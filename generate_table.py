@@ -107,7 +107,7 @@ def generate_html(models_data: Dict[str, Any]) -> str:
             Click on column headers to sort. Use the search box to filter results.
         </p>
         <p class="info-text">
-            <small>Last updated: ''' + datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC') + '''</small>
+            <small>Last updated: ''' + datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC') + '''</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -139,13 +139,17 @@ def generate_html(models_data: Dict[str, Any]) -> str:
         
         # Convert prices to per 1M tokens (they're provided as per-token prices)
         try:
-            prompt_price_display = f"${float(prompt_price) * 1_000_000:.4f}"
+            prompt_price_numeric = float(prompt_price) * 1_000_000
+            prompt_price_display = f"${prompt_price_numeric:.4f}"
         except (ValueError, TypeError):
+            prompt_price_numeric = 0
             prompt_price_display = "N/A"
             
         try:
-            completion_price_display = f"${float(completion_price) * 1_000_000:.4f}"
+            completion_price_numeric = float(completion_price) * 1_000_000
+            completion_price_display = f"${completion_price_numeric:.4f}"
         except (ValueError, TypeError):
+            completion_price_numeric = 0
             completion_price_display = "N/A"
         
         # Get other fields
@@ -169,9 +173,9 @@ def generate_html(models_data: Dict[str, Any]) -> str:
         html_template += f'''                <tr>
                     <td class="model-id">{html.escape(model_id)}</td>
                     <td>{html.escape(name)}</td>
-                    <td class="context-length">{context_length:,}</td>
-                    <td class="price-cell">{html.escape(prompt_price_display)}</td>
-                    <td class="price-cell">{html.escape(completion_price_display)}</td>
+                    <td class="context-length" data-order="{context_length}">{context_length:,}</td>
+                    <td class="price-cell" data-order="{prompt_price_numeric}">{html.escape(prompt_price_display)}</td>
+                    <td class="price-cell" data-order="{completion_price_numeric}">{html.escape(completion_price_display)}</td>
                     <td class="architecture">{html.escape(arch_display)}</td>
                     <td class="created-date">{html.escape(created_date)}</td>
                     <td>{html.escape(top_provider_name)}</td>

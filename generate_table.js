@@ -149,13 +149,17 @@ function generateHTML(modelsData) {
         // Convert prices to per 1M tokens
         let promptPriceDisplay = 'N/A';
         let completionPriceDisplay = 'N/A';
+        let promptPriceNumeric = 0;
+        let completionPriceNumeric = 0;
         
         try {
-            promptPriceDisplay = `$${(parseFloat(promptPrice) * 1000000).toFixed(4)}`;
+            promptPriceNumeric = parseFloat(promptPrice) * 1000000;
+            promptPriceDisplay = `$${promptPriceNumeric.toFixed(4)}`;
         } catch (e) {}
         
         try {
-            completionPriceDisplay = `$${(parseFloat(completionPrice) * 1000000).toFixed(4)}`;
+            completionPriceNumeric = parseFloat(completionPrice) * 1000000;
+            completionPriceDisplay = `$${completionPriceNumeric.toFixed(4)}`;
         } catch (e) {}
         
         // Get other fields
@@ -177,9 +181,9 @@ function generateHTML(modelsData) {
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td>${escapeHtml(name)}</td>
-                    <td class="context-length">${contextLength.toLocaleString()}</td>
-                    <td class="price-cell">${escapeHtml(promptPriceDisplay)}</td>
-                    <td class="price-cell">${escapeHtml(completionPriceDisplay)}</td>
+                    <td class="context-length" data-order="${contextLength}">${contextLength.toLocaleString()}</td>
+                    <td class="price-cell" data-order="${promptPriceNumeric}">${escapeHtml(promptPriceDisplay)}</td>
+                    <td class="price-cell" data-order="${completionPriceNumeric}">${escapeHtml(completionPriceDisplay)}</td>
                     <td class="architecture">${escapeHtml(archDisplay)}</td>
                     <td class="created-date">${escapeHtml(createdDate)}</td>
                     <td>${escapeHtml(topProviderName)}</td>
