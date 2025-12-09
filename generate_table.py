@@ -3,6 +3,7 @@
 Fetch OpenRouter models data and generate a static HTML table.
 """
 
+import html
 import json
 import urllib.request
 import urllib.error
@@ -120,7 +121,6 @@ def generate_html(models_data: Dict[str, Any]) -> str:
                     <th>Architecture</th>
                     <th>Created</th>
                     <th>Top Provider</th>
-                    <th>Pricing</th>
                 </tr>
             </thead>
             <tbody>
@@ -166,24 +166,15 @@ def generate_html(models_data: Dict[str, Any]) -> str:
         top_provider = model.get('top_provider', {})
         top_provider_name = top_provider.get('name', 'N/A') if top_provider else 'N/A'
         
-        # Pricing metadata
-        pricing_info = []
-        if pricing.get('prompt'):
-            pricing_info.append(f"prompt: {prompt_price}")
-        if pricing.get('completion'):
-            pricing_info.append(f"completion: {completion_price}")
-        pricing_str = ", ".join(pricing_info) if pricing_info else "N/A"
-        
         html_template += f'''                <tr>
-                    <td class="model-id">{model_id}</td>
-                    <td>{name}</td>
+                    <td class="model-id">{html.escape(model_id)}</td>
+                    <td>{html.escape(name)}</td>
                     <td class="context-length">{context_length:,}</td>
-                    <td class="price-cell">{prompt_price_display}</td>
-                    <td class="price-cell">{completion_price_display}</td>
-                    <td class="architecture">{arch_display}</td>
-                    <td class="created-date">{created_date}</td>
-                    <td>{top_provider_name}</td>
-                    <td style="display:none;">{pricing_str}</td>
+                    <td class="price-cell">{html.escape(prompt_price_display)}</td>
+                    <td class="price-cell">{html.escape(completion_price_display)}</td>
+                    <td class="architecture">{html.escape(arch_display)}</td>
+                    <td class="created-date">{html.escape(created_date)}</td>
+                    <td>{html.escape(top_provider_name)}</td>
                 </tr>
 '''
     

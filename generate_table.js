@@ -130,7 +130,6 @@ function generateHTML(modelsData) {
                     <th>Architecture</th>
                     <th>Created</th>
                     <th>Top Provider</th>
-                    <th>Pricing</th>
                 </tr>
             </thead>
             <tbody>
@@ -175,12 +174,6 @@ function generateHTML(modelsData) {
         const topProvider = model.top_provider || {};
         const topProviderName = topProvider.name || 'N/A';
         
-        // Pricing metadata
-        const pricingInfo = [];
-        if (pricing.prompt) pricingInfo.push(`prompt: ${promptPrice}`);
-        if (pricing.completion) pricingInfo.push(`completion: ${completionPrice}`);
-        const pricingStr = pricingInfo.length > 0 ? pricingInfo.join(', ') : 'N/A';
-        
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td>${escapeHtml(name)}</td>
@@ -190,7 +183,6 @@ function generateHTML(modelsData) {
                     <td class="architecture">${escapeHtml(archDisplay)}</td>
                     <td class="created-date">${escapeHtml(createdDate)}</td>
                     <td>${escapeHtml(topProviderName)}</td>
-                    <td style="display:none;">${escapeHtml(pricingStr)}</td>
                 </tr>
 `;
     });
