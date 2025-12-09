@@ -276,7 +276,7 @@ function generateHTML(modelsData) {
                 function(settings, data, dataIndex) {
                     const min = parseInt($('#contextMinFilter').val(), 10);
                     const max = parseInt($('#contextMaxFilter').val(), 10);
-                    const contextLength = parseFloat(data[2].replace(/,/g, '')) || 0;
+                    const contextLength = parseInt(data[2].replace(/,/g, ''), 10) || 0;
                     
                     if ((isNaN(min) && isNaN(max)) ||
                         (isNaN(min) && contextLength <= max) ||
@@ -289,6 +289,7 @@ function generateHTML(modelsData) {
             );
             
             // Custom range filtering function for Created Date
+            // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
             $.fn.dataTable.ext.search.push(
                 function(settings, data, dataIndex) {
                     const minDate = $('#createdMinFilter').val();

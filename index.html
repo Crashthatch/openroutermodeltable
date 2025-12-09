@@ -107,7 +107,7 @@
             Click on column headers to sort. Use the search box to filter results.
         </p>
         <p class="info-text">
-            <small>Last updated: 2025-12-09 23:45:17 UTC</small>
+            <small>Last updated: 2025-12-09 23:50:15 UTC</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -5945,7 +5945,7 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo</td>
                 function(settings, data, dataIndex) {
                     const min = parseInt($('#contextMinFilter').val(), 10);
                     const max = parseInt($('#contextMaxFilter').val(), 10);
-                    const contextLength = parseFloat(data[2].replace(/,/g, '')) || 0;
+                    const contextLength = parseInt(data[2].replace(/,/g, ''), 10) || 0;
                     
                     if ((isNaN(min) && isNaN(max)) ||
                         (isNaN(min) && contextLength <= max) ||
@@ -5958,6 +5958,7 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo</td>
             );
             
             // Custom range filtering function for Created Date
+            // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
             $.fn.dataTable.ext.search.push(
                 function(settings, data, dataIndex) {
                     const minDate = $('#createdMinFilter').val();
