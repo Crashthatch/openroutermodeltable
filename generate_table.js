@@ -112,6 +112,15 @@ function generateHTML(modelsData) {
         }
         #modelsTable tbody tr td:nth-child(2):hover {
             background-color: #f0f8ff;
+        .param-cell {
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .param-yes {
+            color: #28a745;
+        }
+        .param-no {
+            color: #dc3545;
         }
     </style>
 </head>
@@ -137,6 +146,11 @@ function generateHTML(modelsData) {
                     <th>Architecture</th>
                     <th>Created</th>
                     <th>Top Provider</th>
+                    <th>Tools</th>
+                    <th>Reasoning</th>
+                    <th>Include Reasoning</th>
+                    <th>Response Format</th>
+                    <th>Structured Outputs</th>
                 </tr>
             </thead>
             <tbody>
@@ -186,6 +200,23 @@ function generateHTML(modelsData) {
         const topProvider = model.top_provider || {};
         const topProviderName = topProvider.name || 'N/A';
         
+        // Get supported parameters
+        const supportedParams = model.supported_parameters || [];
+        const supportsTools = supportedParams.includes('tools');
+        const supportsReasoning = supportedParams.includes('reasoning');
+        const supportsIncludeReasoning = supportedParams.includes('include_reasoning');
+        const supportsResponseFormat = supportedParams.includes('response_format');
+        const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
+        
+        // Helper function to create parameter cell
+        const paramCell = (supported) => {
+            if (supported) {
+                return `<td class="param-cell param-yes" data-order="1">✓</td>`;
+            } else {
+                return `<td class="param-cell param-no" data-order="0">✗</td>`;
+            }
+        };
+        
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
@@ -195,6 +226,11 @@ function generateHTML(modelsData) {
                     <td class="architecture">${escapeHtml(archDisplay)}</td>
                     <td class="created-date">${escapeHtml(createdDate)}</td>
                     <td>${escapeHtml(topProviderName)}</td>
+                    ${paramCell(supportsTools)}
+                    ${paramCell(supportsReasoning)}
+                    ${paramCell(supportsIncludeReasoning)}
+                    ${paramCell(supportsResponseFormat)}
+                    ${paramCell(supportsStructuredOutputs)}
                 </tr>
 `;
     });
@@ -213,13 +249,35 @@ function generateHTML(modelsData) {
     
     <script>
         $(document).ready(function() {
-            $('#modelsTable').DataTable({
+            const table = $('#modelsTable').DataTable({
                 "pageLength": 25,
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
                     { "type": "num", "targets": [2, 3, 4] }  // Numeric sorting for context and prices
-                ]
+                ],
+                "initComplete": function () {
+                    // Add filter dropdowns for parameter columns (columns 8-12)
+                    this.api().columns([8, 9, 10, 11, 12]).every(function () {
+                        const column = this;
+                        const header = $(column.header());
+                        
+                        // Create select element
+                        const select = $('<select class="form-select form-select-sm"><option value="">All</option></select>')
+                            .appendTo(header)
+                            .on('change', function () {
+                                const val = $.fn.dataTable.util.escapeRegex($(this).val());
+                                column.search(val ? '^' + val + '$' : '', true, false).draw();
+                            })
+                            .on('click', function(e) {
+                                e.stopPropagation();
+                            });
+                        
+                        // Add options
+                        select.append('<option value="✓">✓ Yes</option>');
+                        select.append('<option value="✗">✗ No</option>');
+                    });
+                }
             });
         });
     </script>
