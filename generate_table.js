@@ -112,6 +112,7 @@ function generateHTML(modelsData) {
         }
         #modelsTable tbody tr td:nth-child(2):hover {
             background-color: #f0f8ff;
+        }
         .param-cell {
             text-align: center;
             font-size: 1.2em;
@@ -121,6 +122,27 @@ function generateHTML(modelsData) {
         }
         .param-no {
             color: #dc3545;
+        }
+        /* Filter input styling */
+        .filter-input {
+            width: 100%;
+            padding: 4px 8px;
+            margin-top: 5px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filter-container {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .filter-container input {
+            flex: 1;
+            padding: 4px 8px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -249,6 +271,40 @@ function generateHTML(modelsData) {
     
     <script>
         $(document).ready(function() {
+            // Custom range filtering function for Context Length
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const min = parseInt($('#contextMinFilter').val(), 10);
+                    const max = parseInt($('#contextMaxFilter').val(), 10);
+                    const contextLength = parseFloat(data[2].replace(/,/g, '')) || 0;
+                    
+                    if ((isNaN(min) && isNaN(max)) ||
+                        (isNaN(min) && contextLength <= max) ||
+                        (min <= contextLength && isNaN(max)) ||
+                        (min <= contextLength && contextLength <= max)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
+            // Custom range filtering function for Created Date
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const minDate = $('#createdMinFilter').val();
+                    const maxDate = $('#createdMaxFilter').val();
+                    const createdDate = data[6] || '';
+                    
+                    if ((!minDate && !maxDate) ||
+                        (!minDate && createdDate <= maxDate) ||
+                        (minDate <= createdDate && !maxDate) ||
+                        (minDate <= createdDate && createdDate <= maxDate)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
             const table = $('#modelsTable').DataTable({
                 "pageLength": 25,
                 "order": [[0, "asc"]],
@@ -257,8 +313,44 @@ function generateHTML(modelsData) {
                     { "type": "num", "targets": [2, 3, 4] }  // Numeric sorting for context and prices
                 ],
                 "initComplete": function () {
+                    const api = this.api();
+                    
+                    // Add min/max filters for Context Length (column 2)
+                    const contextHeader = $(api.column(2).header());
+                    const contextFilterDiv = $('<div class="filter-container"></div>');
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMinFilter" placeholder="Min" class="filter-input" />'
+                    );
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMaxFilter" placeholder="Max" class="filter-input" />'
+                    );
+                    contextHeader.append(contextFilterDiv);
+                    
+                    $('#contextMinFilter, #contextMaxFilter').on('keyup change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
+                    // Add date range filters for Created (column 6)
+                    const createdHeader = $(api.column(6).header());
+                    const createdFilterDiv = $('<div class="filter-container"></div>');
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMinFilter" placeholder="From" class="filter-input" />'
+                    );
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMaxFilter" placeholder="To" class="filter-input" />'
+                    );
+                    createdHeader.append(createdFilterDiv);
+                    
+                    $('#createdMinFilter, #createdMaxFilter').on('change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
                     // Add filter dropdowns for parameter columns (columns 8-12)
-                    this.api().columns([8, 9, 10, 11, 12]).every(function () {
+                    api.columns([8, 9, 10, 11, 12]).every(function () {
                         const column = this;
                         const header = $(column.header());
                         
