@@ -9,6 +9,7 @@ A comprehensive, sortable, and filterable table of all models available from [Op
 - 📊 **Complete information**: Includes pricing, context length, architecture, release date, and more
 - 🚀 **Static HTML**: Can be hosted anywhere - no server required
 - 🔄 **Easy updates**: Simple scripts to regenerate the table with latest data
+- 🔒 **Secure**: HTML escaping prevents XSS attacks
 
 ## Usage
 
