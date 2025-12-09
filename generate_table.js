@@ -106,6 +106,12 @@ function generateHTML(modelsData) {
             color: #0066cc;
             font-size: 0.8em;
         }
+        /* Tooltip styling for model names */
+        #modelsTable tbody tr td:nth-child(2) {
+            cursor: help;
+        }
+        #modelsTable tbody tr td:nth-child(2):hover {
+            background-color: #f0f8ff;
         .param-cell {
             text-align: center;
             font-size: 1.2em;
@@ -154,6 +160,7 @@ function generateHTML(modelsData) {
     models.forEach(model => {
         const modelId = model.id || '';
         const name = model.name || '';
+        const description = model.description || '';
         const contextLength = model.context_length || 0;
         
         // Get pricing information
@@ -212,7 +219,7 @@ function generateHTML(modelsData) {
         
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
-                    <td>${escapeHtml(name)}</td>
+                    <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
                     <td class="context-length" data-order="${contextLength}">${contextLength.toLocaleString()}</td>
                     <td class="price-cell" data-order="${promptPriceNumeric}">${escapeHtml(promptPriceDisplay)}</td>
                     <td class="price-cell" data-order="${completionPriceNumeric}">${escapeHtml(completionPriceDisplay)}</td>
