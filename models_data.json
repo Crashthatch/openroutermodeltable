@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "openai/gpt-4",
+      "name": "GPT-4",
+      "context_length": 8192,
+      "pricing": {
+        "prompt": "0.00003",
+        "completion": "0.00006"
+      },
+      "architecture": {
+        "modality": "text",
+        "tokenizer": "GPT",
+        "instruct_type": "chat"
+      },
+      "created": 1678320000,
+      "top_provider": {
+        "name": "OpenAI"
+      }
+    },
+    {
+      "id": "anthropic/claude-2",
+      "name": "Claude 2",
+      "context_length": 100000,
+      "pricing": {
+        "prompt": "0.00001102",
+        "completion": "0.00003268"
+      },
+      "architecture": {
+        "modality": "text",
+        "tokenizer": "Claude",
+        "instruct_type": "chat"
+      },
+      "created": 1688256000,
+      "top_provider": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "id": "meta-llama/llama-2-70b-chat",
+      "name": "Llama 2 70B Chat",
+      "context_length": 4096,
+      "pricing": {
+        "prompt": "0.0000007",
+        "completion": "0.0000009"
+      },
+      "architecture": {
+        "modality": "text",
+        "tokenizer": "Llama2",
+        "instruct_type": "llama2"
+      },
+      "created": 1689465600,
+      "top_provider": {
+        "name": "Meta"
+      }
+    }
+  ]
+}
