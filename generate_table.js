@@ -39,9 +39,140 @@ function fetchModelsData() {
 }
 
 /**
+ * Fetch stats data from OpenRouter API for a specific model
+ */
+function fetchStatsData(permaslug, statsType) {
+    return new Promise((resolve, reject) => {
+        const encodedSlug = encodeURIComponent(permaslug);
+        const url = `https://openrouter.ai/api/frontend/stats/${statsType}?permaslug=${encodedSlug}`;
+        
+        https.get(url, {
+            headers: {
+                'User-Agent': 'OpenRouterModelTable/1.0'
+            }
+        }, (res) => {
+            let data = '';
+            
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            
+            res.on('end', () => {
+                try {
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
+                } catch (e) {
+                    // If stats are not available, return null instead of failing
+                    resolve(null);
+                }
+            });
+        }).on('error', (err) => {
+            // If stats are not available, return null instead of failing
+            resolve(null);
+        });
+    });
+}
+
+/**
+ * Calculate min, max, median from an array of numbers
+ */
+function calculateStats(values) {
+    if (!values || values.length === 0) {
+        return { min: null, max: null, median: null };
+    }
+    
+    const sorted = [...values].sort((a, b) => a - b);
+    const min = sorted[0];
+    const max = sorted[sorted.length - 1];
+    
+    let median;
+    const mid = Math.floor(sorted.length / 2);
+    if (sorted.length % 2 === 0) {
+        median = (sorted[mid - 1] + sorted[mid]) / 2;
+    } else {
+        median = sorted[mid];
+    }
+    
+    return { min, max, median };
+}
+
+/**
+ * Extract values from stats API response
+ */
+function extractStatsValues(statsData) {
+    if (!statsData || !statsData.data) {
+        return [];
+    }
+    
+    const values = [];
+    for (const entry of statsData.data) {
+        if (entry.y) {
+            // Get the first provider's value
+            const providerValues = Object.values(entry.y);
+            if (providerValues.length > 0) {
+                values.push(providerValues[0]);
+            }
+        }
+    }
+    
+    return values;
+}
+
+/**
+ * Calculate average uptime from recent uptime data
+ */
+function calculateAverageUptime(uptimeData) {
+    if (!uptimeData || !uptimeData.data) {
+        return null;
+    }
+    
+    const providerData = Object.values(uptimeData.data)[0];
+    if (!providerData || providerData.length === 0) {
+        return null;
+    }
+    
+    const uptimes = providerData.map(entry => entry.uptime);
+    const sum = uptimes.reduce((a, b) => a + b, 0);
+    return sum / uptimes.length;
+}
+
+/**
+ * Fetch all stats for a model
+ */
+async function fetchModelStats(canonicalSlug) {
+    if (!canonicalSlug) {
+        return null;
+    }
+    
+    try {
+        const [throughputData, latencyData, e2eLatencyData, uptimeData] = await Promise.all([
+            fetchStatsData(canonicalSlug, 'throughput-comparison'),
+            fetchStatsData(canonicalSlug, 'latency-comparison'),
+            fetchStatsData(canonicalSlug, 'latency-e2e-comparison'),
+            fetchStatsData(canonicalSlug, 'uptime-recent')
+        ]);
+        
+        const throughputValues = extractStatsValues(throughputData);
+        const latencyValues = extractStatsValues(latencyData);
+        const e2eLatencyValues = extractStatsValues(e2eLatencyData);
+        const avgUptime = calculateAverageUptime(uptimeData);
+        
+        return {
+            throughput: calculateStats(throughputValues),
+            latency: calculateStats(latencyValues),
+            e2eLatency: calculateStats(e2eLatencyValues),
+            uptime: avgUptime
+        };
+    } catch (err) {
+        console.error(`Error fetching stats for ${canonicalSlug}: ${err.message}`);
+        return null;
+    }
+}
+
+/**
  * Generate HTML page with sortable, filterable table
  */
-function generateHTML(modelsData) {
+function generateHTML(modelsData, modelsStats) {
     const models = modelsData.data || [];
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
@@ -75,6 +206,7 @@ function generateHTML(modelsData) {
         }
         table.dataTable {
             width: 100% !important;
+            font-size: 0.9em;
         }
         .model-id {
             font-family: monospace;
@@ -112,6 +244,7 @@ function generateHTML(modelsData) {
         }
         #modelsTable tbody tr td:nth-child(2):hover {
             background-color: #f0f8ff;
+        }
         .param-cell {
             text-align: center;
             font-size: 1.2em;
@@ -121,6 +254,15 @@ function generateHTML(modelsData) {
         }
         .param-no {
             color: #dc3545;
+        }
+        .stats-cell {
+            text-align: right;
+            font-family: monospace;
+            font-size: 0.85em;
+        }
+        .stats-na {
+            text-align: center;
+            color: #999;
         }
     </style>
 </head>
@@ -133,6 +275,9 @@ function generateHTML(modelsData) {
         </p>
         <p class="info-text">
             <small>Last updated: ${timestamp}</small>
+        </p>
+        <p class="info-text">
+            <small>Stats columns show min/max/median values over the last 7 days. Throughput in tokens/sec, latency in ms, uptime in %.</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -151,6 +296,16 @@ function generateHTML(modelsData) {
                     <th>Include Reasoning</th>
                     <th>Response Format</th>
                     <th>Structured Outputs</th>
+                    <th>Throughput Min</th>
+                    <th>Throughput Max</th>
+                    <th>Throughput Median</th>
+                    <th>Latency Min</th>
+                    <th>Latency Max</th>
+                    <th>Latency Median</th>
+                    <th>E2E Latency Min</th>
+                    <th>E2E Latency Max</th>
+                    <th>E2E Latency Median</th>
+                    <th>Uptime (7d avg)</th>
                 </tr>
             </thead>
             <tbody>
@@ -159,6 +314,7 @@ function generateHTML(modelsData) {
     // Add rows for each model
     models.forEach(model => {
         const modelId = model.id || '';
+        const canonicalSlug = model.canonical_slug || '';
         const name = model.name || '';
         const description = model.description || '';
         const contextLength = model.context_length || 0;
@@ -208,6 +364,9 @@ function generateHTML(modelsData) {
         const supportsResponseFormat = supportedParams.includes('response_format');
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
+        // Get stats for this model
+        const stats = modelsStats[canonicalSlug] || null;
+        
         // Helper function to create parameter cell
         const paramCell = (supported) => {
             if (supported) {
@@ -215,6 +374,14 @@ function generateHTML(modelsData) {
             } else {
                 return `<td class="param-cell param-no" data-order="0">✗</td>`;
             }
+        };
+        
+        // Helper function to format stats cell
+        const statsCell = (value, decimals = 2) => {
+            if (value === null || value === undefined) {
+                return `<td class="stats-na" data-order="-1">N/A</td>`;
+            }
+            return `<td class="stats-cell" data-order="${value}">${value.toFixed(decimals)}</td>`;
         };
         
         html += `                <tr>
@@ -231,6 +398,16 @@ function generateHTML(modelsData) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
+                    ${stats ? statsCell(stats.throughput.min, 2) : statsCell(null)}
+                    ${stats ? statsCell(stats.throughput.max, 2) : statsCell(null)}
+                    ${stats ? statsCell(stats.throughput.median, 2) : statsCell(null)}
+                    ${stats ? statsCell(stats.latency.min, 0) : statsCell(null)}
+                    ${stats ? statsCell(stats.latency.max, 0) : statsCell(null)}
+                    ${stats ? statsCell(stats.latency.median, 0) : statsCell(null)}
+                    ${stats ? statsCell(stats.e2eLatency.min, 0) : statsCell(null)}
+                    ${stats ? statsCell(stats.e2eLatency.max, 0) : statsCell(null)}
+                    ${stats ? statsCell(stats.e2eLatency.median, 0) : statsCell(null)}
+                    ${stats && stats.uptime !== null ? statsCell(stats.uptime, 2) : statsCell(null)}
                 </tr>
 `;
     });
@@ -254,7 +431,7 @@ function generateHTML(modelsData) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    { "type": "num", "targets": [2, 3, 4] }  // Numeric sorting for context and prices
+                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] }  // Numeric sorting for context, prices, and stats
                 ],
                 "initComplete": function () {
                     // Add filter dropdowns for parameter columns (columns 8-12)
@@ -316,8 +493,53 @@ async function main() {
         fs.writeFileSync('models_data.json', JSON.stringify(modelsData, null, 2), 'utf-8');
         console.log('Saved raw data to models_data.json');
         
+        // Fetch stats for models
+        console.log('Fetching statistics for models...');
+        const modelsStats = {};
+        const models = modelsData.data || [];
+        
+        // Check for command line argument to limit number of models
+        const args = process.argv.slice(2);
+        const limitIndex = args.indexOf('--limit');
+        let limit = models.length;
+        if (limitIndex !== -1 && args[limitIndex + 1]) {
+            limit = parseInt(args[limitIndex + 1]);
+            console.log(`Limiting stats fetch to first ${limit} models`);
+        }
+        
+        // Fetch stats concurrently in batches of 10 to speed up the process
+        const batchSize = 10;
+        const modelsToFetch = models.slice(0, limit);
+        
+        for (let i = 0; i < modelsToFetch.length; i += batchSize) {
+            const batch = modelsToFetch.slice(i, Math.min(i + batchSize, modelsToFetch.length));
+            console.log(`Fetching stats batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(modelsToFetch.length / batchSize)} (${batch.length} models)...`);
+            
+            const batchPromises = batch.map(async (model) => {
+                if (model.canonical_slug) {
+                    const stats = await fetchModelStats(model.canonical_slug);
+                    return { slug: model.canonical_slug, stats };
+                }
+                return null;
+            });
+            
+            const batchResults = await Promise.all(batchPromises);
+            batchResults.forEach(result => {
+                if (result && result.stats) {
+                    modelsStats[result.slug] = result.stats;
+                }
+            });
+            
+            // Add a small delay between batches to avoid overwhelming the API
+            if (i + batchSize < modelsToFetch.length) {
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+        }
+        
+        console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
+        
         // Generate HTML
-        const htmlContent = generateHTML(modelsData);
+        const htmlContent = generateHTML(modelsData, modelsStats);
         
         // Save HTML file
         fs.writeFileSync('index.html', htmlContent, 'utf-8');
