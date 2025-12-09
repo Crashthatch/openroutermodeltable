@@ -153,12 +153,12 @@ function generateHTML(modelsData) {
         let completionPriceNumeric = 0;
         
         try {
-            promptPriceNumeric = parseFloat(promptPrice) * 1000000;
+            promptPriceNumeric = Math.round(parseFloat(promptPrice) * 1000000 * 10000) / 10000;
             promptPriceDisplay = `$${promptPriceNumeric.toFixed(4)}`;
         } catch (e) {}
         
         try {
-            completionPriceNumeric = parseFloat(completionPrice) * 1000000;
+            completionPriceNumeric = Math.round(parseFloat(completionPrice) * 1000000 * 10000) / 10000;
             completionPriceDisplay = `$${completionPriceNumeric.toFixed(4)}`;
         } catch (e) {}
         

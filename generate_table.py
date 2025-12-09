@@ -7,7 +7,7 @@ import html
 import json
 import urllib.request
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List, Any
 
 API_URL = "https://openrouter.ai/api/v1/models"
@@ -107,7 +107,7 @@ def generate_html(models_data: Dict[str, Any]) -> str:
             Click on column headers to sort. Use the search box to filter results.
         </p>
         <p class="info-text">
-            <small>Last updated: ''' + datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC') + '''</small>
+            <small>Last updated: ''' + datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC') + '''</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -139,14 +139,14 @@ def generate_html(models_data: Dict[str, Any]) -> str:
         
         # Convert prices to per 1M tokens (they're provided as per-token prices)
         try:
-            prompt_price_numeric = float(prompt_price) * 1_000_000
+            prompt_price_numeric = round(float(prompt_price) * 1_000_000, 4)
             prompt_price_display = f"${prompt_price_numeric:.4f}"
         except (ValueError, TypeError):
             prompt_price_numeric = 0
             prompt_price_display = "N/A"
             
         try:
-            completion_price_numeric = float(completion_price) * 1_000_000
+            completion_price_numeric = round(float(completion_price) * 1_000_000, 4)
             completion_price_display = f"${completion_price_numeric:.4f}"
         except (ValueError, TypeError):
             completion_price_numeric = 0
@@ -165,7 +165,7 @@ def generate_html(models_data: Dict[str, Any]) -> str:
             arch_display += f" | {arch_instruct_type}"
         
         created = model.get('created', 0)
-        created_date = datetime.fromtimestamp(created).strftime('%Y-%m-%d') if created else 'N/A'
+        created_date = datetime.fromtimestamp(created, tz=timezone.utc).strftime('%Y-%m-%d') if created else 'N/A'
         
         top_provider = model.get('top_provider', {})
         top_provider_name = top_provider.get('name', 'N/A') if top_provider else 'N/A'
