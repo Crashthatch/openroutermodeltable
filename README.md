@@ -6,6 +6,10 @@ A comprehensive, sortable, and filterable table of all models available from [Op
 
 - ✨ **Sortable columns**: Click on any column header to sort the table
 - 🔍 **Searchable/Filterable**: Use the search box to filter models in real-time
+- 🎯 **Per-column filtering**: 
+  - Filter Context Length by min/max values
+  - Filter Created date with date range picker
+  - Filter parameter columns with dropdown selectors
 - 📊 **Complete information**: Includes pricing, context length, architecture, release date, and more
 - 🚀 **Static HTML**: Can be hosted anywhere - no server required
 - 🔄 **Easy updates**: Simple scripts to regenerate the table with latest data
@@ -49,12 +53,27 @@ The table includes the following columns:
 
 - **Model ID**: Unique identifier for the model
 - **Name**: Human-readable model name
-- **Context Length**: Maximum context window size
+- **Context Length**: Maximum context window size (filterable by min/max range)
 - **Prompt Price**: Cost per 1M input tokens
 - **Completion Price**: Cost per 1M output tokens
 - **Architecture**: Model architecture details (modality, tokenizer, instruction type)
-- **Created**: Release/creation date
+- **Created**: Release/creation date (filterable by date range)
 - **Top Provider**: Best available provider for this model
+- **Parameter Columns**: Tools, Reasoning, Include Reasoning, Response Format, Structured Outputs (filterable with dropdown)
+
+### Using Column Filters
+
+**Context Length Filter:**
+- Enter minimum and/or maximum values to filter models by context window size
+- Example: Enter "Min: 100000" to show only models with 100K+ tokens
+
+**Created Date Filter:**
+- Use the date pickers to filter models by release date
+- Example: Select "From: 2024-01-01" to show only 2024 models
+
+**Parameter Filters:**
+- Use the dropdown menus in the parameter columns to filter by support
+- Example: Select "✓ Yes" in the Tools column to show only models supporting tools
 
 ## Requirements
 

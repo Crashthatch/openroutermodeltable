@@ -65,6 +65,7 @@
         }
         #modelsTable tbody tr td:nth-child(2):hover {
             background-color: #f0f8ff;
+        }
         .param-cell {
             text-align: center;
             font-size: 1.2em;
@@ -74,6 +75,27 @@
         }
         .param-no {
             color: #dc3545;
+        }
+        /* Filter input styling */
+        .filter-input {
+            width: 100%;
+            padding: 4px 8px;
+            margin-top: 5px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filter-container {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .filter-container input {
+            flex: 1;
+            padding: 4px 8px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -85,7 +107,7 @@
             Click on column headers to sort. Use the search box to filter results.
         </p>
         <p class="info-text">
-            <small>Last updated: 2025-12-09 23:26:56 UTC</small>
+            <small>Last updated: 2025-12-09 23:50:15 UTC</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -4528,11 +4550,11 @@ The model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
-                    <td class="model-id">mistralai/ministral-8b</td>
-                    <td title="Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length and excels in knowledge and reasoning tasks. It outperforms peers in the sub-10B category, making it perfect for low-latency, privacy-first applications.">Mistral: Ministral 8B</td>
+                    <td class="model-id">mistralai/ministral-3b</td>
+                    <td title="Ministral 3B is a 3B parameter model optimized for on-device and edge computing. It excels in knowledge, commonsense reasoning, and function-calling, outperforming larger models like Mistral 7B on most benchmarks. Supporting up to 128k context length, it’s ideal for orchestrating agentic workflows and specialist tasks with efficient inference.">Mistral: Ministral 3B</td>
                     <td class="context-length" data-order="131072">131,072</td>
-                    <td class="price-cell" data-order="0.1">$0.1000</td>
-                    <td class="price-cell" data-order="0.1">$0.1000</td>
+                    <td class="price-cell" data-order="0.04">$0.0400</td>
+                    <td class="price-cell" data-order="0.04">$0.0400</td>
                     <td class="architecture">text-&gt;text | Mistral</td>
                     <td class="created-date">2024-10-17</td>
                     <td>N/A</td>
@@ -4543,11 +4565,11 @@ The model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">mistralai/ministral-3b</td>
-                    <td title="Ministral 3B is a 3B parameter model optimized for on-device and edge computing. It excels in knowledge, commonsense reasoning, and function-calling, outperforming larger models like Mistral 7B on most benchmarks. Supporting up to 128k context length, it’s ideal for orchestrating agentic workflows and specialist tasks with efficient inference.">Mistral: Ministral 3B</td>
+                    <td class="model-id">mistralai/ministral-8b</td>
+                    <td title="Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length and excels in knowledge and reasoning tasks. It outperforms peers in the sub-10B category, making it perfect for low-latency, privacy-first applications.">Mistral: Ministral 8B</td>
                     <td class="context-length" data-order="131072">131,072</td>
-                    <td class="price-cell" data-order="0.04">$0.0400</td>
-                    <td class="price-cell" data-order="0.04">$0.0400</td>
+                    <td class="price-cell" data-order="0.1">$0.1000</td>
+                    <td class="price-cell" data-order="0.1">$0.1000</td>
                     <td class="architecture">text-&gt;text | Mistral</td>
                     <td class="created-date">2024-10-17</td>
                     <td>N/A</td>
@@ -4600,10 +4622,12 @@ Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://ww
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
-                    <td class="model-id">inflection/inflection-3-pi</td>
-                    <td title="Inflection 3 Pi powers Inflection&#039;s [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay.
+                    <td class="model-id">inflection/inflection-3-productivity</td>
+                    <td title="Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news.
 
-Pi has been trained to mirror your tone and style, if you use more emojis, so will Pi! Try experimenting with various prompts and conversation styles.">Inflection: Inflection 3 Pi</td>
+For emotional intelligence similar to Pi, see [Inflect 3 Pi](/inflection/inflection-3-pi)
+
+See [Inflection&#039;s announcement](https://inflection.ai/blog/enterprise) for more details.">Inflection: Inflection 3 Productivity</td>
                     <td class="context-length" data-order="8000">8,000</td>
                     <td class="price-cell" data-order="2.5">$2.5000</td>
                     <td class="price-cell" data-order="10">$10.0000</td>
@@ -4617,12 +4641,10 @@ Pi has been trained to mirror your tone and style, if you use more emojis, so wi
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
-                    <td class="model-id">inflection/inflection-3-productivity</td>
-                    <td title="Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news.
+                    <td class="model-id">inflection/inflection-3-pi</td>
+                    <td title="Inflection 3 Pi powers Inflection&#039;s [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay.
 
-For emotional intelligence similar to Pi, see [Inflect 3 Pi](/inflection/inflection-3-pi)
-
-See [Inflection&#039;s announcement](https://inflection.ai/blog/enterprise) for more details.">Inflection: Inflection 3 Productivity</td>
+Pi has been trained to mirror your tone and style, if you use more emojis, so will Pi! Try experimenting with various prompts and conversation styles.">Inflection: Inflection 3 Pi</td>
                     <td class="context-length" data-order="8000">8,000</td>
                     <td class="price-cell" data-order="2.5">$2.5000</td>
                     <td class="price-cell" data-order="10">$10.0000</td>
@@ -4698,6 +4720,27 @@ Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://ww
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
+                    <td class="model-id">meta-llama/llama-3.2-11b-vision-instruct</td>
+                    <td title="Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and visual question answering, bridging the gap between language generation and visual reasoning. Pre-trained on a massive dataset of image-text pairs, it performs well in complex, high-accuracy image analysis.
+
+Its ability to integrate visual understanding with language processing makes it an ideal solution for industries requiring comprehensive visual-linguistic AI applications, such as content creation, AI-driven customer service, and research.
+
+Click here for the [original model card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md).
+
+Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).">Meta: Llama 3.2 11B Vision Instruct</td>
+                    <td class="context-length" data-order="131072">131,072</td>
+                    <td class="price-cell" data-order="0.049">$0.0490</td>
+                    <td class="price-cell" data-order="0.049">$0.0490</td>
+                    <td class="architecture">text+image-&gt;text | Llama3 | llama3</td>
+                    <td class="created-date">2024-09-25</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                </tr>
+                <tr>
                     <td class="model-id">meta-llama/llama-3.2-1b-instruct</td>
                     <td title="Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate efficiently in low-resource environments while maintaining strong task performance.
 
@@ -4730,27 +4773,6 @@ Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://ww
                     <td class="context-length" data-order="32768">32,768</td>
                     <td class="price-cell" data-order="0.35">$0.3500</td>
                     <td class="price-cell" data-order="0.4">$0.4000</td>
-                    <td class="architecture">text+image-&gt;text | Llama3 | llama3</td>
-                    <td class="created-date">2024-09-25</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                </tr>
-                <tr>
-                    <td class="model-id">meta-llama/llama-3.2-11b-vision-instruct</td>
-                    <td title="Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and visual question answering, bridging the gap between language generation and visual reasoning. Pre-trained on a massive dataset of image-text pairs, it performs well in complex, high-accuracy image analysis.
-
-Its ability to integrate visual understanding with language processing makes it an ideal solution for industries requiring comprehensive visual-linguistic AI applications, such as content creation, AI-driven customer service, and research.
-
-Click here for the [original model card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md).
-
-Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).">Meta: Llama 3.2 11B Vision Instruct</td>
-                    <td class="context-length" data-order="131072">131,072</td>
-                    <td class="price-cell" data-order="0.049">$0.0490</td>
-                    <td class="price-cell" data-order="0.049">$0.0490</td>
                     <td class="architecture">text+image-&gt;text | Llama3 | llama3</td>
                     <td class="created-date">2024-09-25</td>
                     <td>N/A</td>
@@ -5050,25 +5072,6 @@ To read more about the model release, [click here](https://ai.meta.com/blog/meta
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
-                    <td class="model-id">meta-llama/llama-3.1-8b-instruct</td>
-                    <td title="Meta&#039;s latest class of model (Llama 3.1) launched with a variety of sizes &amp; flavors. This 8B instruct-tuned version is fast and efficient.
-
-It has demonstrated strong performance compared to leading closed-source models in human evaluations.
-
-To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3-1/). Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).">Meta: Llama 3.1 8B Instruct</td>
-                    <td class="context-length" data-order="131072">131,072</td>
-                    <td class="price-cell" data-order="0.02">$0.0200</td>
-                    <td class="price-cell" data-order="0.03">$0.0300</td>
-                    <td class="architecture">text-&gt;text | Llama3 | llama3</td>
-                    <td class="created-date">2024-07-23</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                </tr>
-                <tr>
                     <td class="model-id">meta-llama/llama-3.1-405b-instruct</td>
                     <td title="The highly anticipated 400B class of Llama3 is here! Clocking in at 128k context with impressive eval scores, the Meta AI team continues to push the frontier of open-source LLMs.
 
@@ -5107,6 +5110,25 @@ To read more about the model release, [click here](https://ai.meta.com/blog/meta
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
+                </tr>
+                <tr>
+                    <td class="model-id">meta-llama/llama-3.1-8b-instruct</td>
+                    <td title="Meta&#039;s latest class of model (Llama 3.1) launched with a variety of sizes &amp; flavors. This 8B instruct-tuned version is fast and efficient.
+
+It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+
+To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3-1/). Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).">Meta: Llama 3.1 8B Instruct</td>
+                    <td class="context-length" data-order="131072">131,072</td>
+                    <td class="price-cell" data-order="0.02">$0.0200</td>
+                    <td class="price-cell" data-order="0.03">$0.0300</td>
+                    <td class="architecture">text-&gt;text | Llama3 | llama3</td>
+                    <td class="created-date">2024-07-23</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
                     <td class="model-id">mistralai/mistral-nemo</td>
@@ -5233,6 +5255,29 @@ See the [launch announcement](https://blog.google/technology/developers/google-g
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
+                    <td class="model-id">mistralai/mistral-7b-instruct-v0.3</td>
+                    <td title="A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
+
+An improved version of [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2), with the following changes:
+
+- Extended vocabulary to 32768
+- Supports v3 Tokenizer
+- Supports function calling
+
+NOTE: Support for function calling depends on the provider.">Mistral: Mistral 7B Instruct v0.3</td>
+                    <td class="context-length" data-order="32768">32,768</td>
+                    <td class="price-cell" data-order="0.2">$0.2000</td>
+                    <td class="price-cell" data-order="0.2">$0.2000</td>
+                    <td class="architecture">text-&gt;text | Mistral | mistral</td>
+                    <td class="created-date">2024-05-27</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                </tr>
+                <tr>
                     <td class="model-id">nousresearch/hermes-2-pro-llama-3-8b</td>
                     <td title="Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.">NousResearch: Hermes 2 Pro - Llama-3 8B</td>
                     <td class="context-length" data-order="8192">8,192</td>
@@ -5279,29 +5324,6 @@ See the [launch announcement](https://blog.google/technology/developers/google-g
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                </tr>
-                <tr>
-                    <td class="model-id">mistralai/mistral-7b-instruct-v0.3</td>
-                    <td title="A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
-
-An improved version of [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2), with the following changes:
-
-- Extended vocabulary to 32768
-- Supports v3 Tokenizer
-- Supports function calling
-
-NOTE: Support for function calling depends on the provider.">Mistral: Mistral 7B Instruct v0.3</td>
-                    <td class="context-length" data-order="32768">32,768</td>
-                    <td class="price-cell" data-order="0.2">$0.2000</td>
-                    <td class="price-cell" data-order="0.2">$0.2000</td>
-                    <td class="architecture">text-&gt;text | Mistral | mistral</td>
-                    <td class="created-date">2024-05-27</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
@@ -5364,25 +5386,6 @@ To read more about the model release, [click here](https://ai.meta.com/blog/meta
                     <td class="param-cell param-no" data-order="0">✗</td>
                 </tr>
                 <tr>
-                    <td class="model-id">openai/gpt-4o-2024-05-13</td>
-                    <td title="GPT-4o (&quot;o&quot; for &quot;omni&quot;) is OpenAI&#039;s latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
-
-For benchmarking against other models, it was briefly called [&quot;im-also-a-good-gpt2-chatbot&quot;](https://twitter.com/LiamFedus/status/1790064963966370209)
-
-#multimodal">OpenAI: GPT-4o (2024-05-13)</td>
-                    <td class="context-length" data-order="128000">128,000</td>
-                    <td class="price-cell" data-order="5">$5.0000</td>
-                    <td class="price-cell" data-order="15">$15.0000</td>
-                    <td class="architecture">text+image-&gt;text | GPT</td>
-                    <td class="created-date">2024-05-13</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                </tr>
-                <tr>
                     <td class="model-id">openai/gpt-4o</td>
                     <td title="GPT-4o (&quot;o&quot; for &quot;omni&quot;) is OpenAI&#039;s latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
 
@@ -5421,17 +5424,17 @@ For benchmarking against other models, it was briefly called [&quot;im-also-a-go
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">meta-llama/llama-3-70b-instruct</td>
-                    <td title="Meta&#039;s latest class of model (Llama 3) launched with a variety of sizes &amp; flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases.
+                    <td class="model-id">openai/gpt-4o-2024-05-13</td>
+                    <td title="GPT-4o (&quot;o&quot; for &quot;omni&quot;) is OpenAI&#039;s latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
 
-It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+For benchmarking against other models, it was briefly called [&quot;im-also-a-good-gpt2-chatbot&quot;](https://twitter.com/LiamFedus/status/1790064963966370209)
 
-To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).">Meta: Llama 3 70B Instruct</td>
-                    <td class="context-length" data-order="8192">8,192</td>
-                    <td class="price-cell" data-order="0.3">$0.3000</td>
-                    <td class="price-cell" data-order="0.4">$0.4000</td>
-                    <td class="architecture">text-&gt;text | Llama3 | llama3</td>
-                    <td class="created-date">2024-04-18</td>
+#multimodal">OpenAI: GPT-4o (2024-05-13)</td>
+                    <td class="context-length" data-order="128000">128,000</td>
+                    <td class="price-cell" data-order="5">$5.0000</td>
+                    <td class="price-cell" data-order="15">$15.0000</td>
+                    <td class="architecture">text+image-&gt;text | GPT</td>
+                    <td class="created-date">2024-05-13</td>
                     <td>N/A</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
@@ -5457,6 +5460,25 @@ To read more about the model release, [click here](https://ai.meta.com/blog/meta
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
+                </tr>
+                <tr>
+                    <td class="model-id">meta-llama/llama-3-70b-instruct</td>
+                    <td title="Meta&#039;s latest class of model (Llama 3) launched with a variety of sizes &amp; flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases.
+
+It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+
+To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta&#039;s Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).">Meta: Llama 3 70B Instruct</td>
+                    <td class="context-length" data-order="8192">8,192</td>
+                    <td class="price-cell" data-order="0.3">$0.3000</td>
+                    <td class="price-cell" data-order="0.4">$0.4000</td>
+                    <td class="architecture">text-&gt;text | Llama3 | llama3</td>
+                    <td class="created-date">2024-04-18</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
                     <td class="model-id">mistralai/mixtral-8x22b-instruct</td>
@@ -5574,13 +5596,13 @@ It supports dozens of languages including French, German, Spanish, Italian, Port
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">openai/gpt-3.5-turbo-0613</td>
-                    <td title="GPT-3.5 Turbo is OpenAI&#039;s fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
+                    <td class="model-id">openai/gpt-4-turbo-preview</td>
+                    <td title="The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023.
 
-Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo (older v0613)</td>
-                    <td class="context-length" data-order="4095">4,095</td>
-                    <td class="price-cell" data-order="1">$1.0000</td>
-                    <td class="price-cell" data-order="2">$2.0000</td>
+**Note:** heavily rate limited by OpenAI while in preview.">OpenAI: GPT-4 Turbo Preview</td>
+                    <td class="context-length" data-order="128000">128,000</td>
+                    <td class="price-cell" data-order="10">$10.0000</td>
+                    <td class="price-cell" data-order="30">$30.0000</td>
                     <td class="architecture">text-&gt;text | GPT</td>
                     <td class="created-date">2024-01-25</td>
                     <td>N/A</td>
@@ -5591,13 +5613,13 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo (older v0613)</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">openai/gpt-4-turbo-preview</td>
-                    <td title="The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023.
+                    <td class="model-id">openai/gpt-3.5-turbo-0613</td>
+                    <td title="GPT-3.5 Turbo is OpenAI&#039;s fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
 
-**Note:** heavily rate limited by OpenAI while in preview.">OpenAI: GPT-4 Turbo Preview</td>
-                    <td class="context-length" data-order="128000">128,000</td>
-                    <td class="price-cell" data-order="10">$10.0000</td>
-                    <td class="price-cell" data-order="30">$30.0000</td>
+Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo (older v0613)</td>
+                    <td class="context-length" data-order="4095">4,095</td>
+                    <td class="price-cell" data-order="1">$1.0000</td>
+                    <td class="price-cell" data-order="2">$2.0000</td>
                     <td class="architecture">text-&gt;text | GPT</td>
                     <td class="created-date">2024-01-25</td>
                     <td>N/A</td>
@@ -5768,21 +5790,6 @@ Training data: up to April 2023.">OpenAI: GPT-4 Turbo (older v1106)</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">openai/gpt-3.5-turbo-instruct</td>
-                    <td title="This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021.">OpenAI: GPT-3.5 Turbo Instruct</td>
-                    <td class="context-length" data-order="4095">4,095</td>
-                    <td class="price-cell" data-order="1.5">$1.5000</td>
-                    <td class="price-cell" data-order="2">$2.0000</td>
-                    <td class="architecture">text-&gt;text | GPT | chatml</td>
-                    <td class="created-date">2023-09-28</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                </tr>
-                <tr>
                     <td class="model-id">mistralai/mistral-7b-instruct-v0.1</td>
                     <td title="A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.">Mistral: Mistral 7B Instruct v0.1</td>
                     <td class="context-length" data-order="2824">2,824</td>
@@ -5796,6 +5803,21 @@ Training data: up to April 2023.">OpenAI: GPT-4 Turbo (older v1106)</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
                     <td class="param-cell param-no" data-order="0">✗</td>
+                </tr>
+                <tr>
+                    <td class="model-id">openai/gpt-3.5-turbo-instruct</td>
+                    <td title="This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021.">OpenAI: GPT-3.5 Turbo Instruct</td>
+                    <td class="context-length" data-order="4095">4,095</td>
+                    <td class="price-cell" data-order="1.5">$1.5000</td>
+                    <td class="price-cell" data-order="2">$2.0000</td>
+                    <td class="architecture">text-&gt;text | GPT | chatml</td>
+                    <td class="created-date">2023-09-28</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
                     <td class="model-id">openai/gpt-3.5-turbo-16k</td>
@@ -5858,21 +5880,6 @@ Training data: up to April 2023.">OpenAI: GPT-4 Turbo (older v1106)</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
                 <tr>
-                    <td class="model-id">openai/gpt-4-0314</td>
-                    <td title="GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.">OpenAI: GPT-4 (older v0314)</td>
-                    <td class="context-length" data-order="8191">8,191</td>
-                    <td class="price-cell" data-order="30">$30.0000</td>
-                    <td class="price-cell" data-order="60">$60.0000</td>
-                    <td class="architecture">text-&gt;text | GPT</td>
-                    <td class="created-date">2023-05-28</td>
-                    <td>N/A</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-no" data-order="0">✗</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                    <td class="param-cell param-yes" data-order="1">✓</td>
-                </tr>
-                <tr>
                     <td class="model-id">openai/gpt-4</td>
                     <td title="OpenAI&#039;s flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning capabilities. Training data: up to Sep 2021.">OpenAI: GPT-4</td>
                     <td class="context-length" data-order="8191">8,191</td>
@@ -5904,6 +5911,21 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                     <td class="param-cell param-yes" data-order="1">✓</td>
                 </tr>
+                <tr>
+                    <td class="model-id">openai/gpt-4-0314</td>
+                    <td title="GPT-4-0314 is the first version of GPT-4 released, with a context length of 8,192 tokens, and was supported until June 14. Training data: up to Sep 2021.">OpenAI: GPT-4 (older v0314)</td>
+                    <td class="context-length" data-order="8191">8,191</td>
+                    <td class="price-cell" data-order="30">$30.0000</td>
+                    <td class="price-cell" data-order="60">$60.0000</td>
+                    <td class="architecture">text-&gt;text | GPT</td>
+                    <td class="created-date">2023-05-28</td>
+                    <td>N/A</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-no" data-order="0">✗</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                    <td class="param-cell param-yes" data-order="1">✓</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -5918,6 +5940,41 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo</td>
     
     <script>
         $(document).ready(function() {
+            // Custom range filtering function for Context Length
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const min = parseInt($('#contextMinFilter').val(), 10);
+                    const max = parseInt($('#contextMaxFilter').val(), 10);
+                    const contextLength = parseInt(data[2].replace(/,/g, ''), 10) || 0;
+                    
+                    if ((isNaN(min) && isNaN(max)) ||
+                        (isNaN(min) && contextLength <= max) ||
+                        (min <= contextLength && isNaN(max)) ||
+                        (min <= contextLength && contextLength <= max)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
+            // Custom range filtering function for Created Date
+            // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const minDate = $('#createdMinFilter').val();
+                    const maxDate = $('#createdMaxFilter').val();
+                    const createdDate = data[6] || '';
+                    
+                    if ((!minDate && !maxDate) ||
+                        (!minDate && createdDate <= maxDate) ||
+                        (minDate <= createdDate && !maxDate) ||
+                        (minDate <= createdDate && createdDate <= maxDate)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
             const table = $('#modelsTable').DataTable({
                 "pageLength": 25,
                 "order": [[0, "asc"]],
@@ -5926,8 +5983,44 @@ Training data up to Sep 2021.">OpenAI: GPT-3.5 Turbo</td>
                     { "type": "num", "targets": [2, 3, 4] }  // Numeric sorting for context and prices
                 ],
                 "initComplete": function () {
+                    const api = this.api();
+                    
+                    // Add min/max filters for Context Length (column 2)
+                    const contextHeader = $(api.column(2).header());
+                    const contextFilterDiv = $('<div class="filter-container"></div>');
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMinFilter" placeholder="Min" class="filter-input" />'
+                    );
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMaxFilter" placeholder="Max" class="filter-input" />'
+                    );
+                    contextHeader.append(contextFilterDiv);
+                    
+                    $('#contextMinFilter, #contextMaxFilter').on('keyup change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
+                    // Add date range filters for Created (column 6)
+                    const createdHeader = $(api.column(6).header());
+                    const createdFilterDiv = $('<div class="filter-container"></div>');
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMinFilter" placeholder="From" class="filter-input" />'
+                    );
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMaxFilter" placeholder="To" class="filter-input" />'
+                    );
+                    createdHeader.append(createdFilterDiv);
+                    
+                    $('#createdMinFilter, #createdMaxFilter').on('change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
                     // Add filter dropdowns for parameter columns (columns 8-12)
-                    this.api().columns([8, 9, 10, 11, 12]).every(function () {
+                    api.columns([8, 9, 10, 11, 12]).every(function () {
                         const column = this;
                         const header = $(column.header());
                         
