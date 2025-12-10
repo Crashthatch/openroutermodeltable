@@ -468,6 +468,14 @@ function generateHTML(modelsData, modelsStats) {
             return `<td class="stats-cell" data-order="${value}">${value.toFixed(decimals)}</td>`;
         };
 
+        // Helper function to format integer stats cell (for counts)
+        const statsCountCell = (value) => {
+            if (value === null || value === undefined) {
+                return `<td class="stats-na" data-order="-1">N/A</td>`;
+            }
+            return `<td class="stats-cell" data-order="${value}">${value.toLocaleString()}</td>`;
+        };
+
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
@@ -484,7 +492,7 @@ function generateHTML(modelsData, modelsStats) {
                     ${paramCell(supportsStructuredOutputs)}
                     ${stats && stats.topProvider ? statsCell(stats.topProvider.p50_throughput, 2) : statsCell(null)}
                     ${stats && stats.topProvider ? statsCell(stats.topProvider.p50_latency, 0) : statsCell(null)}
-                    ${stats && stats.topProvider && stats.topProvider.request_count !== null ? `<td class="stats-cell" data-order="${stats.topProvider.request_count}">${stats.topProvider.request_count.toLocaleString()}</td>` : `<td class="stats-na" data-order="-1">N/A</td>`}
+                    ${stats && stats.topProvider ? statsCountCell(stats.topProvider.request_count) : statsCountCell(null)}
                     ${stats ? statsCell(stats.throughput.min, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.max, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.median, 2) : statsCell(null)}
@@ -553,7 +561,8 @@ function generateHTML(modelsData, modelsStats) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }  // Numeric sorting for context, prices, and stats
+                    // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
+                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
                 ],
                 "initComplete": function () {
                     const api = this.api();
