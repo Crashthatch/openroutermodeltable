@@ -506,8 +506,13 @@ async function main() {
         const limitIndex = args.indexOf('--limit');
         let limit = models.length;
         if (limitIndex !== -1 && args[limitIndex + 1]) {
-            limit = parseInt(args[limitIndex + 1]);
-            console.log(`Limiting stats fetch to first ${limit} models`);
+            const parsedLimit = parseInt(args[limitIndex + 1]);
+            if (!isNaN(parsedLimit) && parsedLimit > 0) {
+                limit = parsedLimit;
+                console.log(`Limiting stats fetch to first ${limit} models`);
+            } else {
+                console.warn(`Invalid limit value: ${args[limitIndex + 1]}, ignoring`);
+            }
         }
         
         // Fetch stats concurrently in batches of 10 to speed up the process
