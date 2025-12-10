@@ -131,7 +131,10 @@ function calculateAverageUptime(uptimeData) {
         return null;
     }
     
-    const uptimes = providerData.map(entry => entry.uptime);
+    const uptimes = providerData.map(entry => entry.uptime).filter(uptime => uptime !== null);
+    if (uptimes.length === 0) {
+        return null;
+    }
     const sum = uptimes.reduce((a, b) => a + b, 0);
     return sum / uptimes.length;
 }
