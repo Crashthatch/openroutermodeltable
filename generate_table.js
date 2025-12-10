@@ -140,6 +140,60 @@ function calculateAverageUptime(uptimeData) {
 }
 
 /**
+ * Fetch endpoint stats for a model (top provider info)
+ */
+function fetchEndpointStats(permaslug, variant = 'standard') {
+    return new Promise((resolve) => {
+        const encodedSlug = encodeURIComponent(permaslug);
+        const url = `https://openrouter.ai/api/frontend/stats/endpoint?permaslug=${encodedSlug}&variant=${variant}`;
+
+        https.get(url, {
+            headers: {
+                'User-Agent': 'OpenRouterModelTable/1.0'
+            }
+        }, (res) => {
+            let data = '';
+
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            res.on('end', () => {
+                try {
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
+                } catch (e) {
+                    // If stats are not available, return null instead of failing
+                    resolve(null);
+                }
+            });
+        }).on('error', (err) => {
+            // If stats are not available, return null instead of failing
+            resolve(null);
+        });
+    });
+}
+
+/**
+ * Extract top provider stats from endpoint stats API response
+ */
+function extractTopProviderStats(endpointData) {
+    if (!endpointData || !endpointData.data || endpointData.data.length === 0) {
+        return null;
+    }
+
+    // Get the first endpoint (top provider)
+    const topEndpoint = endpointData.data[0];
+    const stats = topEndpoint.stats || {};
+
+    return {
+        p50_throughput: stats.p50_throughput || null,
+        p50_latency: stats.p50_latency || null,
+        request_count: stats.request_count || null
+    };
+}
+
+/**
  * Fetch all stats for a model
  */
 async function fetchModelStats(canonicalSlug) {
@@ -148,23 +202,26 @@ async function fetchModelStats(canonicalSlug) {
     }
 
     try {
-        const [throughputData, latencyData, e2eLatencyData, uptimeData] = await Promise.all([
+        const [throughputData, latencyData, e2eLatencyData, uptimeData, endpointData] = await Promise.all([
             fetchStatsData(canonicalSlug, 'throughput-comparison'),
             fetchStatsData(canonicalSlug, 'latency-comparison'),
             fetchStatsData(canonicalSlug, 'latency-e2e-comparison'),
-            fetchStatsData(canonicalSlug, 'uptime-recent')
+            fetchStatsData(canonicalSlug, 'uptime-recent'),
+            fetchEndpointStats(canonicalSlug)
         ]);
 
         const throughputValues = extractStatsValues(throughputData);
         const latencyValues = extractStatsValues(latencyData);
         const e2eLatencyValues = extractStatsValues(e2eLatencyData);
         const avgUptime = calculateAverageUptime(uptimeData);
+        const topProviderStats = extractTopProviderStats(endpointData);
 
         return {
             throughput: calculateStats(throughputValues),
             latency: calculateStats(latencyValues),
             e2eLatency: calculateStats(e2eLatencyValues),
-            uptime: avgUptime
+            uptime: avgUptime,
+            topProvider: topProviderStats
         };
     } catch (err) {
         console.error(`Error fetching stats for ${canonicalSlug}: ${err.message}`);
@@ -301,7 +358,7 @@ function generateHTML(modelsData, modelsStats) {
             <small>Last updated: ${timestamp}</small>
         </p>
         <p class="info-text">
-            <small>Stats columns show min/max/median values over the last 7 days. Throughput in tokens/sec, latency in ms, uptime in %.</small>
+            <small>Top Provider columns show P50 throughput (tokens/sec), P50 latency (ms), and request count for the best provider. Stats columns show min/max/median values over the last 7 days.</small>
         </p>
         
         <table id="modelsTable" class="table table-striped table-bordered" style="width:100%">
@@ -320,6 +377,9 @@ function generateHTML(modelsData, modelsStats) {
                     <th>Include Reasoning</th>
                     <th>Response Format</th>
                     <th>Structured Outputs</th>
+                    <th>Top Provider Throughput (P50)</th>
+                    <th>Top Provider Latency (P50)</th>
+                    <th>Top Provider Request Count</th>
                     <th>Throughput Min</th>
                     <th>Throughput Max</th>
                     <th>Throughput Median</th>
@@ -408,6 +468,17 @@ function generateHTML(modelsData, modelsStats) {
             return `<td class="stats-cell" data-order="${value}">${value.toFixed(decimals)}</td>`;
         };
 
+        // Helper function to format integer stats cell (for counts)
+        const statsCountCell = (value) => {
+            if (value === null || value === undefined) {
+                return `<td class="stats-na" data-order="-1">N/A</td>`;
+            }
+            return `<td class="stats-cell" data-order="${value}">${value.toLocaleString()}</td>`;
+        };
+
+        // Extract top provider stats for easier access
+        const topProviderStats = stats && stats.topProvider;
+
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
@@ -422,6 +493,9 @@ function generateHTML(modelsData, modelsStats) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
+                    ${topProviderStats ? statsCell(topProviderStats.p50_throughput, 2) : statsCell(null)}
+                    ${topProviderStats ? statsCell(topProviderStats.p50_latency, 0) : statsCell(null)}
+                    ${topProviderStats ? statsCountCell(topProviderStats.request_count) : statsCountCell(null)}
                     ${stats ? statsCell(stats.throughput.min, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.max, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.median, 2) : statsCell(null)}
@@ -490,7 +564,8 @@ function generateHTML(modelsData, modelsStats) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] }  // Numeric sorting for context, prices, and stats
+                    // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
+                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
                 ],
                 "initComplete": function () {
                     const api = this.api();
