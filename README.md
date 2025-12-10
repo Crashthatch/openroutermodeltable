@@ -31,6 +31,12 @@ python3 generate_table.py
 node generate_table.js
 ```
 
+**Note:** Fetching statistics for all models can take a significant amount of time. You can use the `--limit` option to generate the table with stats for only the first N models:
+
+```bash
+node generate_table.js --limit 50
+```
+
 2. Open `index.html` in your web browser to view the interactive table
 
 ### What Gets Generated
@@ -59,7 +65,15 @@ The table includes the following columns:
 - **Architecture**: Model architecture details (modality, tokenizer, instruction type)
 - **Created**: Release/creation date (filterable by date range)
 - **Top Provider**: Best available provider for this model
-- **Parameter Columns**: Tools, Reasoning, Include Reasoning, Response Format, Structured Outputs (filterable with dropdown)
+- **Tools**: Supports tools/function calling (✓/✗)
+- **Reasoning**: Supports reasoning parameter (✓/✗)
+- **Include Reasoning**: Supports include_reasoning parameter (✓/✗)
+- **Response Format**: Supports response_format parameter (✓/✗)
+- **Structured Outputs**: Supports structured_outputs parameter (✓/✗)
+- **Throughput Min/Max/Median**: Minimum, maximum, and median throughput (tokens/sec) over the last 7 days
+- **Latency Min/Max/Median**: Minimum, maximum, and median time to first token (ms) over the last 7 days
+- **E2E Latency Min/Max/Median**: Minimum, maximum, and median end-to-end latency (ms) over the last 7 days
+- **Uptime (7d avg)**: Average uptime percentage over the last 7 days
 
 ### Using Column Filters
 

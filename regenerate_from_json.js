@@ -11,8 +11,8 @@ try {
     const modelsData = JSON.parse(fs.readFileSync('models_data.json', 'utf-8'));
     console.log(`Loaded ${modelsData.data ? modelsData.data.length : 0} models from models_data.json`);
     
-    // Generate HTML
-    const htmlContent = generateHTML(modelsData);
+    // Generate HTML (without stats)
+    const htmlContent = generateHTML(modelsData, {});
     
     // Save HTML file
     fs.writeFileSync('index.html', htmlContent, 'utf-8');
