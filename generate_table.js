@@ -485,22 +485,8 @@ function generateHTML(modelsData, modelsStats) {
                 };
             }
             
-            // Custom range filtering function for Context Length
-            $.fn.dataTable.ext.search.push(
-                function(settings, data, dataIndex) {
-                    const min = parseInt($('#contextMinFilter').val(), 10);
-                    const max = parseInt($('#contextMaxFilter').val(), 10);
-                    const contextLength = parseInt(data[2].replace(/,/g, ''), 10) || 0;
-                    
-                    if ((isNaN(min) && isNaN(max)) ||
-                        (isNaN(min) && contextLength <= max) ||
-                        (min <= contextLength && isNaN(max)) ||
-                        (min <= contextLength && contextLength <= max)) {
-                        return true;
-                    }
-                    return false;
-                }
-            );
+            // Add filter for Context Length (column 2)
+            $.fn.dataTable.ext.search.push(createNumericFilter(2, 'contextMinFilter', 'contextMaxFilter'));
             
             // Add filters for Prompt Price (column 3)
             $.fn.dataTable.ext.search.push(createNumericFilter(3, 'promptPriceMin', 'promptPriceMax'));
