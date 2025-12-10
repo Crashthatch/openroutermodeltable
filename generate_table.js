@@ -450,6 +450,41 @@ function generateHTML(modelsData, modelsStats) {
     
     <script>
         $(document).ready(function() {
+            // Helper function to parse numeric values from table cells
+            function parseNumericValue(value) {
+                if (!value || value === 'N/A') return null;
+                // Remove $ signs, commas, and other non-numeric characters except decimal point and minus
+                const cleaned = value.replace(/[$,]/g, '');
+                const parsed = parseFloat(cleaned);
+                return isNaN(parsed) ? null : parsed;
+            }
+            
+            // Generic range filtering function for numeric columns
+            function createNumericFilter(columnIndex, minFilterId, maxFilterId) {
+                return function(settings, data, dataIndex) {
+                    const minInput = $(\`#\${minFilterId}\`).val();
+                    const maxInput = $(\`#\${maxFilterId}\`).val();
+                    
+                    if (!minInput && !maxInput) return true;
+                    
+                    const min = parseFloat(minInput);
+                    const max = parseFloat(maxInput);
+                    const value = parseNumericValue(data[columnIndex]);
+                    
+                    // If value is null (N/A), exclude from filtered results unless no filters are set
+                    if (value === null) return false;
+                    
+                    if (!isNaN(min) && !isNaN(max)) {
+                        return value >= min && value <= max;
+                    } else if (!isNaN(min)) {
+                        return value >= min;
+                    } else if (!isNaN(max)) {
+                        return value <= max;
+                    }
+                    return true;
+                };
+            }
+            
             // Custom range filtering function for Context Length
             $.fn.dataTable.ext.search.push(
                 function(settings, data, dataIndex) {
@@ -466,6 +501,30 @@ function generateHTML(modelsData, modelsStats) {
                     return false;
                 }
             );
+            
+            // Add filters for Prompt Price (column 3)
+            $.fn.dataTable.ext.search.push(createNumericFilter(3, 'promptPriceMin', 'promptPriceMax'));
+            
+            // Add filters for Completion Price (column 4)
+            $.fn.dataTable.ext.search.push(createNumericFilter(4, 'completionPriceMin', 'completionPriceMax'));
+            
+            // Add filters for Throughput columns (13, 14, 15)
+            $.fn.dataTable.ext.search.push(createNumericFilter(13, 'throughputMinMin', 'throughputMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(14, 'throughputMaxMin', 'throughputMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(15, 'throughputMedianMin', 'throughputMedianMax'));
+            
+            // Add filters for Latency columns (16, 17, 18)
+            $.fn.dataTable.ext.search.push(createNumericFilter(16, 'latencyMinMin', 'latencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(17, 'latencyMaxMin', 'latencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(18, 'latencyMedianMin', 'latencyMedianMax'));
+            
+            // Add filters for E2E Latency columns (19, 20, 21)
+            $.fn.dataTable.ext.search.push(createNumericFilter(19, 'e2eLatencyMinMin', 'e2eLatencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
+            
+            // Add filter for Uptime (column 22)
+            $.fn.dataTable.ext.search.push(createNumericFilter(22, 'uptimeMin', 'uptimeMax'));
             
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
@@ -485,6 +544,35 @@ function generateHTML(modelsData, modelsStats) {
                 }
             );
             
+            // Helper function to add min/max filters to a column
+            function addMinMaxFilter(api, columnIndex, minId, maxId, inputType = 'number', step = null) {
+                const header = $(api.column(columnIndex).header());
+                const filterDiv = $('<div class="filter-container"></div>');
+                
+                let minInput = \`<input type="\${inputType}" id="\${minId}" placeholder="Min" class="filter-input"\`;
+                let maxInput = \`<input type="\${inputType}" id="\${maxId}" placeholder="Max" class="filter-input"\`;
+                
+                if (step) {
+                    minInput += \` step="\${step}"\`;
+                    maxInput += \` step="\${step}"\`;
+                }
+                
+                minInput += ' />';
+                maxInput += ' />';
+                
+                filterDiv.append(minInput);
+                filterDiv.append(maxInput);
+                header.append(filterDiv);
+                
+                \`#\${minId}, #\${maxId}\`.split(', ').forEach(selector => {
+                    $(selector).on('keyup change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                });
+            }
+            
             const table = $('#modelsTable').DataTable({
                 "pageLength": 25,
                 "order": [[0, "asc"]],
@@ -496,38 +584,16 @@ function generateHTML(modelsData, modelsStats) {
                     const api = this.api();
                     
                     // Add min/max filters for Context Length (column 2)
-                    const contextHeader = $(api.column(2).header());
-                    const contextFilterDiv = $('<div class="filter-container"></div>');
-                    contextFilterDiv.append(
-                        '<input type="number" id="contextMinFilter" placeholder="Min" class="filter-input" />'
-                    );
-                    contextFilterDiv.append(
-                        '<input type="number" id="contextMaxFilter" placeholder="Max" class="filter-input" />'
-                    );
-                    contextHeader.append(contextFilterDiv);
+                    addMinMaxFilter(api, 2, 'contextMinFilter', 'contextMaxFilter', 'number');
                     
-                    $('#contextMinFilter, #contextMaxFilter').on('keyup change', function() {
-                        table.draw();
-                    }).on('click', function(e) {
-                        e.stopPropagation();
-                    });
+                    // Add min/max filters for Prompt Price (column 3)
+                    addMinMaxFilter(api, 3, 'promptPriceMin', 'promptPriceMax', 'number', '0.01');
+                    
+                    // Add min/max filters for Completion Price (column 4)
+                    addMinMaxFilter(api, 4, 'completionPriceMin', 'completionPriceMax', 'number', '0.01');
                     
                     // Add date range filters for Created (column 6)
-                    const createdHeader = $(api.column(6).header());
-                    const createdFilterDiv = $('<div class="filter-container"></div>');
-                    createdFilterDiv.append(
-                        '<input type="date" id="createdMinFilter" placeholder="From" class="filter-input" />'
-                    );
-                    createdFilterDiv.append(
-                        '<input type="date" id="createdMaxFilter" placeholder="To" class="filter-input" />'
-                    );
-                    createdHeader.append(createdFilterDiv);
-                    
-                    $('#createdMinFilter, #createdMaxFilter').on('change', function() {
-                        table.draw();
-                    }).on('click', function(e) {
-                        e.stopPropagation();
-                    });
+                    addMinMaxFilter(api, 6, 'createdMinFilter', 'createdMaxFilter', 'date');
                     
                     // Add filter dropdowns for parameter columns (columns 8-12)
                     api.columns([8, 9, 10, 11, 12]).every(function () {
@@ -549,6 +615,24 @@ function generateHTML(modelsData, modelsStats) {
                         select.append('<option value="✓">✓ Yes</option>');
                         select.append('<option value="✗">✗ No</option>');
                     });
+                    
+                    // Add min/max filters for Throughput columns (13, 14, 15)
+                    addMinMaxFilter(api, 13, 'throughputMinMin', 'throughputMinMax', 'number', '0.01');
+                    addMinMaxFilter(api, 14, 'throughputMaxMin', 'throughputMaxMax', 'number', '0.01');
+                    addMinMaxFilter(api, 15, 'throughputMedianMin', 'throughputMedianMax', 'number', '0.01');
+                    
+                    // Add min/max filters for Latency columns (16, 17, 18)
+                    addMinMaxFilter(api, 16, 'latencyMinMin', 'latencyMinMax', 'number', '1');
+                    addMinMaxFilter(api, 17, 'latencyMaxMin', 'latencyMaxMax', 'number', '1');
+                    addMinMaxFilter(api, 18, 'latencyMedianMin', 'latencyMedianMax', 'number', '1');
+                    
+                    // Add min/max filters for E2E Latency columns (19, 20, 21)
+                    addMinMaxFilter(api, 19, 'e2eLatencyMinMin', 'e2eLatencyMinMax', 'number', '1');
+                    addMinMaxFilter(api, 20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax', 'number', '1');
+                    addMinMaxFilter(api, 21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax', 'number', '1');
+                    
+                    // Add min/max filter for Uptime (column 22)
+                    addMinMaxFilter(api, 22, 'uptimeMin', 'uptimeMax', 'number', '0.01');
                 }
             });
         });
