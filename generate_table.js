@@ -270,24 +270,27 @@ function generateHTML(modelsData, modelsStats) {
         /* Filter input styling */
         .filter-input {
             width: 100%;
-            padding: 4px 8px;
+            padding: 6px 10px;
             margin-top: 5px;
             font-size: 0.85em;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         .filter-container {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            margin-top: 5px;
+            gap: 4px;
+            margin-top: 8px;
+            min-width: 150px;
         }
         .filter-container input {
             width: 100%;
-            padding: 4px 8px;
+            padding: 6px 10px;
             font-size: 0.85em;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-sizing: border-box;
         }
     </style>
 </head>
