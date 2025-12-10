@@ -486,7 +486,7 @@ function generateHTML(modelsData, modelsStats) {
             );
             
             const table = $('#modelsTable').DataTable({
-                "pageLength": 25,
+                "pageLength": -1,
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
