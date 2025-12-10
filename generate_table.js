@@ -143,7 +143,7 @@ function calculateAverageUptime(uptimeData) {
  * Fetch endpoint stats for a model (top provider info)
  */
 function fetchEndpointStats(permaslug, variant = 'standard') {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const encodedSlug = encodeURIComponent(permaslug);
         const url = `https://openrouter.ai/api/frontend/stats/endpoint?permaslug=${encodedSlug}&variant=${variant}`;
 
@@ -476,6 +476,9 @@ function generateHTML(modelsData, modelsStats) {
             return `<td class="stats-cell" data-order="${value}">${value.toLocaleString()}</td>`;
         };
 
+        // Extract top provider stats for easier access
+        const topProviderStats = stats && stats.topProvider;
+
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
@@ -490,9 +493,9 @@ function generateHTML(modelsData, modelsStats) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
-                    ${stats && stats.topProvider ? statsCell(stats.topProvider.p50_throughput, 2) : statsCell(null)}
-                    ${stats && stats.topProvider ? statsCell(stats.topProvider.p50_latency, 0) : statsCell(null)}
-                    ${stats && stats.topProvider ? statsCountCell(stats.topProvider.request_count) : statsCountCell(null)}
+                    ${topProviderStats ? statsCell(topProviderStats.p50_throughput, 2) : statsCell(null)}
+                    ${topProviderStats ? statsCell(topProviderStats.p50_latency, 0) : statsCell(null)}
+                    ${topProviderStats ? statsCountCell(topProviderStats.request_count) : statsCountCell(null)}
                     ${stats ? statsCell(stats.throughput.min, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.max, 2) : statsCell(null)}
                     ${stats ? statsCell(stats.throughput.median, 2) : statsCell(null)}
