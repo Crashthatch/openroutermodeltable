@@ -278,11 +278,12 @@ function generateHTML(modelsData, modelsStats) {
         }
         .filter-container {
             display: flex;
+            flex-direction: column;
             gap: 5px;
             margin-top: 5px;
         }
         .filter-container input {
-            flex: 1;
+            width: 100%;
             padding: 4px 8px;
             font-size: 0.85em;
             border: 1px solid #ddd;
@@ -531,20 +532,12 @@ function generateHTML(modelsData, modelsStats) {
             );
             
             // Helper function to add min/max filters to a column
-            function addMinMaxFilter(api, columnIndex, minId, maxId, inputType = 'number', step = null) {
+            function addMinMaxFilter(api, columnIndex, minId, maxId, inputType = 'text') {
                 const header = $(api.column(columnIndex).header());
                 const filterDiv = $('<div class="filter-container"></div>');
                 
-                let minInput = \`<input type="\${inputType}" id="\${minId}" placeholder="Min" class="filter-input"\`;
-                let maxInput = \`<input type="\${inputType}" id="\${maxId}" placeholder="Max" class="filter-input"\`;
-                
-                if (step) {
-                    minInput += \` step="\${step}"\`;
-                    maxInput += \` step="\${step}"\`;
-                }
-                
-                minInput += ' />';
-                maxInput += ' />';
+                const minInput = \`<input type="\${inputType}" id="\${minId}" placeholder="Min" class="filter-input" />\`;
+                const maxInput = \`<input type="\${inputType}" id="\${maxId}" placeholder="Max" class="filter-input" />\`;
                 
                 filterDiv.append(minInput);
                 filterDiv.append(maxInput);
@@ -570,13 +563,13 @@ function generateHTML(modelsData, modelsStats) {
                     const api = this.api();
                     
                     // Add min/max filters for Context Length (column 2)
-                    addMinMaxFilter(api, 2, 'contextMinFilter', 'contextMaxFilter', 'number');
+                    addMinMaxFilter(api, 2, 'contextMinFilter', 'contextMaxFilter');
                     
                     // Add min/max filters for Prompt Price (column 3)
-                    addMinMaxFilter(api, 3, 'promptPriceMin', 'promptPriceMax', 'number', '0.01');
+                    addMinMaxFilter(api, 3, 'promptPriceMin', 'promptPriceMax');
                     
                     // Add min/max filters for Completion Price (column 4)
-                    addMinMaxFilter(api, 4, 'completionPriceMin', 'completionPriceMax', 'number', '0.01');
+                    addMinMaxFilter(api, 4, 'completionPriceMin', 'completionPriceMax');
                     
                     // Add date range filters for Created (column 6)
                     addMinMaxFilter(api, 6, 'createdMinFilter', 'createdMaxFilter', 'date');
@@ -603,22 +596,22 @@ function generateHTML(modelsData, modelsStats) {
                     });
                     
                     // Add min/max filters for Throughput columns (13, 14, 15)
-                    addMinMaxFilter(api, 13, 'throughputMinMin', 'throughputMinMax', 'number', '0.01');
-                    addMinMaxFilter(api, 14, 'throughputMaxMin', 'throughputMaxMax', 'number', '0.01');
-                    addMinMaxFilter(api, 15, 'throughputMedianMin', 'throughputMedianMax', 'number', '0.01');
+                    addMinMaxFilter(api, 13, 'throughputMinMin', 'throughputMinMax');
+                    addMinMaxFilter(api, 14, 'throughputMaxMin', 'throughputMaxMax');
+                    addMinMaxFilter(api, 15, 'throughputMedianMin', 'throughputMedianMax');
                     
                     // Add min/max filters for Latency columns (16, 17, 18)
-                    addMinMaxFilter(api, 16, 'latencyMinMin', 'latencyMinMax', 'number', '1');
-                    addMinMaxFilter(api, 17, 'latencyMaxMin', 'latencyMaxMax', 'number', '1');
-                    addMinMaxFilter(api, 18, 'latencyMedianMin', 'latencyMedianMax', 'number', '1');
+                    addMinMaxFilter(api, 16, 'latencyMinMin', 'latencyMinMax');
+                    addMinMaxFilter(api, 17, 'latencyMaxMin', 'latencyMaxMax');
+                    addMinMaxFilter(api, 18, 'latencyMedianMin', 'latencyMedianMax');
                     
                     // Add min/max filters for E2E Latency columns (19, 20, 21)
-                    addMinMaxFilter(api, 19, 'e2eLatencyMinMin', 'e2eLatencyMinMax', 'number', '1');
-                    addMinMaxFilter(api, 20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax', 'number', '1');
-                    addMinMaxFilter(api, 21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax', 'number', '1');
+                    addMinMaxFilter(api, 19, 'e2eLatencyMinMin', 'e2eLatencyMinMax');
+                    addMinMaxFilter(api, 20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax');
+                    addMinMaxFilter(api, 21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax');
                     
                     // Add min/max filter for Uptime (column 22)
-                    addMinMaxFilter(api, 22, 'uptimeMin', 'uptimeMax', 'number', '0.01');
+                    addMinMaxFilter(api, 22, 'uptimeMin', 'uptimeMax');
                 }
             });
         });
