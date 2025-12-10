@@ -7,6 +7,7 @@ const https = require('https');
 const fs = require('fs');
 
 const API_URL = 'https://openrouter.ai/api/v1/models';
+const ANALYTICS_API_URL = 'https://openrouter.ai/api/frontend/models/find?order=newest';
 
 /**
  * Fetch models data from OpenRouter API
@@ -14,6 +15,36 @@ const API_URL = 'https://openrouter.ai/api/v1/models';
 function fetchModelsData() {
     return new Promise((resolve, reject) => {
         https.get(API_URL, {
+            headers: {
+                'User-Agent': 'OpenRouterModelTable/1.0'
+            }
+        }, (res) => {
+            let data = '';
+            
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            
+            res.on('end', () => {
+                try {
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
+                } catch (e) {
+                    reject(new Error(`Failed to parse JSON: ${e.message}`));
+                }
+            });
+        }).on('error', (err) => {
+            reject(err);
+        });
+    });
+}
+
+/**
+ * Fetch analytics data from OpenRouter API
+ */
+function fetchAnalyticsData() {
+    return new Promise((resolve, reject) => {
+        https.get(ANALYTICS_API_URL, {
             headers: {
                 'User-Agent': 'OpenRouterModelTable/1.0'
             }
@@ -232,8 +263,9 @@ async function fetchModelStats(canonicalSlug) {
 /**
  * Generate HTML page with sortable, filterable table
  */
-function generateHTML(modelsData, modelsStats) {
+function generateHTML(modelsData, modelsStats, analyticsData = null) {
     const models = modelsData.data || [];
+    const analytics = analyticsData && analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
     let html = `<!DOCTYPE html>
@@ -377,6 +409,8 @@ function generateHTML(modelsData, modelsStats) {
                     <th>Include Reasoning</th>
                     <th>Response Format</th>
                     <th>Structured Outputs</th>
+                    <th>Total Prompt Tokens</th>
+                    <th>Total Completion Tokens</th>
                     <th>Top Provider Throughput (P50)</th>
                     <th>Top Provider Latency (P50)</th>
                     <th>Top Provider Request Count</th>
@@ -451,6 +485,12 @@ function generateHTML(modelsData, modelsStats) {
         // Get stats for this model
         const stats = modelsStats[canonicalSlug] || null;
 
+        // Get analytics data for this model
+        // The analytics data is keyed by permaslug
+        const modelAnalytics = analytics[canonicalSlug] || null;
+        const totalPromptTokens = modelAnalytics ? modelAnalytics.total_prompt_tokens : null;
+        const totalCompletionTokens = modelAnalytics ? modelAnalytics.total_completion_tokens : null;
+
         // Helper function to create parameter cell
         const paramCell = (supported) => {
             if (supported) {
@@ -493,6 +533,8 @@ function generateHTML(modelsData, modelsStats) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
+                    ${statsCountCell(totalPromptTokens)}
+                    ${statsCountCell(totalCompletionTokens)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_throughput, 2) : statsCell(null)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_latency, 0) : statsCell(null)}
                     ${topProviderStats ? statsCountCell(topProviderStats.request_count) : statsCountCell(null)}
@@ -564,8 +606,8 @@ function generateHTML(modelsData, modelsStats) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
-                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
+                    // Numeric sorting for context (2), prices (3,4), analytics (13,14), top provider stats (15,16,17), and aggregated stats (18-27)
+                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27] }
                 ],
                 "initComplete": function () {
                     const api = this.api();
@@ -717,8 +759,13 @@ async function main() {
 
         console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
 
+        // Fetch analytics data
+        console.log('Fetching analytics data from OpenRouter API...');
+        const analyticsData = await fetchAnalyticsData();
+        console.log(`Successfully fetched analytics data for ${analyticsData.data && analyticsData.data.analytics ? Object.keys(analyticsData.data.analytics).length : 0} models`);
+
         // Generate HTML
-        const htmlContent = generateHTML(modelsData, modelsStats);
+        const htmlContent = generateHTML(modelsData, modelsStats, analyticsData);
         
         // Save HTML file
         fs.writeFileSync('index.html', htmlContent, 'utf-8');
