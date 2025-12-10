@@ -373,22 +373,22 @@ function generateHTML(modelsData, modelsStats) {
                     <th>Created</th>
                     <th>Top Provider</th>
                     <th>Tools</th>
-                    <th>Reasoning</th>
-                    <th>Include Reasoning</th>
-                    <th>Response Format</th>
-                    <th>Structured Outputs</th>
-                    <th>Top Provider Throughput (P50)</th>
-                    <th>Top Provider Latency (P50)</th>
+                    <th>Supports reasoning</th>
+                    <th>Supports include_reasoning</th>
+                    <th>Supports response_format</th>
+                    <th>Supports structured_output</th>
+                    <th>Top Provider Throughput (P50) (tps)</th>
+                    <th>Top Provider Latency (P50) (ms)</th>
                     <th>Top Provider Request Count</th>
-                    <th>Throughput Min</th>
-                    <th>Throughput Max</th>
-                    <th>Throughput Median</th>
-                    <th>Latency Min</th>
-                    <th>Latency Max</th>
-                    <th>Latency Median</th>
-                    <th>E2E Latency Min</th>
-                    <th>E2E Latency Max</th>
-                    <th>E2E Latency Median</th>
+                    <th>Throughput Min (tps)</th>
+                    <th>Throughput Max (tps)</th>
+                    <th>Throughput Median (tps)</th>
+                    <th>Latency Min (ms)</th>
+                    <th>Latency Max (ms)</th>
+                    <th>Latency Median (ms)</th>
+                    <th>E2E Latency Min (ms)</th>
+                    <th>E2E Latency Max (ms)</th>
+                    <th>E2E Latency Median (ms)</th>
                     <th>Uptime (7d avg)</th>
                 </tr>
             </thead>
