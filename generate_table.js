@@ -265,7 +265,7 @@ async function fetchModelStats(canonicalSlug) {
  */
 function generateHTML(modelsData, modelsStats, analyticsData = null) {
     const models = modelsData.data || [];
-    const analytics = analyticsData && analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
+    const analytics = analyticsData && analyticsData.analytics ? analyticsData.analytics : {};
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
     let html = `<!DOCTYPE html>
@@ -433,6 +433,7 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
     models.forEach(model => {
         const modelId = model.id || '';
         const canonicalSlug = model.canonical_slug || '';
+        const permaslug = model.permaslug || canonicalSlug;
         const name = model.name || '';
         const description = model.description || '';
         const contextLength = model.context_length || 0;
@@ -483,11 +484,11 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
         // Get stats for this model
-        const stats = modelsStats[canonicalSlug] || null;
+        const stats = modelsStats[canonicalSlug] || modelsStats[permaslug] || null;
 
         // Get analytics data for this model
-        // The analytics data is keyed by permaslug
-        const modelAnalytics = analytics[canonicalSlug] || null;
+        // The analytics data is keyed by permaslug (or variant_permaslug)
+        const modelAnalytics = analytics[permaslug] || analytics[canonicalSlug] || null;
         const totalPromptTokens = modelAnalytics ? modelAnalytics.total_prompt_tokens : null;
         const totalCompletionTokens = modelAnalytics ? modelAnalytics.total_completion_tokens : null;
 
@@ -762,10 +763,11 @@ async function main() {
         // Fetch analytics data
         console.log('Fetching analytics data from OpenRouter API...');
         const analyticsData = await fetchAnalyticsData();
-        console.log(`Successfully fetched analytics data for ${analyticsData.data && analyticsData.data.analytics ? Object.keys(analyticsData.data.analytics).length : 0} models`);
+        const analyticsModels = analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
+        console.log(`Successfully fetched analytics data for ${Object.keys(analyticsModels).length} models`);
 
         // Generate HTML
-        const htmlContent = generateHTML(modelsData, modelsStats, analyticsData);
+        const htmlContent = generateHTML(modelsData, modelsStats, analyticsModels);
         
         // Save HTML file
         fs.writeFileSync('index.html', htmlContent, 'utf-8');
