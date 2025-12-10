@@ -45,18 +45,18 @@ function fetchStatsData(permaslug, statsType) {
     return new Promise((resolve, reject) => {
         const encodedSlug = encodeURIComponent(permaslug);
         const url = `https://openrouter.ai/api/frontend/stats/${statsType}?permaslug=${encodedSlug}`;
-        
+
         https.get(url, {
             headers: {
                 'User-Agent': 'OpenRouterModelTable/1.0'
             }
         }, (res) => {
             let data = '';
-            
+
             res.on('data', (chunk) => {
                 data += chunk;
             });
-            
+
             res.on('end', () => {
                 try {
                     const jsonData = JSON.parse(data);
@@ -80,11 +80,11 @@ function calculateStats(values) {
     if (!values || values.length === 0) {
         return { min: null, max: null, median: null };
     }
-    
+
     const sorted = [...values].sort((a, b) => a - b);
     const min = sorted[0];
     const max = sorted[sorted.length - 1];
-    
+
     let median;
     const mid = Math.floor(sorted.length / 2);
     if (sorted.length % 2 === 0) {
@@ -92,7 +92,7 @@ function calculateStats(values) {
     } else {
         median = sorted[mid];
     }
-    
+
     return { min, max, median };
 }
 
@@ -103,7 +103,7 @@ function extractStatsValues(statsData) {
     if (!statsData || !statsData.data) {
         return [];
     }
-    
+
     const values = [];
     for (const entry of statsData.data) {
         if (entry.y) {
@@ -114,7 +114,7 @@ function extractStatsValues(statsData) {
             }
         }
     }
-    
+
     return values;
 }
 
@@ -125,12 +125,12 @@ function calculateAverageUptime(uptimeData) {
     if (!uptimeData || !uptimeData.data) {
         return null;
     }
-    
+
     const providerData = Object.values(uptimeData.data)[0];
     if (!providerData || providerData.length === 0) {
         return null;
     }
-    
+
     const uptimes = providerData.map(entry => entry.uptime).filter(uptime => uptime !== null);
     if (uptimes.length === 0) {
         return null;
@@ -146,7 +146,7 @@ async function fetchModelStats(canonicalSlug) {
     if (!canonicalSlug) {
         return null;
     }
-    
+
     try {
         const [throughputData, latencyData, e2eLatencyData, uptimeData] = await Promise.all([
             fetchStatsData(canonicalSlug, 'throughput-comparison'),
@@ -154,12 +154,12 @@ async function fetchModelStats(canonicalSlug) {
             fetchStatsData(canonicalSlug, 'latency-e2e-comparison'),
             fetchStatsData(canonicalSlug, 'uptime-recent')
         ]);
-        
+
         const throughputValues = extractStatsValues(throughputData);
         const latencyValues = extractStatsValues(latencyData);
         const e2eLatencyValues = extractStatsValues(e2eLatencyData);
         const avgUptime = calculateAverageUptime(uptimeData);
-        
+
         return {
             throughput: calculateStats(throughputValues),
             latency: calculateStats(latencyValues),
@@ -267,6 +267,27 @@ function generateHTML(modelsData, modelsStats) {
             text-align: center;
             color: #999;
         }
+        /* Filter input styling */
+        .filter-input {
+            width: 100%;
+            padding: 4px 8px;
+            margin-top: 5px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filter-container {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .filter-container input {
+            flex: 1;
+            padding: 4px 8px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -369,7 +390,7 @@ function generateHTML(modelsData, modelsStats) {
         
         // Get stats for this model
         const stats = modelsStats[canonicalSlug] || null;
-        
+
         // Helper function to create parameter cell
         const paramCell = (supported) => {
             if (supported) {
@@ -386,7 +407,7 @@ function generateHTML(modelsData, modelsStats) {
             }
             return `<td class="stats-cell" data-order="${value}">${value.toFixed(decimals)}</td>`;
         };
-        
+
         html += `                <tr>
                     <td class="model-id">${escapeHtml(modelId)}</td>
                     <td title="${escapeHtml(description)}">${escapeHtml(name)}</td>
@@ -429,6 +450,41 @@ function generateHTML(modelsData, modelsStats) {
     
     <script>
         $(document).ready(function() {
+            // Custom range filtering function for Context Length
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const min = parseInt($('#contextMinFilter').val(), 10);
+                    const max = parseInt($('#contextMaxFilter').val(), 10);
+                    const contextLength = parseInt(data[2].replace(/,/g, ''), 10) || 0;
+                    
+                    if ((isNaN(min) && isNaN(max)) ||
+                        (isNaN(min) && contextLength <= max) ||
+                        (min <= contextLength && isNaN(max)) ||
+                        (min <= contextLength && contextLength <= max)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
+            // Custom range filtering function for Created Date
+            // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const minDate = $('#createdMinFilter').val();
+                    const maxDate = $('#createdMaxFilter').val();
+                    const createdDate = data[6] || '';
+                    
+                    if ((!minDate && !maxDate) ||
+                        (!minDate && createdDate <= maxDate) ||
+                        (minDate <= createdDate && !maxDate) ||
+                        (minDate <= createdDate && createdDate <= maxDate)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            
             const table = $('#modelsTable').DataTable({
                 "pageLength": 25,
                 "order": [[0, "asc"]],
@@ -437,8 +493,44 @@ function generateHTML(modelsData, modelsStats) {
                     { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] }  // Numeric sorting for context, prices, and stats
                 ],
                 "initComplete": function () {
+                    const api = this.api();
+                    
+                    // Add min/max filters for Context Length (column 2)
+                    const contextHeader = $(api.column(2).header());
+                    const contextFilterDiv = $('<div class="filter-container"></div>');
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMinFilter" placeholder="Min" class="filter-input" />'
+                    );
+                    contextFilterDiv.append(
+                        '<input type="number" id="contextMaxFilter" placeholder="Max" class="filter-input" />'
+                    );
+                    contextHeader.append(contextFilterDiv);
+                    
+                    $('#contextMinFilter, #contextMaxFilter').on('keyup change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
+                    // Add date range filters for Created (column 6)
+                    const createdHeader = $(api.column(6).header());
+                    const createdFilterDiv = $('<div class="filter-container"></div>');
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMinFilter" placeholder="From" class="filter-input" />'
+                    );
+                    createdFilterDiv.append(
+                        '<input type="date" id="createdMaxFilter" placeholder="To" class="filter-input" />'
+                    );
+                    createdHeader.append(createdFilterDiv);
+                    
+                    $('#createdMinFilter, #createdMaxFilter').on('change', function() {
+                        table.draw();
+                    }).on('click', function(e) {
+                        e.stopPropagation();
+                    });
+                    
                     // Add filter dropdowns for parameter columns (columns 8-12)
-                    this.api().columns([8, 9, 10, 11, 12]).every(function () {
+                    api.columns([8, 9, 10, 11, 12]).every(function () {
                         const column = this;
                         const header = $(column.header());
                         
@@ -500,7 +592,7 @@ async function main() {
         console.log('Fetching statistics for models...');
         const modelsStats = {};
         const models = modelsData.data || [];
-        
+
         // Check for command line argument to limit number of models
         const args = process.argv.slice(2);
         const limitIndex = args.indexOf('--limit');
@@ -514,15 +606,15 @@ async function main() {
                 console.warn(`Invalid limit value: ${args[limitIndex + 1]}, ignoring`);
             }
         }
-        
+
         // Fetch stats concurrently in batches of 10 to speed up the process
         const batchSize = 10;
         const modelsToFetch = models.slice(0, limit);
-        
+
         for (let i = 0; i < modelsToFetch.length; i += batchSize) {
             const batch = modelsToFetch.slice(i, Math.min(i + batchSize, modelsToFetch.length));
             console.log(`Fetching stats batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(modelsToFetch.length / batchSize)} (${batch.length} models)...`);
-            
+
             const batchPromises = batch.map(async (model) => {
                 if (model.canonical_slug) {
                     const stats = await fetchModelStats(model.canonical_slug);
@@ -530,22 +622,22 @@ async function main() {
                 }
                 return null;
             });
-            
+
             const batchResults = await Promise.all(batchPromises);
             batchResults.forEach(result => {
                 if (result && result.stats) {
                     modelsStats[result.slug] = result.stats;
                 }
             });
-            
+
             // Add a small delay between batches to avoid overwhelming the API
             if (i + batchSize < modelsToFetch.length) {
                 await new Promise(resolve => setTimeout(resolve, 200));
             }
         }
-        
+
         console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
-        
+
         // Generate HTML
         const htmlContent = generateHTML(modelsData, modelsStats);
         
