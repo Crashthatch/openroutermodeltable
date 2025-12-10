@@ -10,9 +10,12 @@ try {
     // Read existing models_data.json
     const modelsData = JSON.parse(fs.readFileSync('models_data.json', 'utf-8'));
     console.log(`Loaded ${modelsData.data ? modelsData.data.length : 0} models from models_data.json`);
+
+    const modelsStats = JSON.parse(fs.readFileSync('models_stats.json', 'utf-8'));
+    console.log(`Loaded ${modelsStats ? Object.keys(modelsStats).length : 0} models from models_stats.json`);
     
     // Generate HTML (without stats)
-    const htmlContent = generateHTML(modelsData, {});
+    const htmlContent = generateHTML(modelsData, modelsStats);
     
     // Save HTML file
     fs.writeFileSync('index.html', htmlContent, 'utf-8');

@@ -608,7 +608,7 @@ async function main() {
         }
 
         // Fetch stats concurrently in batches of 10 to speed up the process
-        const batchSize = 10;
+        const batchSize = 30;
         const modelsToFetch = models.slice(0, limit);
 
         for (let i = 0; i < modelsToFetch.length; i += batchSize) {
@@ -635,6 +635,10 @@ async function main() {
                 await new Promise(resolve => setTimeout(resolve, 200));
             }
         }
+
+        // save modelStats to a JSON file
+        fs.writeFileSync('models_stats.json', JSON.stringify(modelsStats, null, 2), 'utf-8');
+        console.log('Saved stats data to models_stats.json');
 
         console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
 
