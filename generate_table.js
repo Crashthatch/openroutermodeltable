@@ -247,6 +247,9 @@ function generateHTML(modelsData, modelsStats) {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- DataTables Extensions CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css" crossorigin="anonymous">
     
     <style>
         body {
@@ -348,6 +351,18 @@ function generateHTML(modelsData, modelsStats) {
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+        /* Sticky header and column styling */
+        table.dataTable.DTFC_Cloned {
+            background-color: white;
+        }
+        table.dataTable thead th.dtfc-fixed-left,
+        table.dataTable tbody td.dtfc-fixed-left {
+            background-color: white;
+            border-right: 2px solid #ddd;
+        }
+        .dataTables_scrollBody {
+            border-left: none !important;
         }
     </style>
 </head>
@@ -525,6 +540,9 @@ function generateHTML(modelsData, modelsStats) {
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
+    <!-- DataTables Extensions JS -->
+    <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js" crossorigin="anonymous"></script>
     
     <script>
         $(document).ready(function() {
@@ -638,6 +656,13 @@ function generateHTML(modelsData, modelsStats) {
                 "pageLength": -1,
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                "scrollX": true,
+                "scrollY": "70vh",
+                "scrollCollapse": true,
+                "fixedHeader": true,
+                "fixedColumns": {
+                    "left": 1
+                },
                 "columnDefs": [
                     // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
                     { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
