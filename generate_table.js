@@ -265,7 +265,7 @@ async function fetchModelStats(canonicalSlug) {
  */
 function generateHTML(modelsData, modelsStats, analyticsData = null) {
     const models = modelsData.data || [];
-    const analytics = analyticsData && analyticsData.analytics ? analyticsData.analytics : {};
+    const analytics = analyticsData || {};
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
     let html = `<!DOCTYPE html>
@@ -438,6 +438,8 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         const modelId = model.id || '';
         const canonicalSlug = model.canonical_slug || '';
         const permaslug = model.permaslug || canonicalSlug;
+        // Extract base model ID without variant suffix (e.g., "model:free" -> "model")
+        const baseModelId = modelId.split(':')[0];
         const name = model.name || '';
         const description = model.description || '';
         const contextLength = model.context_length || 0;
@@ -491,8 +493,8 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         const stats = modelsStats[canonicalSlug] || modelsStats[permaslug] || null;
 
         // Get analytics data for this model
-        // The analytics data is keyed by permaslug (or variant_permaslug)
-        const modelAnalytics = analytics[permaslug] || analytics[canonicalSlug] || null;
+        // The analytics data is keyed by various slugs, try them all
+        const modelAnalytics = analytics[modelId] || analytics[baseModelId] || analytics[canonicalSlug] || analytics[permaslug] || null;
         const totalPromptTokens = modelAnalytics ? modelAnalytics.total_prompt_tokens : null;
         const totalCompletionTokens = modelAnalytics ? modelAnalytics.total_completion_tokens : null;
 
@@ -841,6 +843,10 @@ async function main() {
         const analyticsData = await fetchAnalyticsData();
         const analyticsModels = analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
         console.log(`Successfully fetched analytics data for ${Object.keys(analyticsModels).length} models`);
+
+        // Save analytics data to JSON file
+        fs.writeFileSync('models_analytics.json', JSON.stringify(analyticsModels, null, 2), 'utf-8');
+        console.log('Saved analytics data to models_analytics.json');
 
         // Generate HTML
         const htmlContent = generateHTML(modelsData, modelsStats, analyticsModels);
