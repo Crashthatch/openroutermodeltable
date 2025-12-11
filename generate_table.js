@@ -339,7 +339,7 @@ function generateHTML(modelsData, modelsStats) {
             flex-direction: column;
             gap: 4px;
             margin-top: 8px;
-            min-width: 150px;
+            min-width: 80px;
         }
         .filter-container input {
             width: 100%;
@@ -572,23 +572,28 @@ function generateHTML(modelsData, modelsStats) {
             // Add filters for Completion Price (column 4)
             $.fn.dataTable.ext.search.push(createNumericFilter(4, 'completionPriceMin', 'completionPriceMax'));
             
-            // Add filters for Throughput columns (13, 14, 15)
-            $.fn.dataTable.ext.search.push(createNumericFilter(13, 'throughputMinMin', 'throughputMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(14, 'throughputMaxMin', 'throughputMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(15, 'throughputMedianMin', 'throughputMedianMax'));
+            // Add filters for P50 columns 
+            $.fn.dataTable.ext.search.push(createNumericFilter(13, 'throughputP50Min', 'throughputP50Max'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(14, 'latencyP50Min', 'latencyP50Max'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(15, 'requestCountMin', 'requestCountMax'));
             
-            // Add filters for Latency columns (16, 17, 18)
-            $.fn.dataTable.ext.search.push(createNumericFilter(16, 'latencyMinMin', 'latencyMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(17, 'latencyMaxMin', 'latencyMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(18, 'latencyMedianMin', 'latencyMedianMax'));
+            // Add filters for Throughput columns 
+            $.fn.dataTable.ext.search.push(createNumericFilter(16, 'throughputMinMin', 'throughputMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(17, 'throughputMaxMin', 'throughputMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(18, 'throughputMedianMin', 'throughputMedianMax'));
             
-            // Add filters for E2E Latency columns (19, 20, 21)
-            $.fn.dataTable.ext.search.push(createNumericFilter(19, 'e2eLatencyMinMin', 'e2eLatencyMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
+            // Add filters for Latency columns 
+            $.fn.dataTable.ext.search.push(createNumericFilter(19, 'latencyMinMin', 'latencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(20, 'latencyMaxMin', 'latencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(21, 'latencyMedianMin', 'latencyMedianMax'));
+            
+            // Add filters for E2E Latency column
+            $.fn.dataTable.ext.search.push(createNumericFilter(22, 'e2eLatencyMinMin', 'e2eLatencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
             
             // Add filter for Uptime (column 22)
-            $.fn.dataTable.ext.search.push(createNumericFilter(22, 'uptimeMin', 'uptimeMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(25, 'uptimeMin', 'uptimeMax'));
             
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
@@ -673,23 +678,28 @@ function generateHTML(modelsData, modelsStats) {
                         select.append('<option value="✗">✗ No</option>');
                     });
                     
-                    // Add min/max filters for Throughput columns (13, 14, 15)
-                    addMinMaxFilter(api, 13, 'throughputMinMin', 'throughputMinMax');
-                    addMinMaxFilter(api, 14, 'throughputMaxMin', 'throughputMaxMax');
-                    addMinMaxFilter(api, 15, 'throughputMedianMin', 'throughputMedianMax');
+                    // Add min/max filters for P50 columns 
+                    addMinMaxFilter(api, 13, 'throughputP50Min', 'throughputP50Max');
+                    addMinMaxFilter(api, 14, 'latencyP50Min', 'latencyP50Max');
+                    addMinMaxFilter(api, 15, 'requestCountMin', 'requestCountMax');
                     
-                    // Add min/max filters for Latency columns (16, 17, 18)
-                    addMinMaxFilter(api, 16, 'latencyMinMin', 'latencyMinMax');
-                    addMinMaxFilter(api, 17, 'latencyMaxMin', 'latencyMaxMax');
-                    addMinMaxFilter(api, 18, 'latencyMedianMin', 'latencyMedianMax');
+                    // Add min/max filters for Throughput columns 
+                    addMinMaxFilter(api, 16, 'throughputMinMin', 'throughputMinMax');
+                    addMinMaxFilter(api, 17, 'throughputMaxMin', 'throughputMaxMax');
+                    addMinMaxFilter(api, 18, 'throughputMedianMin', 'throughputMedianMax');
                     
-                    // Add min/max filters for E2E Latency columns (19, 20, 21)
-                    addMinMaxFilter(api, 19, 'e2eLatencyMinMin', 'e2eLatencyMinMax');
-                    addMinMaxFilter(api, 20, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax');
-                    addMinMaxFilter(api, 21, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax');
+                    // Add min/max filters for Latency columns
+                    addMinMaxFilter(api, 19, 'latencyMinMin', 'latencyMinMax');
+                    addMinMaxFilter(api, 20, 'latencyMaxMin', 'latencyMaxMax');
+                    addMinMaxFilter(api, 21, 'latencyMedianMin', 'latencyMedianMax');
                     
-                    // Add min/max filter for Uptime (column 22)
-                    addMinMaxFilter(api, 22, 'uptimeMin', 'uptimeMax');
+                    // Add min/max filters for E2E Latency columns
+                    addMinMaxFilter(api, 22, 'e2eLatencyMinMin', 'e2eLatencyMinMax');
+                    addMinMaxFilter(api, 23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax');
+                    addMinMaxFilter(api, 24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax');
+                    
+                    // Add min/max filter for Uptime
+                    addMinMaxFilter(api, 25, 'uptimeMin', 'uptimeMax');
                 }
             });
         });
