@@ -490,7 +490,8 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         const supportsResponseFormat = supportedParams.includes('response_format');
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
-        // Check if model supports caching (has input_cache_read field in pricing)
+        // Check if model supports caching by checking for the presence of input_cache_read field in pricing
+        // Models with caching support have this field to indicate the cached input read pricing
         const supportsCaching = 'input_cache_read' in pricing;
         
         // Get stats for this model
