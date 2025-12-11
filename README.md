@@ -70,6 +70,9 @@ The table includes the following columns:
 - **Include Reasoning**: Supports include_reasoning parameter (✓/✗)
 - **Response Format**: Supports response_format parameter (✓/✗)
 - **Structured Outputs**: Supports structured_outputs parameter (✓/✗)
+- **Top Provider Throughput (P50)**: Median throughput (tokens/sec) for the top provider
+- **Top Provider Latency (P50)**: Median time to first token (ms) for the top provider
+- **Top Provider Request Count**: Total number of requests for the top provider
 - **Throughput Min/Max/Median**: Minimum, maximum, and median throughput (tokens/sec) over the last 7 days
 - **Latency Min/Max/Median**: Minimum, maximum, and median time to first token (ms) over the last 7 days
 - **E2E Latency Min/Max/Median**: Minimum, maximum, and median end-to-end latency (ms) over the last 7 days
