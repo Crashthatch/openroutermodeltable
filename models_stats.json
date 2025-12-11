@@ -1,178 +1,90 @@
 {
   "mistralai/devstral-2512": {
     "throughput": {
-      "min": 66.502,
+      "min": 62.5,
       "max": 70.8855,
-      "median": 68.69375
+      "median": 66.298
     },
     "latency": {
       "min": 1043,
-      "max": 1100,
-      "median": 1081
+      "max": 1483,
+      "median": 1100
     },
     "e2eLatency": {
-      "min": 2050,
+      "min": 2106,
       "max": 6496,
-      "median": 4273
+      "median": 3035.5
     },
-    "uptime": 99.99908365748949,
+    "uptime": 99.99908366378708,
     "topProvider": {
-      "p50_throughput": 64.646,
-      "p50_latency": 1186,
-      "request_count": 266
+      "p50_throughput": 63.483,
+      "p50_latency": 1662,
+      "request_count": 35
     }
   },
   "relace/relace-search-20251208": {
     "throughput": {
       "min": 161.19,
       "max": 190.6465,
-      "median": 174.145
+      "median": 173.92425
     },
     "latency": {
       "min": 791,
       "max": 1425,
-      "median": 814
+      "median": 1006.5
     },
     "e2eLatency": {
       "min": 1551,
       "max": 2917,
-      "median": 1987
+      "median": 1977
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 164.89,
-      "p50_latency": 1138,
-      "request_count": 40
+      "p50_throughput": 186.133,
+      "p50_latency": 1192.5,
+      "request_count": 4
     }
   },
   "z-ai/glm-4.6-20251208": {
     "throughput": {
-      "min": 88,
+      "min": 88.0145,
       "max": 155.0085,
-      "median": 141.547
+      "median": 130.695
     },
     "latency": {
-      "min": 498,
+      "min": 499,
       "max": 4410.5,
-      "median": 3046.5
+      "median": 2336.25
     },
     "e2eLatency": {
-      "min": 3871,
+      "min": 3869.5,
       "max": 9606.5,
-      "median": 7870
+      "median": 6054
     },
-    "uptime": 94.20926418464126,
+    "uptime": 95.53624472967094,
     "topProvider": {
-      "p50_throughput": 113.452,
-      "p50_latency": 2653,
-      "request_count": 375
+      "p50_throughput": 84.693,
+      "p50_latency": 7102,
+      "request_count": 801
     }
   },
   "nex-agi/deepseek-v3.1-nex-n1": {
     "throughput": {
-      "min": 28.241,
-      "max": 28.241,
-      "median": 28.241
+      "min": 27.91,
+      "max": 28.128,
+      "median": 28.019
     },
     "latency": {
-      "min": 4157.5,
-      "max": 4157.5,
-      "median": 4157.5
+      "min": 3951,
+      "max": 4332,
+      "median": 4141.5
     },
     "e2eLatency": {
-      "min": 18536,
-      "max": 18687,
-      "median": 18611.5
+      "min": 18687,
+      "max": 18833.5,
+      "median": 18760.25
     },
     "uptime": 100,
     "topProvider": null
-  },
-  "essentialai/rnj-1-instruct": {
-    "throughput": {
-      "min": 130.999,
-      "max": 142.857,
-      "median": 133.903
-    },
-    "latency": {
-      "min": 171,
-      "max": 231,
-      "median": 198
-    },
-    "e2eLatency": {
-      "min": 1115,
-      "max": 3383,
-      "median": 1301
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 136.671,
-      "p50_latency": 326.5,
-      "request_count": 10
-    }
-  },
-  "openrouter/bodybuilder": {
-    "throughput": {
-      "min": null,
-      "max": null,
-      "median": null
-    },
-    "latency": {
-      "min": null,
-      "max": null,
-      "median": null
-    },
-    "e2eLatency": {
-      "min": null,
-      "max": null,
-      "median": null
-    },
-    "uptime": null,
-    "topProvider": null
-  },
-  "openai/gpt-5.1-codex-max-20251204": {
-    "throughput": {
-      "min": 35.975,
-      "max": 55.7345,
-      "median": 49.152249999999995
-    },
-    "latency": {
-      "min": 3354,
-      "max": 6214.5,
-      "median": 4061
-    },
-    "e2eLatency": {
-      "min": 9015.5,
-      "max": 16690.5,
-      "median": 11792.75
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 44.166,
-      "p50_latency": 3401.5,
-      "request_count": 812
-    }
-  },
-  "amazon/nova-2-lite-v1": {
-    "throughput": {
-      "min": 186.405,
-      "max": 1092.766,
-      "median": 878.274
-    },
-    "latency": {
-      "min": 677.5,
-      "max": 5565,
-      "median": 5351
-    },
-    "e2eLatency": {
-      "min": 1492,
-      "max": 7911.5,
-      "median": 7369.5
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 157.9595,
-      "p50_latency": 920,
-      "request_count": 136
-    }
   }
 }
