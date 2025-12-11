@@ -413,8 +413,6 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     <th>Supports include_reasoning</th>
                     <th>Supports response_format</th>
                     <th>Supports structured_output</th>
-                    <th>Total Prompt Tokens</th>
-                    <th>Total Completion Tokens</th>
                     <th>Top Provider Throughput (P50) (tps)</th>
                     <th>Top Provider Latency (P50) (ms)</th>
                     <th>Top Provider Request Count</th>
@@ -428,6 +426,8 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     <th>E2E Latency Max (ms)</th>
                     <th>E2E Latency Median (ms)</th>
                     <th>Uptime (7d avg)</th>
+                    <th>Total Prompt Tokens</th>
+                    <th>Total Completion Tokens</th>
                 </tr>
             </thead>
             <tbody>
@@ -538,8 +538,6 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
-                    ${statsCountCell(totalPromptTokens)}
-                    ${statsCountCell(totalCompletionTokens)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_throughput, 2) : statsCell(null)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_latency, 0) : statsCell(null)}
                     ${topProviderStats ? statsCountCell(topProviderStats.request_count) : statsCountCell(null)}
@@ -553,6 +551,8 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     ${stats ? statsCell(stats.e2eLatency.max, 0) : statsCell(null)}
                     ${stats ? statsCell(stats.e2eLatency.median, 0) : statsCell(null)}
                     ${stats && stats.uptime !== null ? statsCell(stats.uptime, 2) : statsCell(null)}
+                    ${statsCountCell(totalPromptTokens)}
+                    ${statsCountCell(totalCompletionTokens)}
                 </tr>
 `;
     });
@@ -682,7 +682,7 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    // Numeric sorting for context (2), prices (3,4), analytics (13,14), top provider stats (15,16,17), and aggregated stats (18-27)
+                    // Numeric sorting
                     { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27] }
                 ],
                 "initComplete": function () {
