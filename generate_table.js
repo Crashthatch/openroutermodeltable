@@ -491,7 +491,7 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
         // Check if model supports caching (has input_cache_read field in pricing)
-        const supportsCaching = pricing.hasOwnProperty('input_cache_read');
+        const supportsCaching = 'input_cache_read' in pricing;
         
         // Get stats for this model
         const stats = modelsStats[canonicalSlug] || modelsStats[permaslug] || null;
