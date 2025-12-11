@@ -7,7 +7,6 @@ const https = require('https');
 const fs = require('fs');
 
 const API_URL = 'https://openrouter.ai/api/v1/models';
-const ANALYTICS_API_URL = 'https://openrouter.ai/api/frontend/models/find?order=newest';
 
 /**
  * Fetch models data from OpenRouter API
@@ -25,36 +24,6 @@ function fetchModelsData() {
                 data += chunk;
             });
             
-            res.on('end', () => {
-                try {
-                    const jsonData = JSON.parse(data);
-                    resolve(jsonData);
-                } catch (e) {
-                    reject(new Error(`Failed to parse JSON: ${e.message}`));
-                }
-            });
-        }).on('error', (err) => {
-            reject(err);
-        });
-    });
-}
-
-/**
- * Fetch analytics data from OpenRouter API
- */
-function fetchAnalyticsData() {
-    return new Promise((resolve, reject) => {
-        https.get(ANALYTICS_API_URL, {
-            headers: {
-                'User-Agent': 'OpenRouterModelTable/1.0'
-            }
-        }, (res) => {
-            let data = '';
-
-            res.on('data', (chunk) => {
-                data += chunk;
-            });
-
             res.on('end', () => {
                 try {
                     const jsonData = JSON.parse(data);
@@ -263,9 +232,8 @@ async function fetchModelStats(canonicalSlug) {
 /**
  * Generate HTML page with sortable, filterable table
  */
-function generateHTML(modelsData, modelsStats, analyticsData = null) {
+function generateHTML(modelsData, modelsStats) {
     const models = modelsData.data || [];
-    const analytics = analyticsData || {};
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
     let html = `<!DOCTYPE html>
@@ -381,6 +349,27 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
             border-radius: 4px;
             box-sizing: border-box;
         }
+        /* Sticky header row */
+        #modelsTable thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: white;
+            box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+        }
+        /* Sticky first column (Model ID) */
+        #modelsTable tbody td:first-child,
+        #modelsTable thead th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 9;
+            background-color: white;
+            box-shadow: 2px 0 2px -1px rgba(0, 0, 0, 0.4);
+        }
+        /* First column header needs higher z-index to stay above body cells */
+        #modelsTable thead th:first-child {
+            z-index: 11;
+        }
     </style>
 </head>
 <body>
@@ -427,8 +416,6 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     <th>E2E Latency Max (ms)</th>
                     <th>E2E Latency Median (ms)</th>
                     <th>Uptime (7d avg)</th>
-                    <th>Total Prompt Tokens</th>
-                    <th>Total Completion Tokens</th>
                 </tr>
             </thead>
             <tbody>
@@ -438,9 +425,6 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
     models.forEach(model => {
         const modelId = model.id || '';
         const canonicalSlug = model.canonical_slug || '';
-        const permaslug = model.permaslug || canonicalSlug;
-        // Extract base model ID without variant suffix (e.g., "model:free" -> "model")
-        const baseModelId = modelId.split(':')[0];
         const name = model.name || '';
         const description = model.description || '';
         const contextLength = model.context_length || 0;
@@ -493,15 +477,9 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
         // Check if model supports caching by checking for the presence of input_cache_read field in pricing
         // Models with caching support have this field to indicate the cached input read pricing
         const supportsCaching = 'input_cache_read' in pricing;
-        
-        // Get stats for this model
-        const stats = modelsStats[canonicalSlug] || modelsStats[permaslug] || null;
 
-        // Get analytics data for this model
-        // The analytics data is keyed by various slugs, try them all
-        const modelAnalytics = analytics[modelId] || analytics[baseModelId] || analytics[canonicalSlug] || analytics[permaslug] || null;
-        const totalPromptTokens = modelAnalytics ? modelAnalytics.total_prompt_tokens : null;
-        const totalCompletionTokens = modelAnalytics ? modelAnalytics.total_completion_tokens : null;
+        // Get stats for this model
+        const stats = modelsStats[canonicalSlug] || null;
 
         // Helper function to create parameter cell
         const paramCell = (supported) => {
@@ -559,8 +537,6 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     ${stats ? statsCell(stats.e2eLatency.max, 0) : statsCell(null)}
                     ${stats ? statsCell(stats.e2eLatency.median, 0) : statsCell(null)}
                     ${stats && stats.uptime !== null ? statsCell(stats.uptime, 2) : statsCell(null)}
-                    ${statsCountCell(totalPromptTokens)}
-                    ${statsCountCell(totalCompletionTokens)}
                 </tr>
 `;
     });
@@ -852,18 +828,8 @@ async function main() {
 
         console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
 
-        // Fetch analytics data
-        console.log('Fetching analytics data from OpenRouter API...');
-        const analyticsData = await fetchAnalyticsData();
-        const analyticsModels = analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
-        console.log(`Successfully fetched analytics data for ${Object.keys(analyticsModels).length} models`);
-
-        // Save analytics data to JSON file
-        fs.writeFileSync('models_analytics.json', JSON.stringify(analyticsModels, null, 2), 'utf-8');
-        console.log('Saved analytics data to models_analytics.json');
-
         // Generate HTML
-        const htmlContent = generateHTML(modelsData, modelsStats, analyticsModels);
+        const htmlContent = generateHTML(modelsData, modelsStats);
         
         // Save HTML file
         fs.writeFileSync('index.html', htmlContent, 'utf-8');
