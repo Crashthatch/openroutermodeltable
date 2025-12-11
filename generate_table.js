@@ -402,6 +402,7 @@ function generateHTML(modelsData, modelsStats) {
                     <th>Supports include_reasoning</th>
                     <th>Supports response_format</th>
                     <th>Supports structured_output</th>
+                    <th>Supports caching</th>
                     <th>Top Provider Throughput (P50) (tps)</th>
                     <th>Top Provider Latency (P50) (ms)</th>
                     <th>Top Provider Request Count</th>
@@ -473,6 +474,10 @@ function generateHTML(modelsData, modelsStats) {
         const supportsResponseFormat = supportedParams.includes('response_format');
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
+        // Check if model supports caching by checking for the presence of input_cache_read field in pricing
+        // Models with caching support have this field to indicate the cached input read pricing
+        const supportsCaching = 'input_cache_read' in pricing;
+
         // Get stats for this model
         const stats = modelsStats[canonicalSlug] || null;
 
@@ -518,6 +523,7 @@ function generateHTML(modelsData, modelsStats) {
                     ${paramCell(supportsIncludeReasoning)}
                     ${paramCell(supportsResponseFormat)}
                     ${paramCell(supportsStructuredOutputs)}
+                    ${paramCell(supportsCaching)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_throughput, 2) : statsCell(null)}
                     ${topProviderStats ? statsCell(topProviderStats.p50_latency, 0) : statsCell(null)}
                     ${topProviderStats ? statsCountCell(topProviderStats.request_count) : statsCountCell(null)}
@@ -594,27 +600,27 @@ function generateHTML(modelsData, modelsStats) {
             $.fn.dataTable.ext.search.push(createNumericFilter(4, 'completionPriceMin', 'completionPriceMax'));
             
             // Add filters for P50 columns 
-            $.fn.dataTable.ext.search.push(createNumericFilter(13, 'throughputP50Min', 'throughputP50Max'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(14, 'latencyP50Min', 'latencyP50Max'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(15, 'requestCountMin', 'requestCountMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(14, 'throughputP50Min', 'throughputP50Max'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(15, 'latencyP50Min', 'latencyP50Max'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(16, 'requestCountMin', 'requestCountMax'));
             
             // Add filters for Throughput columns 
-            $.fn.dataTable.ext.search.push(createNumericFilter(16, 'throughputMinMin', 'throughputMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(17, 'throughputMaxMin', 'throughputMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(18, 'throughputMedianMin', 'throughputMedianMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(17, 'throughputMinMin', 'throughputMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(18, 'throughputMaxMin', 'throughputMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(19, 'throughputMedianMin', 'throughputMedianMax'));
             
             // Add filters for Latency columns 
-            $.fn.dataTable.ext.search.push(createNumericFilter(19, 'latencyMinMin', 'latencyMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(20, 'latencyMaxMin', 'latencyMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(21, 'latencyMedianMin', 'latencyMedianMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(20, 'latencyMinMin', 'latencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(21, 'latencyMaxMin', 'latencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(22, 'latencyMedianMin', 'latencyMedianMax'));
             
             // Add filters for E2E Latency column
-            $.fn.dataTable.ext.search.push(createNumericFilter(22, 'e2eLatencyMinMin', 'e2eLatencyMinMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(23, 'e2eLatencyMinMin', 'e2eLatencyMinMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(24, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(25, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
             
-            // Add filter for Uptime (column 22)
-            $.fn.dataTable.ext.search.push(createNumericFilter(25, 'uptimeMin', 'uptimeMax'));
+            // Add filter for Uptime (column 26)
+            $.fn.dataTable.ext.search.push(createNumericFilter(26, 'uptimeMin', 'uptimeMax'));
             
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
@@ -660,8 +666,8 @@ function generateHTML(modelsData, modelsStats) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
-                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
+                    // Numeric sorting
+                    { "type": "num", "targets": [2, 3, 4, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26] }
                 ],
                 "initComplete": function () {
                     const api = this.api();
@@ -678,8 +684,8 @@ function generateHTML(modelsData, modelsStats) {
                     // Add date range filters for Created (column 6)
                     addMinMaxFilter(api, 6, 'createdMinFilter', 'createdMaxFilter', 'date');
                     
-                    // Add filter dropdowns for parameter columns (columns 8-12)
-                    api.columns([8, 9, 10, 11, 12]).every(function () {
+                    // Add filter dropdowns for parameter columns (columns 8-13)
+                    api.columns([8, 9, 10, 11, 12, 13]).every(function () {
                         const column = this;
                         const header = $(column.header());
                         
@@ -700,27 +706,27 @@ function generateHTML(modelsData, modelsStats) {
                     });
                     
                     // Add min/max filters for P50 columns 
-                    addMinMaxFilter(api, 13, 'throughputP50Min', 'throughputP50Max');
-                    addMinMaxFilter(api, 14, 'latencyP50Min', 'latencyP50Max');
-                    addMinMaxFilter(api, 15, 'requestCountMin', 'requestCountMax');
+                    addMinMaxFilter(api, 14, 'throughputP50Min', 'throughputP50Max');
+                    addMinMaxFilter(api, 15, 'latencyP50Min', 'latencyP50Max');
+                    addMinMaxFilter(api, 16, 'requestCountMin', 'requestCountMax');
                     
                     // Add min/max filters for Throughput columns 
-                    addMinMaxFilter(api, 16, 'throughputMinMin', 'throughputMinMax');
-                    addMinMaxFilter(api, 17, 'throughputMaxMin', 'throughputMaxMax');
-                    addMinMaxFilter(api, 18, 'throughputMedianMin', 'throughputMedianMax');
+                    addMinMaxFilter(api, 17, 'throughputMinMin', 'throughputMinMax');
+                    addMinMaxFilter(api, 18, 'throughputMaxMin', 'throughputMaxMax');
+                    addMinMaxFilter(api, 19, 'throughputMedianMin', 'throughputMedianMax');
                     
                     // Add min/max filters for Latency columns
-                    addMinMaxFilter(api, 19, 'latencyMinMin', 'latencyMinMax');
-                    addMinMaxFilter(api, 20, 'latencyMaxMin', 'latencyMaxMax');
-                    addMinMaxFilter(api, 21, 'latencyMedianMin', 'latencyMedianMax');
+                    addMinMaxFilter(api, 20, 'latencyMinMin', 'latencyMinMax');
+                    addMinMaxFilter(api, 21, 'latencyMaxMin', 'latencyMaxMax');
+                    addMinMaxFilter(api, 22, 'latencyMedianMin', 'latencyMedianMax');
                     
                     // Add min/max filters for E2E Latency columns
-                    addMinMaxFilter(api, 22, 'e2eLatencyMinMin', 'e2eLatencyMinMax');
-                    addMinMaxFilter(api, 23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax');
-                    addMinMaxFilter(api, 24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax');
+                    addMinMaxFilter(api, 23, 'e2eLatencyMinMin', 'e2eLatencyMinMax');
+                    addMinMaxFilter(api, 24, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax');
+                    addMinMaxFilter(api, 25, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax');
                     
                     // Add min/max filter for Uptime
-                    addMinMaxFilter(api, 25, 'uptimeMin', 'uptimeMax');
+                    addMinMaxFilter(api, 26, 'uptimeMin', 'uptimeMax');
                 }
             });
         });
