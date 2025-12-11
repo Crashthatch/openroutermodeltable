@@ -14,8 +14,17 @@ try {
     const modelsStats = JSON.parse(fs.readFileSync('models_stats.json', 'utf-8'));
     console.log(`Loaded ${modelsStats ? Object.keys(modelsStats).length : 0} models from models_stats.json`);
     
-    // Generate HTML (without stats)
-    const htmlContent = generateHTML(modelsData, modelsStats);
+    // Read analytics data if available
+    let analyticsData = {};
+    try {
+        analyticsData = JSON.parse(fs.readFileSync('models_analytics.json', 'utf-8'));
+        console.log(`Loaded ${analyticsData ? Object.keys(analyticsData).length : 0} models from models_analytics.json`);
+    } catch (err) {
+        console.log('No models_analytics.json found, skipping analytics data');
+    }
+    
+    // Generate HTML
+    const htmlContent = generateHTML(modelsData, modelsStats, analyticsData);
     
     // Save HTML file
     fs.writeFileSync('index.html', htmlContent, 'utf-8');

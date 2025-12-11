@@ -7,6 +7,7 @@ const https = require('https');
 const fs = require('fs');
 
 const API_URL = 'https://openrouter.ai/api/v1/models';
+const ANALYTICS_API_URL = 'https://openrouter.ai/api/frontend/models/find?order=newest';
 
 /**
  * Fetch models data from OpenRouter API
@@ -24,6 +25,36 @@ function fetchModelsData() {
                 data += chunk;
             });
             
+            res.on('end', () => {
+                try {
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
+                } catch (e) {
+                    reject(new Error(`Failed to parse JSON: ${e.message}`));
+                }
+            });
+        }).on('error', (err) => {
+            reject(err);
+        });
+    });
+}
+
+/**
+ * Fetch analytics data from OpenRouter API
+ */
+function fetchAnalyticsData() {
+    return new Promise((resolve, reject) => {
+        https.get(ANALYTICS_API_URL, {
+            headers: {
+                'User-Agent': 'OpenRouterModelTable/1.0'
+            }
+        }, (res) => {
+            let data = '';
+
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+
             res.on('end', () => {
                 try {
                     const jsonData = JSON.parse(data);
@@ -232,8 +263,9 @@ async function fetchModelStats(canonicalSlug) {
 /**
  * Generate HTML page with sortable, filterable table
  */
-function generateHTML(modelsData, modelsStats) {
+function generateHTML(modelsData, modelsStats, analyticsData = null) {
     const models = modelsData.data || [];
+    const analytics = analyticsData || {};
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     
     let html = `<!DOCTYPE html>
@@ -394,6 +426,8 @@ function generateHTML(modelsData, modelsStats) {
                     <th>E2E Latency Max (ms)</th>
                     <th>E2E Latency Median (ms)</th>
                     <th>Uptime (7d avg)</th>
+                    <th>Total Prompt Tokens</th>
+                    <th>Total Completion Tokens</th>
                 </tr>
             </thead>
             <tbody>
@@ -403,6 +437,9 @@ function generateHTML(modelsData, modelsStats) {
     models.forEach(model => {
         const modelId = model.id || '';
         const canonicalSlug = model.canonical_slug || '';
+        const permaslug = model.permaslug || canonicalSlug;
+        // Extract base model ID without variant suffix (e.g., "model:free" -> "model")
+        const baseModelId = modelId.split(':')[0];
         const name = model.name || '';
         const description = model.description || '';
         const contextLength = model.context_length || 0;
@@ -453,7 +490,13 @@ function generateHTML(modelsData, modelsStats) {
         const supportsStructuredOutputs = supportedParams.includes('structured_outputs');
         
         // Get stats for this model
-        const stats = modelsStats[canonicalSlug] || null;
+        const stats = modelsStats[canonicalSlug] || modelsStats[permaslug] || null;
+
+        // Get analytics data for this model
+        // The analytics data is keyed by various slugs, try them all
+        const modelAnalytics = analytics[modelId] || analytics[baseModelId] || analytics[canonicalSlug] || analytics[permaslug] || null;
+        const totalPromptTokens = modelAnalytics ? modelAnalytics.total_prompt_tokens : null;
+        const totalCompletionTokens = modelAnalytics ? modelAnalytics.total_completion_tokens : null;
 
         // Helper function to create parameter cell
         const paramCell = (supported) => {
@@ -510,6 +553,8 @@ function generateHTML(modelsData, modelsStats) {
                     ${stats ? statsCell(stats.e2eLatency.max, 0) : statsCell(null)}
                     ${stats ? statsCell(stats.e2eLatency.median, 0) : statsCell(null)}
                     ${stats && stats.uptime !== null ? statsCell(stats.uptime, 2) : statsCell(null)}
+                    ${statsCountCell(totalPromptTokens)}
+                    ${statsCountCell(totalCompletionTokens)}
                 </tr>
 `;
     });
@@ -592,8 +637,12 @@ function generateHTML(modelsData, modelsStats) {
             $.fn.dataTable.ext.search.push(createNumericFilter(23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
             $.fn.dataTable.ext.search.push(createNumericFilter(24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
             
-            // Add filter for Uptime (column 22)
+            // Add filter for Uptime (column 25)
             $.fn.dataTable.ext.search.push(createNumericFilter(25, 'uptimeMin', 'uptimeMax'));
+            
+            // Add filters for Total Tokens columns
+            $.fn.dataTable.ext.search.push(createNumericFilter(26, 'totalPromptTokensMin', 'totalPromptTokensMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(27, 'totalCompletionTokensMin', 'totalCompletionTokensMax'));
             
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
@@ -639,8 +688,8 @@ function generateHTML(modelsData, modelsStats) {
                 "order": [[0, "asc"]],
                 "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                 "columnDefs": [
-                    // Numeric sorting for context (2), prices (3,4), top provider stats (13,14,15), and aggregated stats (16-25)
-                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] }
+                    // Numeric sorting
+                    { "type": "num", "targets": [2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27] }
                 ],
                 "initComplete": function () {
                     const api = this.api();
@@ -700,6 +749,10 @@ function generateHTML(modelsData, modelsStats) {
                     
                     // Add min/max filter for Uptime
                     addMinMaxFilter(api, 25, 'uptimeMin', 'uptimeMax');
+                    
+                    // Add min/max filters for Total Tokens columns
+                    addMinMaxFilter(api, 26, 'totalPromptTokensMin', 'totalPromptTokensMax');
+                    addMinMaxFilter(api, 27, 'totalCompletionTokensMin', 'totalCompletionTokensMax');
                 }
             });
         });
@@ -793,8 +846,18 @@ async function main() {
 
         console.log(`Fetched stats for ${Object.keys(modelsStats).length} models`);
 
+        // Fetch analytics data
+        console.log('Fetching analytics data from OpenRouter API...');
+        const analyticsData = await fetchAnalyticsData();
+        const analyticsModels = analyticsData.data && analyticsData.data.analytics ? analyticsData.data.analytics : {};
+        console.log(`Successfully fetched analytics data for ${Object.keys(analyticsModels).length} models`);
+
+        // Save analytics data to JSON file
+        fs.writeFileSync('models_analytics.json', JSON.stringify(analyticsModels, null, 2), 'utf-8');
+        console.log('Saved analytics data to models_analytics.json');
+
         // Generate HTML
-        const htmlContent = generateHTML(modelsData, modelsStats);
+        const htmlContent = generateHTML(modelsData, modelsStats, analyticsModels);
         
         // Save HTML file
         fs.writeFileSync('index.html', htmlContent, 'utf-8');
