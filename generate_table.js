@@ -637,8 +637,12 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
             $.fn.dataTable.ext.search.push(createNumericFilter(23, 'e2eLatencyMaxMin', 'e2eLatencyMaxMax'));
             $.fn.dataTable.ext.search.push(createNumericFilter(24, 'e2eLatencyMedianMin', 'e2eLatencyMedianMax'));
             
-            // Add filter for Uptime (column 22)
+            // Add filter for Uptime (column 25)
             $.fn.dataTable.ext.search.push(createNumericFilter(25, 'uptimeMin', 'uptimeMax'));
+            
+            // Add filters for Total Tokens columns
+            $.fn.dataTable.ext.search.push(createNumericFilter(26, 'totalPromptTokensMin', 'totalPromptTokensMax'));
+            $.fn.dataTable.ext.search.push(createNumericFilter(27, 'totalCompletionTokensMin', 'totalCompletionTokensMax'));
             
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
@@ -745,6 +749,10 @@ function generateHTML(modelsData, modelsStats, analyticsData = null) {
                     
                     // Add min/max filter for Uptime
                     addMinMaxFilter(api, 25, 'uptimeMin', 'uptimeMax');
+                    
+                    // Add min/max filters for Total Tokens columns
+                    addMinMaxFilter(api, 26, 'totalPromptTokensMin', 'totalPromptTokensMax');
+                    addMinMaxFilter(api, 27, 'totalCompletionTokensMin', 'totalCompletionTokensMax');
                 }
             });
         });
