@@ -622,10 +622,6 @@ function generateHTML(modelsData, modelsStats) {
             // Add filter for Uptime (column 26)
             $.fn.dataTable.ext.search.push(createNumericFilter(26, 'uptimeMin', 'uptimeMax'));
             
-            // Add filters for Total Tokens columns
-            $.fn.dataTable.ext.search.push(createNumericFilter(27, 'totalPromptTokensMin', 'totalPromptTokensMax'));
-            $.fn.dataTable.ext.search.push(createNumericFilter(28, 'totalCompletionTokensMin', 'totalCompletionTokensMax'));
-            
             // Custom range filtering function for Created Date
             // Note: String comparison works correctly for ISO 8601 dates (YYYY-MM-DD format)
             $.fn.dataTable.ext.search.push(
@@ -731,10 +727,6 @@ function generateHTML(modelsData, modelsStats) {
                     
                     // Add min/max filter for Uptime
                     addMinMaxFilter(api, 26, 'uptimeMin', 'uptimeMax');
-                    
-                    // Add min/max filters for Total Tokens columns
-                    addMinMaxFilter(api, 27, 'totalPromptTokensMin', 'totalPromptTokensMax');
-                    addMinMaxFilter(api, 28, 'totalCompletionTokensMin', 'totalCompletionTokensMax');
                 }
             });
         });
