@@ -376,11 +376,11 @@ function generateHTML(modelsData, modelsStats) {
     <div class="container-fluid">
         <h1>OpenRouter Models Table</h1>
         <p class="info-text">
-            A comprehensive, sortable, and filterable table of all models available from OpenRouter.
+            An unofficial, comprehensive, sortable, and filterable table of all models available from OpenRouter.
             Click on column headers to sort. Use the search box to filter results.
         </p>
         <p class="info-text">
-            <small>Last updated: ${timestamp}</small>
+            <small>Last updated: ${timestamp} - <a href="https://github.com/Crashthatch/openroutermodeltable" target="_blank">Github Repo</a></small>
         </p>
         <p class="info-text">
             <small>Top Provider columns show P50 throughput (tokens/sec), P50 latency (ms), and request count for the best provider. Stats columns show min/max/median values over the last 7 days.</small>
