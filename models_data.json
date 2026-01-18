@@ -1299,6 +1299,7 @@
       "pricing": {
         "prompt": "0.00000125",
         "completion": "0.00001",
+        "web_search": "0.01",
         "input_cache_read": "0.000000125"
       },
       "top_provider": {
@@ -2345,7 +2346,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000002",
-        "input_cache_write": "0.000002375"
+        "input_cache_write": "0.000000375"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -4245,7 +4246,7 @@
         "prompt": "0.000003",
         "completion": "0.000015",
         "request": "0",
-        "image": "0",
+        "image": "0.0048",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -4254,7 +4255,7 @@
       "top_provider": {
         "context_length": 1000000,
         "max_completion_tokens": 64000,
-        "is_moderated": false
+        "is_moderated": true
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -4465,7 +4466,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075",
-        "input_cache_write": "0.0000003833"
+        "input_cache_write": "0.0000000833"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -4524,7 +4525,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000001",
-        "input_cache_write": "0.000001"
+        "input_cache_write": "0.0000000833"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -5157,7 +5158,7 @@
       "name": "Qwen: Qwen3 Next 80B A3B Thinking",
       "created": 1757612284,
       "description": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging, logic, and agentic planning, and reports strong results across knowledge, reasoning, coding, alignment, and multilingual evaluations. Compared with prior Qwen3 variants, it emphasizes stability under long chains of thought and efficient scaling during inference, and it is tuned to follow complex instructions while reducing repetitive or off-task behavior.\n\nThe model is suitable for agent frameworks and tool use (function calling), retrieval-heavy workflows, and standardized benchmarking where step-by-step solutions are required. It supports long, detailed completions and leverages throughput-oriented techniques (e.g., multi-token prediction) for faster generation. Note that it operates in thinking-only mode.",
-      "context_length": 262144,
+      "context_length": 128000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -5178,8 +5179,8 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 262144,
+        "context_length": 128000,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7612,7 +7613,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000001",
-        "input_cache_write": "0.0000001833"
+        "input_cache_write": "0.0000000833"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -8608,7 +8609,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000003",
-        "input_cache_write": "0.0000003833"
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -8667,7 +8668,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000125",
-        "input_cache_write": "0.000001625"
+        "input_cache_write": "0.000000375"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -8928,7 +8929,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000031",
-        "input_cache_write": "0.000001625"
+        "input_cache_write": "0.000000375"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -9008,7 +9009,7 @@
       "name": "DeepSeek: R1 0528",
       "created": 1748455170,
       "description": "May 28th update to the [original DeepSeek R1](/deepseek/deepseek-r1) Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass.\n\nFully open-source model.",
-      "context_length": 131072,
+      "context_length": 163840,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -9021,18 +9022,16 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000045",
-        "completion": "0.00000215",
+        "prompt": "0.0000004",
+        "completion": "0.00000175",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0",
-        "input_cache_write": "0"
+        "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 32768,
+        "context_length": 163840,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9400,7 +9399,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000031",
-        "input_cache_write": "0.000001625"
+        "input_cache_write": "0.000000375"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -12157,7 +12156,7 @@
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000025",
-        "input_cache_write": "0.0000001833"
+        "input_cache_write": "0.0000000833"
       },
       "top_provider": {
         "context_length": 1048576,
