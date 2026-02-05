@@ -1,6 +1,59 @@
 {
   "data": [
     {
+      "id": "qwen/qwen3-coder-next",
+      "canonical_slug": "qwen/qwen3-coder-next-2025-02-03",
+      "hugging_face_id": "Qwen/Qwen3-Coder-Next",
+      "name": "Qwen: Qwen3 Coder Next",
+      "created": 1770164101,
+      "description": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per token, delivering performance comparable to models with 10 to 20x higher active compute, which makes it well suited for cost-sensitive, always-on agent deployment.\n\nThe model is trained with a strong agentic focus and performs reliably on long-horizon coding tasks, complex tool usage, and recovery from execution failures. With a native 256k context window, it integrates cleanly into real-world CLI and IDE environments and adapts well to common agent scaffolds used by modern coding tools. The model operates exclusively in non-thinking mode and does not emit <think> blocks, simplifying integration for production coding agents.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000007",
+        "completion": "0.0000003"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
       "id": "openrouter/free",
       "canonical_slug": "openrouter/free",
       "hugging_face_id": "",
@@ -33,7 +86,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -651,10 +703,10 @@
       "expiration_date": null
     },
     {
-      "id": "allenai/molmo-2-8b:free",
+      "id": "allenai/molmo-2-8b",
       "canonical_slug": "allenai/molmo-2-8b-20260109",
       "hugging_face_id": "allenai/Molmo2-8B",
-      "name": "AllenAI: Molmo2 8B (free)",
+      "name": "AllenAI: Molmo2 8B",
       "created": 1767996672,
       "description": "Molmo2-8B is an open vision-language model developed by the Allen Institute for AI (Ai2) as part of the Molmo2 family, supporting image, video, and multi-image understanding and grounding. It is based on Qwen3-8B and uses SigLIP 2 as its vision backbone, outperforming other open-weight, open-data models on short videos, counting, and captioning, while remaining competitive on long-video tasks.",
       "context_length": 36864,
@@ -672,8 +724,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0",
-        "completion": "0"
+        "prompt": "0.0000002",
+        "completion": "0.0000002"
       },
       "top_provider": {
         "context_length": 36864,
@@ -687,7 +739,6 @@
         "max_tokens",
         "presence_penalty",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
         "temperature",
@@ -707,7 +758,7 @@
       "hugging_face_id": "allenai/Olmo-3.1-32B-Instruct",
       "name": "AllenAI: Olmo 3.1 32B Instruct",
       "created": 1767728554,
-      "description": "Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the Olmo 3.1 family, this variant emphasizes responsiveness to complex user directions and robust chat interactions while retaining strong capabilities on reasoning and coding benchmarks. Developed by Ai2 under the Apache 2.0 license, Olmo 3.1 32B Instruct reflects the Olmo initiative’s commitment to openness and transparency.",
+      "description": "Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the Olmo 3.1 family, this variant emphasizes responsiveness to complex user directions and robust chat interactions while retaining strong capabilities on reasoning and coding benchmarks. Developed by Ai2 under the Apache 2.0 license, Olmo 3.1 32B Instruct reflects the Olmo initiative���s commitment to openness and transparency.",
       "context_length": 65536,
       "architecture": {
         "modality": "text->text",
@@ -876,11 +927,12 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.0000011"
+        "completion": "0.00000095",
+        "input_cache_read": "0.0000000299999997"
       },
       "top_provider": {
         "context_length": 196608,
-        "max_completion_tokens": 196608,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4913,7 +4965,8 @@
       },
       "pricing": {
         "prompt": "0.0000002",
-        "completion": "0.0000012"
+        "completion": "0.00000088",
+        "input_cache_read": "0.00000011"
       },
       "top_provider": {
         "context_length": 262144,
@@ -5175,7 +5228,7 @@
       "pricing": {
         "prompt": "0.00000021",
         "completion": "0.00000079",
-        "input_cache_read": "0.000000168"
+        "input_cache_read": "0.0000001300000002"
       },
       "top_provider": {
         "context_length": 163840,
@@ -7777,7 +7830,7 @@
       },
       "pricing": {
         "prompt": "0.000000071",
-        "completion": "0.000000463"
+        "completion": "0.0000001"
       },
       "top_provider": {
         "context_length": 262144,
@@ -11357,7 +11410,7 @@
       "name": "Google: Gemma 3 27B",
       "created": 1741756359,
       "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 27B is Google's latest open source model, successor to [Gemma 2](google/gemma-2-27b-it)",
-      "context_length": 96000,
+      "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -11375,8 +11428,8 @@
         "completion": "0.00000015"
       },
       "top_provider": {
-        "context_length": 96000,
-        "max_completion_tokens": 96000,
+        "context_length": 128000,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14669,7 +14722,7 @@
         "top_p"
       ],
       "default_parameters": {},
-      "expiration_date": null
+      "expiration_date": "2026-02-17"
     },
     {
       "id": "sao10k/l3-lunaris-8b",
