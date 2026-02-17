@@ -1,140 +1,186 @@
 {
-  "minimax/minimax-m2.5-20260211": {
+  "qwen/qwen3.5-plus-20260216": {
     "throughput": {
-      "min": 25,
-      "max": 51,
-      "median": 35
+      "min": 23,
+      "max": 23,
+      "median": 23
     },
     "latency": {
-      "min": 1713,
-      "max": 2973,
-      "median": 2443.75
+      "min": 889,
+      "max": 889,
+      "median": 889
     },
     "e2eLatency": {
-      "min": 6161,
-      "max": 9589.5,
-      "median": 9324.25
+      "min": 5418.5,
+      "max": 5418.5,
+      "median": 5418.5
     },
-    "uptime": 99.06281364217739,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 54.5,
-      "p50_latency": 1608.5,
-      "request_count": 58
+      "p50_throughput": 60,
+      "p50_latency": 858,
+      "request_count": 2261
+    }
+  },
+  "qwen/qwen3.5-397b-a17b-20260216": {
+    "throughput": {
+      "min": 50,
+      "max": 50,
+      "median": 50
+    },
+    "latency": {
+      "min": 791,
+      "max": 791,
+      "median": 791
+    },
+    "e2eLatency": {
+      "min": 10652,
+      "max": 10652,
+      "median": 10652
+    },
+    "uptime": 100,
+    "topProvider": {
+      "p50_throughput": 74,
+      "p50_latency": 755,
+      "request_count": 3978
+    }
+  },
+  "minimax/minimax-m2.5-20260211": {
+    "throughput": {
+      "min": 23,
+      "max": 51,
+      "median": 26
+    },
+    "latency": {
+      "min": 1709.5,
+      "max": 2993.5,
+      "median": 2898
+    },
+    "e2eLatency": {
+      "min": 6014.5,
+      "max": 10216.5,
+      "median": 9589.5
+    },
+    "uptime": 98.72818084425751,
+    "topProvider": {
+      "p50_throughput": 41,
+      "p50_latency": 2149,
+      "request_count": 4060
     }
   },
   "z-ai/glm-5-20260211": {
     "throughput": {
-      "min": 24,
-      "max": 50,
-      "median": 42
+      "min": 20,
+      "max": 42,
+      "median": 25
     },
     "latency": {
-      "min": 2329,
-      "max": 4964,
-      "median": 3948
+      "min": 1941,
+      "max": 6746,
+      "median": 3875
     },
     "e2eLatency": {
       "min": 10603.5,
-      "max": 21363.5,
-      "median": 16698.5
+      "max": 36496.5,
+      "median": 16901.75
     },
-    "uptime": 87.23136422109944,
+    "uptime": 92.7105673642911,
     "topProvider": {
-      "p50_throughput": 49,
-      "p50_latency": 2375,
-      "request_count": 575
+      "p50_throughput": 45.5,
+      "p50_latency": 1990.5,
+      "request_count": 4464
     }
   },
   "qwen/qwen3-max-thinking-20260123": {
     "throughput": {
       "min": 20,
       "max": 28,
-      "median": 24
+      "median": 25.5
     },
     "latency": {
       "min": 1310.5,
-      "max": 1846,
-      "median": 1538
+      "max": 1850,
+      "median": 1525
     },
     "e2eLatency": {
       "min": 5626,
-      "max": 13151.5,
-      "median": 7590
+      "max": 13339.5,
+      "median": 8486.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 22,
-      "p50_latency": 1803,
-      "request_count": 339
+      "p50_throughput": 27,
+      "p50_latency": 1255,
+      "request_count": 165
     }
   },
   "openrouter/aurora-alpha": {
     "throughput": {
-      "min": 40,
-      "max": 82,
-      "median": 73
+      "min": 39,
+      "max": 108,
+      "median": 73.5
     },
     "latency": {
       "min": 1057,
       "max": 1749,
-      "median": 1515
+      "median": 1487
     },
     "e2eLatency": {
       "min": 2352.5,
       "max": 4230.5,
-      "median": 3590
+      "median": 3610.25
     },
-    "uptime": 99.9977828564801,
+    "uptime": 99.93925743568592,
     "topProvider": {
-      "p50_throughput": 66,
-      "p50_latency": 1840,
-      "request_count": 6896
+      "p50_throughput": 90,
+      "p50_latency": 1167,
+      "request_count": 6981
     }
   },
   "anthropic/claude-4.6-opus-20260205": {
     "throughput": {
       "min": 35,
-      "max": 43,
-      "median": 39.5
+      "max": 42,
+      "median": 38.5
     },
     "latency": {
-      "min": 1437,
+      "min": 1407,
       "max": 2278,
-      "median": 2186.75
+      "median": 2099
     },
     "e2eLatency": {
-      "min": 6476.5,
+      "min": 7002,
       "max": 9909,
-      "median": 8283.75
+      "median": 8260.25
     },
-    "uptime": 99.99645991061745,
+    "uptime": 99.99733798011772,
     "topProvider": {
       "p50_throughput": 36,
-      "p50_latency": 1975,
-      "request_count": 8373
+      "p50_latency": 1965,
+      "request_count": 23348
     }
   },
   "qwen/qwen3-coder-next-2025-02-03": {
     "throughput": {
       "min": 26,
       "max": 73,
-      "median": 48
+      "median": 47
     },
     "latency": {
-      "min": 568.5,
-      "max": 1972.5,
-      "median": 1151.25
+      "min": 719,
+      "max": 1458.5,
+      "median": 1072
     },
     "e2eLatency": {
-      "min": 2322,
+      "min": 2205,
       "max": 7589,
-      "median": 4409.75
+      "median": 4045.5
     },
-    "uptime": 99.27787890065859,
+    "uptime": 99.81393955762951,
     "topProvider": {
-      "p50_throughput": 33,
-      "p50_latency": 1328,
-      "request_count": 1447
+      "p50_throughput": 30,
+      "p50_latency": 2380,
+      "request_count": 271
     }
   },
   "openrouter/free": {
@@ -159,238 +205,238 @@
   "stepfun/step-3.5-flash": {
     "throughput": {
       "min": 82,
-      "max": 169,
-      "median": 122
+      "max": 147,
+      "median": 115.5
     },
     "latency": {
       "min": 1123.5,
-      "max": 2325,
-      "median": 1602.5
+      "max": 2350,
+      "median": 1776
     },
     "e2eLatency": {
-      "min": 5808.5,
-      "max": 9853,
-      "median": 8505.25
+      "min": 6120,
+      "max": 10044,
+      "median": 9315.25
     },
-    "uptime": 100,
+    "uptime": 99.99970242877633,
     "topProvider": {
-      "p50_throughput": 128,
-      "p50_latency": 2286.5,
-      "request_count": 830
+      "p50_throughput": 165,
+      "p50_latency": 1050.5,
+      "request_count": 3890
     }
   },
   "arcee-ai/trinity-large-preview": {
     "throughput": {
       "min": 9,
       "max": 27,
-      "median": 19.5
+      "median": 19
     },
     "latency": {
-      "min": 533,
+      "min": 659,
       "max": 1251,
-      "median": 713.25
+      "median": 741
     },
     "e2eLatency": {
-      "min": 6332.5,
+      "min": 6163.5,
       "max": 19655.5,
       "median": 6897.75
     },
-    "uptime": 99.7048796815234,
+    "uptime": 99.40853982913812,
     "topProvider": null
   },
   "moonshotai/kimi-k2.5-0127": {
     "throughput": {
-      "min": 15,
-      "max": 75,
-      "median": 22
+      "min": 14,
+      "max": 67,
+      "median": 34
     },
     "latency": {
       "min": 682,
-      "max": 4194,
-      "median": 1990.5
+      "max": 3504,
+      "median": 1954.5
     },
     "e2eLatency": {
-      "min": 8250.5,
-      "max": 32042.5,
-      "median": 17098.25
+      "min": 2602,
+      "max": 25412,
+      "median": 16395.5
     },
-    "uptime": 97.61552163126574,
+    "uptime": 97.72173681921804,
     "topProvider": {
-      "p50_throughput": 21,
-      "p50_latency": 4033,
-      "request_count": 573
+      "p50_throughput": 19,
+      "p50_latency": 3137,
+      "request_count": 4459
     }
   },
   "upstage/solar-pro-3": {
     "throughput": {
-      "min": 79,
-      "max": 105,
-      "median": 89
+      "min": 80,
+      "max": 92,
+      "median": 86.5
     },
     "latency": {
       "min": 1507,
-      "max": 1626,
-      "median": 1553
+      "max": 1668,
+      "median": 1580.25
     },
     "e2eLatency": {
-      "min": 13508.5,
-      "max": 19003.5,
-      "median": 16747
+      "min": 14853,
+      "max": 19494,
+      "median": 17637.25
     },
-    "uptime": 99.90997523281372,
+    "uptime": 99.87527346047045,
     "topProvider": null
   },
   "minimax/minimax-m2-her-20260123": {
     "throughput": {
-      "min": 23,
-      "max": 40,
-      "median": 32
+      "min": 25,
+      "max": 38,
+      "median": 29.5
     },
     "latency": {
       "min": 720,
       "max": 1178,
-      "median": 1075.5
+      "median": 1130
     },
     "e2eLatency": {
       "min": 2188.5,
       "max": 3322,
-      "median": 3046.5
+      "median": 2950.5
     },
-    "uptime": 99.99462018506563,
+    "uptime": 99.99641345671041,
     "topProvider": {
-      "p50_throughput": 26,
-      "p50_latency": 1112.5,
-      "request_count": 278
+      "p50_throughput": 24,
+      "p50_latency": 1345,
+      "request_count": 165
     }
   },
   "writer/palmyra-x5-20250428": {
     "throughput": {
       "min": 52,
-      "max": 64,
-      "median": 58.5
+      "max": 62,
+      "median": 59
     },
     "latency": {
       "min": 548,
-      "max": 866,
-      "median": 642
+      "max": 767,
+      "median": 672.5
     },
     "e2eLatency": {
       "min": 2818,
-      "max": 5841,
+      "max": 4055.5,
       "median": 3255.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 52,
-      "p50_latency": 914.5,
-      "request_count": 52
+      "p50_throughput": 25,
+      "p50_latency": 522,
+      "request_count": 19
     }
   },
   "liquid/lfm-2.5-1.2b-thinking-20260120": {
     "throughput": {
-      "min": 324,
+      "min": 321,
       "max": 333,
-      "median": 327.5
+      "median": 326
     },
     "latency": {
-      "min": 341,
-      "max": 391,
-      "median": 352.25
+      "min": 343,
+      "max": 389,
+      "median": 363
     },
     "e2eLatency": {
       "min": 3209.5,
       "max": 3887.5,
       "median": 3463.5
     },
-    "uptime": 99.99752426223013,
+    "uptime": 99.99345996504873,
     "topProvider": null
   },
   "liquid/lfm-2.5-1.2b-instruct-20260120": {
     "throughput": {
       "min": 93,
-      "max": 134,
-      "median": 116
+      "max": 150,
+      "median": 120
     },
     "latency": {
       "min": 326,
       "max": 391,
-      "median": 377.5
+      "median": 371.5
     },
     "e2eLatency": {
       "min": 902,
-      "max": 1136,
-      "median": 1016
+      "max": 1162,
+      "median": 1030.5
     },
-    "uptime": 99.98126944062604,
+    "uptime": 99.98677954013503,
     "topProvider": null
   },
   "openai/gpt-audio": {
     "throughput": {
       "min": 20,
       "max": 82,
-      "median": 53.5
+      "median": 59.5
     },
     "latency": {
-      "min": 498.5,
+      "min": 600,
       "max": 925,
       "median": 789.25
     },
     "e2eLatency": {
-      "min": 1801,
-      "max": 4584.5,
+      "min": 1841,
+      "max": 4605,
       "median": 2546
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 117,
-      "p50_latency": 587,
-      "request_count": 3
+      "p50_throughput": 92,
+      "p50_latency": 409,
+      "request_count": 13
     }
   },
   "openai/gpt-audio-mini": {
     "throughput": {
       "min": 12,
       "max": 171,
-      "median": 90
+      "median": 71.5
     },
     "latency": {
       "min": 307,
       "max": 6367,
-      "median": 1155.75
+      "median": 1287.5
     },
     "e2eLatency": {
       "min": 1884,
       "max": 13369,
-      "median": 3445
+      "median": 4291.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 166.5,
-      "p50_latency": 260.5,
-      "request_count": 30
+      "p50_throughput": 95,
+      "p50_latency": 743.5,
+      "request_count": 16
     }
   },
   "z-ai/glm-4.7-flash-20260119": {
     "throughput": {
-      "min": 35,
-      "max": 66,
-      "median": 43.5
+      "min": 31,
+      "max": 47,
+      "median": 39.5
     },
     "latency": {
-      "min": 306,
-      "max": 2517.5,
-      "median": 801
+      "min": 570,
+      "max": 3936.5,
+      "median": 1708.25
     },
     "e2eLatency": {
-      "min": 6909,
+      "min": 6752.5,
       "max": 28058,
-      "median": 16135.25
+      "median": 18163.75
     },
-    "uptime": 90.84026777131749,
+    "uptime": 90.55028905794286,
     "topProvider": {
-      "p50_throughput": 44,
-      "p50_latency": 413,
-      "request_count": 2880
+      "p50_throughput": 38,
+      "p50_latency": 506,
+      "request_count": 2315
     }
   },
   "openai/gpt-5.2-codex-20260114": {
@@ -400,43 +446,43 @@
       "median": 42.5
     },
     "latency": {
-      "min": 1763,
-      "max": 4438,
-      "median": 2214.5
+      "min": 1719,
+      "max": 4702,
+      "median": 2286.25
     },
     "e2eLatency": {
-      "min": 4646,
-      "max": 12576.5,
-      "median": 6828
+      "min": 4768,
+      "max": 13175,
+      "median": 6940.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 41,
-      "p50_latency": 2015,
-      "request_count": 2473
+      "p50_throughput": 51,
+      "p50_latency": 1467.5,
+      "request_count": 11624
     }
   },
   "allenai/molmo-2-8b-20260109": {
     "throughput": {
-      "min": 10,
+      "min": 15,
       "max": 58,
       "median": 37.5
     },
     "latency": {
       "min": 500,
       "max": 1938,
-      "median": 875
+      "median": 988
     },
     "e2eLatency": {
       "min": 1986,
-      "max": 5921,
-      "median": 2610.25
+      "max": 5949,
+      "median": 2559.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 45,
-      "p50_latency": 1159,
-      "request_count": 159
+      "p50_throughput": 37,
+      "p50_latency": 1225,
+      "request_count": 163
     }
   },
   "allenai/olmo-3.1-32b-instruct-20251215": {
@@ -447,42 +493,42 @@
     },
     "latency": {
       "min": 165,
-      "max": 562,
-      "median": 221
+      "max": 287,
+      "median": 219
     },
     "e2eLatency": {
       "min": 627,
-      "max": 3726,
+      "max": 2960,
       "median": 2155.25
     },
-    "uptime": 99.99165345129789,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 45,
-      "p50_latency": 390,
-      "request_count": 87
+      "p50_throughput": 46,
+      "p50_latency": 134,
+      "request_count": 3325
     }
   },
   "bytedance-seed/seed-1.6-flash-20250625": {
     "throughput": {
       "min": 57,
       "max": 163,
-      "median": 98.5
+      "median": 64.5
     },
     "latency": {
-      "min": 315,
-      "max": 847,
-      "median": 614.5
+      "min": 332,
+      "max": 849,
+      "median": 743.5
     },
     "e2eLatency": {
       "min": 2094,
-      "max": 5943,
-      "median": 2625.75
+      "max": 5004.5,
+      "median": 2446.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 75,
-      "p50_latency": 603,
-      "request_count": 1283
+      "p50_throughput": 71,
+      "p50_latency": 682,
+      "request_count": 814
     }
   },
   "bytedance-seed/seed-1.6-20250625": {
@@ -492,181 +538,181 @@
       "median": 35
     },
     "latency": {
-      "min": 1080.5,
+      "min": 1106,
       "max": 3223.5,
-      "median": 1172.5
+      "median": 1182
     },
     "e2eLatency": {
-      "min": 10720,
+      "min": 10996.5,
       "max": 22324,
-      "median": 11275.5
+      "median": 11400
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 41,
-      "p50_latency": 1069,
-      "request_count": 222
+      "p50_throughput": 36,
+      "p50_latency": 1442,
+      "request_count": 23
     }
   },
   "minimax/minimax-m2.1": {
     "throughput": {
-      "min": 26,
-      "max": 76,
-      "median": 46
+      "min": 28,
+      "max": 92,
+      "median": 44
     },
     "latency": {
-      "min": 326.5,
-      "max": 3306,
-      "median": 1916.5
+      "min": 330,
+      "max": 2470,
+      "median": 1752.75
     },
     "e2eLatency": {
-      "min": 4526.5,
-      "max": 12279,
-      "median": 8683
+      "min": 6885.5,
+      "max": 16107,
+      "median": 10969.25
     },
-    "uptime": 99.64573138596397,
+    "uptime": 99.43802910858929,
     "topProvider": {
-      "p50_throughput": 53,
-      "p50_latency": 253,
-      "request_count": 2132
+      "p50_throughput": 24,
+      "p50_latency": 1372,
+      "request_count": 731
     }
   },
   "z-ai/glm-4.7-20251222": {
     "throughput": {
-      "min": 13,
+      "min": 18,
       "max": 68,
-      "median": 37.5
+      "median": 36.5
     },
     "latency": {
-      "min": 1173.5,
+      "min": 848.5,
       "max": 2966,
-      "median": 1984.5
+      "median": 1444.5
     },
     "e2eLatency": {
-      "min": 15477.5,
-      "max": 76590.5,
-      "median": 28001.5
+      "min": 8452.5,
+      "max": 42539.5,
+      "median": 20404.75
     },
-    "uptime": 98.58610300367475,
+    "uptime": 98.12192057384645,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 3752,
-      "request_count": 837
+      "p50_throughput": 25,
+      "p50_latency": 1887,
+      "request_count": 313
     }
   },
   "google/gemini-3-flash-preview-20251217": {
     "throughput": {
       "min": 47,
       "max": 78,
-      "median": 59.5
+      "median": 69.5
     },
     "latency": {
       "min": 1031,
       "max": 2064.5,
-      "median": 1571.5
+      "median": 1198.5
     },
     "e2eLatency": {
       "min": 3046,
       "max": 6033.5,
-      "median": 5032.25
+      "median": 4004
     },
-    "uptime": 99.4508130131477,
+    "uptime": 99.58325882375004,
     "topProvider": {
-      "p50_throughput": 76,
-      "p50_latency": 1272,
-      "request_count": 106482
+      "p50_throughput": 55,
+      "p50_latency": 1363,
+      "request_count": 133250
     }
   },
   "mistralai/mistral-small-creative-20251216": {
     "throughput": {
-      "min": 173,
-      "max": 189,
-      "median": 184.5
+      "min": 152,
+      "max": 187,
+      "median": 183.5
     },
     "latency": {
-      "min": 235,
+      "min": 229,
       "max": 264,
-      "median": 250.5
+      "median": 248.5
     },
     "e2eLatency": {
-      "min": 1533,
-      "max": 2151,
-      "median": 1912.25
+      "min": 1214.5,
+      "max": 2093,
+      "median": 1863.75
     },
-    "uptime": 99.99984076940224,
+    "uptime": 99.99962404476173,
     "topProvider": {
-      "p50_throughput": 167,
-      "p50_latency": 232,
-      "request_count": 5491
+      "p50_throughput": 178,
+      "p50_latency": 256,
+      "request_count": 4235
     }
   },
   "allenai/olmo-3.1-32b-think-20251215": {
     "throughput": {
-      "min": 96,
+      "min": 87,
       "max": 147,
-      "median": 118.75
+      "median": 124
     },
     "latency": {
-      "min": 337,
+      "min": 341,
       "max": 424,
-      "median": 366.5
+      "median": 374
     },
     "e2eLatency": {
-      "min": 7513.5,
-      "max": 41288,
+      "min": 7554.5,
+      "max": 81546,
       "median": 9434.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 68,
-      "p50_latency": 409,
-      "request_count": 245
+      "p50_throughput": 87,
+      "p50_latency": 491,
+      "request_count": 93
     }
   },
   "xiaomi/mimo-v2-flash-20251210": {
     "throughput": {
-      "min": 28,
+      "min": 26.5,
       "max": 97,
-      "median": 37
+      "median": 47
     },
     "latency": {
-      "min": 726.5,
+      "min": 798,
       "max": 1382,
-      "median": 937
+      "median": 879
     },
     "e2eLatency": {
-      "min": 2769,
-      "max": 7464.5,
-      "median": 4743.5
+      "min": 2839,
+      "max": 8425,
+      "median": 5982
     },
-    "uptime": 99.89269919073918,
+    "uptime": 99.38290511102632,
     "topProvider": {
-      "p50_throughput": 33,
-      "p50_latency": 779,
-      "request_count": 1114
+      "p50_throughput": 42,
+      "p50_latency": 888,
+      "request_count": 601
     }
   },
   "nvidia/nemotron-3-nano-30b-a3b": {
     "throughput": {
-      "min": 145,
+      "min": 68,
       "max": 370,
-      "median": 172
+      "median": 167
     },
     "latency": {
-      "min": 263,
-      "max": 748,
-      "median": 363
+      "min": 264,
+      "max": 782,
+      "median": 578.25
     },
     "e2eLatency": {
-      "min": 2241,
-      "max": 7629.5,
-      "median": 4299.75
+      "min": 1801,
+      "max": 9095,
+      "median": 3224.75
     },
-    "uptime": 99.99097856591463,
+    "uptime": 99.99240387428323,
     "topProvider": {
-      "p50_throughput": 163,
-      "p50_latency": 281,
-      "request_count": 1101
+      "p50_throughput": 115,
+      "p50_latency": 223.5,
+      "request_count": 250
     }
   },
   "openai/gpt-5.2-chat-20251211": {
@@ -676,66 +722,66 @@
       "median": 43
     },
     "latency": {
-      "min": 1222,
+      "min": 1122,
       "max": 3463.5,
-      "median": 2138.25
+      "median": 2126
     },
     "e2eLatency": {
-      "min": 6215.5,
+      "min": 6230.5,
       "max": 10156,
-      "median": 7784.25
+      "median": 7711.75
     },
-    "uptime": 100,
+    "uptime": 99.99452354874042,
     "topProvider": {
-      "p50_throughput": 54,
-      "p50_latency": 918,
-      "request_count": 1975
+      "p50_throughput": 55,
+      "p50_latency": 976.5,
+      "request_count": 1950
     }
   },
   "openai/gpt-5.2-pro-20251211": {
     "throughput": {
-      "min": 11,
+      "min": 9,
       "max": 18,
       "median": 16
     },
     "latency": {
-      "min": 29912,
+      "min": 22721.5,
       "max": 51899.5,
       "median": 43236
     },
     "e2eLatency": {
-      "min": 61051,
+      "min": 46526,
       "max": 106315,
       "median": 88473.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 9,
-      "p50_latency": 18096,
-      "request_count": 241
+      "p50_throughput": 14,
+      "p50_latency": 57546,
+      "request_count": 170
     }
   },
   "openai/gpt-5.2-20251211": {
     "throughput": {
       "min": 23,
-      "max": 48,
-      "median": 42.5
+      "max": 47,
+      "median": 40
     },
     "latency": {
       "min": 2088,
       "max": 6663.5,
-      "median": 3079.75
+      "median": 3743.75
     },
     "e2eLatency": {
       "min": 6329,
       "max": 18269.5,
-      "median": 8723.75
+      "median": 10522.25
     },
-    "uptime": 99.993750005699,
+    "uptime": 99.99444722083403,
     "topProvider": {
-      "p50_throughput": 47,
-      "p50_latency": 2538.5,
-      "request_count": 18031
+      "p50_throughput": 45,
+      "p50_latency": 2958.5,
+      "request_count": 20671
     }
   },
   "mistralai/devstral-2512": {
@@ -745,66 +791,66 @@
       "median": 41
     },
     "latency": {
-      "min": 497,
-      "max": 969,
-      "median": 601.25
+      "min": 499,
+      "max": 975,
+      "median": 650.25
     },
     "e2eLatency": {
       "min": 1496,
       "max": 4821,
-      "median": 3045.75
+      "median": 3064.25
     },
-    "uptime": 94.71823659139861,
+    "uptime": 45.556656164024915,
     "topProvider": {
-      "p50_throughput": 50,
-      "p50_latency": 1263,
-      "request_count": 15
+      "p50_throughput": null,
+      "p50_latency": null,
+      "request_count": null
     }
   },
   "relace/relace-search-20251208": {
     "throughput": {
       "min": 37.5,
-      "max": 92,
-      "median": 50
+      "max": 112,
+      "median": 54
     },
     "latency": {
-      "min": 708,
+      "min": 658,
       "max": 1206.5,
-      "median": 902.5
+      "median": 797.75
     },
     "e2eLatency": {
       "min": 1844,
       "max": 3291.5,
-      "median": 2673.75
+      "median": 2682.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 6,
-      "p50_latency": 1521,
-      "request_count": 1
+      "p50_throughput": null,
+      "p50_latency": null,
+      "request_count": null
     }
   },
   "z-ai/glm-4.6-20251208": {
     "throughput": {
       "min": 15,
-      "max": 99.5,
-      "median": 67
+      "max": 82,
+      "median": 22
     },
     "latency": {
-      "min": 811,
-      "max": 5007.5,
-      "median": 1647.5
+      "min": 2104,
+      "max": 7015.5,
+      "median": 3833.5
     },
     "e2eLatency": {
-      "min": 7007,
+      "min": 6382.5,
       "max": 49683,
-      "median": 13570.75
+      "median": 20354.5
     },
-    "uptime": 98.40421974681689,
+    "uptime": 89.32606165066339,
     "topProvider": {
-      "p50_throughput": 35,
-      "p50_latency": 2795,
-      "request_count": 23
+      "p50_throughput": 45,
+      "p50_latency": 3730,
+      "request_count": 17
     }
   },
   "nex-agi/deepseek-v3.1-nex-n1": {
@@ -816,41 +862,41 @@
     "latency": {
       "min": 1976,
       "max": 7558.5,
-      "median": 2373
+      "median": 2284.75
     },
     "e2eLatency": {
       "min": 14276.5,
       "max": 33986,
-      "median": 20883
+      "median": 19449.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 26,
-      "p50_latency": 1916,
-      "request_count": 689
+      "p50_throughput": 27,
+      "p50_latency": 1428,
+      "request_count": 726
     }
   },
   "essentialai/rnj-1-instruct": {
     "throughput": {
-      "min": 65,
-      "max": 119,
-      "median": 114
+      "min": 107,
+      "max": 120,
+      "median": 119
     },
     "latency": {
-      "min": 174,
-      "max": 329,
-      "median": 325.5
+      "min": 202,
+      "max": 334,
+      "median": 327
     },
     "e2eLatency": {
-      "min": 560,
-      "max": 4637,
-      "median": 3407
+      "min": 2472,
+      "max": 8497,
+      "median": 4520.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 80,
-      "p50_latency": 314,
-      "request_count": 2
+      "p50_throughput": 122,
+      "p50_latency": 280,
+      "request_count": 445
     }
   },
   "openrouter/bodybuilder": {
@@ -875,105 +921,105 @@
   "openai/gpt-5.1-codex-max-20251204": {
     "throughput": {
       "min": 25,
-      "max": 62,
-      "median": 51.5
+      "max": 77,
+      "median": 56.5
     },
     "latency": {
-      "min": 2468.5,
+      "min": 2293,
       "max": 5247,
       "median": 3380.5
     },
     "e2eLatency": {
-      "min": 6228.5,
+      "min": 5621,
       "max": 13929,
       "median": 8903
     },
-    "uptime": 99.95929995929997,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 155,
-      "p50_latency": 3601,
-      "request_count": 26
+      "p50_throughput": 60,
+      "p50_latency": 2543,
+      "request_count": 31
     }
   },
   "amazon/nova-2-lite-v1": {
     "throughput": {
-      "min": 64,
+      "min": 59,
       "max": 122,
-      "median": 85
+      "median": 78
     },
     "latency": {
-      "min": 743,
+      "min": 597,
       "max": 2834,
       "median": 931.5
     },
     "e2eLatency": {
-      "min": 2431,
-      "max": 7325.5,
+      "min": 1493,
+      "max": 7318,
       "median": 3313
     },
-    "uptime": 100,
+    "uptime": 99.98525291254977,
     "topProvider": {
-      "p50_throughput": 98,
-      "p50_latency": 712,
-      "request_count": 61
+      "p50_throughput": 30,
+      "p50_latency": 480,
+      "request_count": 41
     }
   },
   "mistralai/ministral-14b-2512": {
     "throughput": {
       "min": 10,
-      "max": 94,
-      "median": 30
+      "max": 54,
+      "median": 19.5
     },
     "latency": {
       "min": 115,
-      "max": 308,
-      "median": 229.5
+      "max": 251,
+      "median": 189
     },
     "e2eLatency": {
       "min": 241,
-      "max": 1740.5,
-      "median": 628
+      "max": 1328.5,
+      "median": 551.75
     },
-    "uptime": 99.78594847024202,
+    "uptime": 99.59136571045845,
     "topProvider": {
-      "p50_throughput": 114,
-      "p50_latency": 303,
-      "request_count": 589
+      "p50_throughput": 32,
+      "p50_latency": 208,
+      "request_count": 2961
     }
   },
   "mistralai/ministral-8b-2512": {
     "throughput": {
       "min": 46,
       "max": 148,
-      "median": 118.5
+      "median": 117.5
     },
     "latency": {
-      "min": 224,
-      "max": 474,
+      "min": 207,
+      "max": 457,
       "median": 249
     },
     "e2eLatency": {
-      "min": 1055.5,
-      "max": 2989.5,
-      "median": 1647.5
+      "min": 682,
+      "max": 3120.5,
+      "median": 1550.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 101,
-      "p50_latency": 316,
-      "request_count": 746
+      "p50_throughput": 114,
+      "p50_latency": 272,
+      "request_count": 3849
     }
   },
   "mistralai/ministral-3b-2512": {
     "throughput": {
       "min": 65,
       "max": 171,
-      "median": 114
+      "median": 80
     },
     "latency": {
-      "min": 179,
-      "max": 228,
-      "median": 215.5
+      "min": 194,
+      "max": 231,
+      "median": 224.5
     },
     "e2eLatency": {
       "min": 615,
@@ -982,101 +1028,101 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 108,
-      "p50_latency": 230,
-      "request_count": 2499
+      "p50_throughput": 89,
+      "p50_latency": 222,
+      "request_count": 2696
     }
   },
   "mistralai/mistral-large-2512": {
     "throughput": {
-      "min": 29,
-      "max": 43,
-      "median": 34
+      "min": 28,
+      "max": 39,
+      "median": 33
     },
     "latency": {
       "min": 441,
-      "max": 631.5,
-      "median": 479.5
+      "max": 514,
+      "median": 475
     },
     "e2eLatency": {
-      "min": 1992,
-      "max": 3897,
-      "median": 2390.75
+      "min": 1925.5,
+      "max": 3235.5,
+      "median": 2273.75
     },
-    "uptime": 99.99823598428164,
+    "uptime": 99.99755315099776,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 477,
-      "request_count": 3935
+      "p50_throughput": 39,
+      "p50_latency": 637,
+      "request_count": 2788
     }
   },
   "arcee-ai/trinity-mini-20251201": {
     "throughput": {
       "min": 155,
-      "max": 189,
-      "median": 165.5
+      "max": 200,
+      "median": 169.25
     },
     "latency": {
-      "min": 192.5,
+      "min": 169,
       "max": 523,
-      "median": 394.5
+      "median": 281.5
     },
     "e2eLatency": {
       "min": 2911.5,
       "max": 4366,
-      "median": 3587
+      "median": 3323.25
     },
-    "uptime": 97.36221390788158,
+    "uptime": 97.87599826196684,
     "topProvider": {
-      "p50_throughput": 178.5,
-      "p50_latency": 206.5,
-      "request_count": 198
+      "p50_throughput": 163.5,
+      "p50_latency": 168,
+      "request_count": 664
     }
   },
   "deepseek/deepseek-v3.2-speciale-20251201": {
     "throughput": {
-      "min": 12,
-      "max": 29,
-      "median": 20
+      "min": 14,
+      "max": 23,
+      "median": 18
     },
     "latency": {
-      "min": 887,
-      "max": 3014,
-      "median": 1742.5
+      "min": 1566,
+      "max": 3053,
+      "median": 2387.5
     },
     "e2eLatency": {
       "min": 19239,
       "max": 238802.5,
-      "median": 51879.75
+      "median": 140068.75
     },
-    "uptime": 88.9593819876482,
+    "uptime": 73.8821551936837,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 1463,
-      "request_count": 5
+      "p50_throughput": 51,
+      "p50_latency": 1987,
+      "request_count": 3
     }
   },
   "deepseek/deepseek-v3.2-20251201": {
     "throughput": {
       "min": 4,
-      "max": 27,
-      "median": 19.5
+      "max": 39,
+      "median": 12
     },
     "latency": {
       "min": 848,
-      "max": 7975,
-      "median": 2094.75
+      "max": 4283,
+      "median": 1396.75
     },
     "e2eLatency": {
-      "min": 5875,
-      "max": 46489,
-      "median": 10945.25
+      "min": 6277,
+      "max": 28519,
+      "median": 8868.75
     },
-    "uptime": 99.94670720369201,
+    "uptime": 99.97196872497011,
     "topProvider": {
-      "p50_throughput": 3,
-      "p50_latency": 4939,
-      "request_count": 2231
+      "p50_throughput": 13,
+      "p50_latency": 1313,
+      "request_count": 622
     }
   },
   "prime-intellect/intellect-3-20251126": {
@@ -1088,17 +1134,17 @@
     "latency": {
       "min": 212,
       "max": 379,
-      "median": 271.25
+      "median": 263.75
     },
     "e2eLatency": {
       "min": 5520.5,
-      "max": 15797,
-      "median": 10326
+      "max": 13232.5,
+      "median": 9620
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 82,
-      "p50_latency": 570,
+      "p50_throughput": 79,
+      "p50_latency": 252,
       "request_count": 9
     }
   },
@@ -1106,46 +1152,46 @@
     "throughput": {
       "min": 20,
       "max": 75,
-      "median": 47.5
+      "median": 71
     },
     "latency": {
       "min": 856.5,
-      "max": 1717,
-      "median": 1187
+      "max": 1410,
+      "median": 1072.5
     },
     "e2eLatency": {
       "min": 11088,
       "max": 41609,
-      "median": 20593.25
+      "median": 13017
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 72,
-      "p50_latency": 859,
-      "request_count": 118
+      "p50_throughput": null,
+      "p50_latency": null,
+      "request_count": null
     }
   },
   "anthropic/claude-4.5-opus-20251124": {
     "throughput": {
       "min": 37,
       "max": 67,
-      "median": 40
+      "median": 41.5
     },
     "latency": {
       "min": 1175.5,
       "max": 2359,
-      "median": 1906.5
+      "median": 1641.5
     },
     "e2eLatency": {
-      "min": 6090.5,
-      "max": 12923.5,
-      "median": 7691
+      "min": 5704.5,
+      "max": 8539,
+      "median": 7140.25
     },
-    "uptime": 99.93810523277838,
+    "uptime": 99.91995529960296,
     "topProvider": {
-      "p50_throughput": 40,
-      "p50_latency": 1723,
-      "request_count": 2635
+      "p50_throughput": 38,
+      "p50_latency": 1859,
+      "request_count": 2944
     }
   },
   "allenai/olmo-3-32b-think-20251121": {
@@ -1173,147 +1219,147 @@
   },
   "allenai/olmo-3-7b-instruct-20251121": {
     "throughput": {
-      "min": 13,
+      "min": 11,
       "max": 45,
-      "median": 35
+      "median": 30.5
     },
     "latency": {
       "min": 201,
       "max": 355,
-      "median": 283
+      "median": 289.5
     },
     "e2eLatency": {
-      "min": 575,
+      "min": 643,
       "max": 18459.5,
-      "median": 4476.5
+      "median": 4023
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 25,
-      "p50_latency": 284,
-      "request_count": 1
+      "p50_throughput": 36,
+      "p50_latency": 292,
+      "request_count": 5
     }
   },
   "allenai/olmo-3-7b-think-20251121": {
     "throughput": {
       "min": 152,
-      "max": 190.5,
-      "median": 177
+      "max": 189,
+      "median": 183.5
     },
     "latency": {
-      "min": 206,
+      "min": 193,
       "max": 299,
-      "median": 276.5
+      "median": 283
     },
     "e2eLatency": {
       "min": 3588,
       "max": 18948,
-      "median": 11419
+      "median": 10671
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 170.5,
-      "p50_latency": 348,
-      "request_count": 4
+      "p50_throughput": 192.5,
+      "p50_latency": 293,
+      "request_count": 6
     }
   },
   "google/gemini-3-pro-image-preview-20251120": {
     "throughput": {
       "min": 42,
-      "max": 97,
-      "median": 66
+      "max": 96,
+      "median": 58.5
     },
     "latency": {
-      "min": 3255.5,
+      "min": 3213,
       "max": 26855,
-      "median": 11492.5
+      "median": 12339.25
     },
     "e2eLatency": {
       "min": 19865,
-      "max": 61744,
-      "median": 35481
+      "max": 61731,
+      "median": 35645.75
     },
-    "uptime": 98.74527391578103,
+    "uptime": 99.9680391784914,
     "topProvider": {
-      "p50_throughput": 104,
-      "p50_latency": 2920.5,
-      "request_count": 1144
+      "p50_throughput": 97,
+      "p50_latency": 3117,
+      "request_count": 973
     }
   },
   "x-ai/grok-4.1-fast": {
     "throughput": {
       "min": 94,
       "max": 129,
-      "median": 105.5
+      "median": 116
     },
     "latency": {
       "min": 3479.5,
       "max": 5987.5,
-      "median": 4295.25
+      "median": 4607.75
     },
     "e2eLatency": {
       "min": 8096.5,
       "max": 13779,
-      "median": 10064.5
+      "median": 10804.25
     },
-    "uptime": 99.9863031331759,
+    "uptime": 99.98734117980091,
     "topProvider": {
-      "p50_throughput": 132,
-      "p50_latency": 4982.5,
-      "request_count": 218301
+      "p50_throughput": 138,
+      "p50_latency": 4462.5,
+      "request_count": 299442
     }
   },
   "google/gemini-3-pro-preview-20251117": {
     "throughput": {
       "min": 35.5,
       "max": 83,
-      "median": 71.5
+      "median": 71
     },
     "latency": {
       "min": 3035,
-      "max": 5581,
-      "median": 3887
+      "max": 5592.5,
+      "median": 3512.75
     },
     "e2eLatency": {
-      "min": 9696.5,
-      "max": 27335.5,
-      "median": 15606.75
+      "min": 9694.5,
+      "max": 26818,
+      "median": 14037
     },
-    "uptime": 97.29647955928634,
+    "uptime": 97.77907821960348,
     "topProvider": {
-      "p50_throughput": 60,
-      "p50_latency": 3441,
-      "request_count": 13001
+      "p50_throughput": 75,
+      "p50_latency": 3415,
+      "request_count": 10342
     }
   },
   "deepcogito/cogito-v2.1-671b-20251118": {
     "throughput": {
-      "min": 22,
+      "min": 27,
       "max": 56,
-      "median": 37
+      "median": 39.5
     },
     "latency": {
       "min": 613,
       "max": 777,
-      "median": 726.5
+      "median": 709
     },
     "e2eLatency": {
-      "min": 1908,
-      "max": 2502,
-      "median": 2201.5
+      "min": 1985,
+      "max": 2752,
+      "median": 2300
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 69,
-      "p50_latency": 734,
-      "request_count": 11
+      "p50_throughput": 66.5,
+      "p50_latency": 436,
+      "request_count": 20
     }
   },
   "openai/gpt-5.1-20251113": {
     "throughput": {
-      "min": 44,
+      "min": 42,
       "max": 109,
-      "median": 55
+      "median": 51
     },
     "latency": {
       "min": 3255.5,
@@ -1325,80 +1371,80 @@
       "max": 18876.5,
       "median": 11600.25
     },
-    "uptime": 99.98897616911479,
+    "uptime": 99.98296879506317,
     "topProvider": {
-      "p50_throughput": 51,
-      "p50_latency": 6478,
-      "request_count": 2437
+      "p50_throughput": 58,
+      "p50_latency": 3575,
+      "request_count": 4225
     }
   },
   "openai/gpt-5.1-chat-20251113": {
     "throughput": {
       "min": 29,
-      "max": 60,
-      "median": 45.5
+      "max": 52,
+      "median": 43.5
     },
     "latency": {
-      "min": 840,
+      "min": 777,
       "max": 2086,
       "median": 1230
     },
     "e2eLatency": {
-      "min": 2474,
-      "max": 7419,
+      "min": 2285,
+      "max": 6649.5,
       "median": 3572.25
     },
-    "uptime": 99.9147485080989,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 60,
-      "p50_latency": 689,
-      "request_count": 767
+      "p50_throughput": 51,
+      "p50_latency": 591,
+      "request_count": 3684
     }
   },
   "openai/gpt-5.1-codex-20251113": {
     "throughput": {
       "min": 23,
-      "max": 44,
+      "max": 37,
       "median": 34
     },
     "latency": {
       "min": 1337,
       "max": 1964,
-      "median": 1818.5
+      "median": 1853.75
     },
     "e2eLatency": {
       "min": 3331,
       "max": 4836,
-      "median": 4142
+      "median": 4402.5
     },
-    "uptime": 99.98058445193324,
+    "uptime": 99.97751305930059,
     "topProvider": {
-      "p50_throughput": 38,
-      "p50_latency": 1557,
-      "request_count": 129
+      "p50_throughput": 46,
+      "p50_latency": 2275,
+      "request_count": 210
     }
   },
   "openai/gpt-5.1-codex-mini-20251113": {
     "throughput": {
       "min": 15,
-      "max": 79,
+      "max": 71,
       "median": 54.5
     },
     "latency": {
-      "min": 1834.5,
+      "min": 1873,
       "max": 4224,
-      "median": 2724.75
+      "median": 2724.5
     },
     "e2eLatency": {
-      "min": 4297.5,
-      "max": 10395,
-      "median": 7118
+      "min": 4532,
+      "max": 15808,
+      "median": 10127.5
     },
-    "uptime": 99.97785287150025,
+    "uptime": 99.98451222597919,
     "topProvider": {
-      "p50_throughput": 71,
-      "p50_latency": 1470,
-      "request_count": 977
+      "p50_throughput": 69,
+      "p50_latency": 1877,
+      "request_count": 1641
     }
   },
   "kwaipilot/kat-coder-pro-v1": {
@@ -1408,7 +1454,7 @@
       "median": 40.5
     },
     "latency": {
-      "min": 1204,
+      "min": 1189,
       "max": 2063,
       "median": 1868
     },
@@ -1417,11 +1463,11 @@
       "max": 9386.5,
       "median": 8824.75
     },
-    "uptime": 99.76219344247163,
+    "uptime": 99.70519854045932,
     "topProvider": {
-      "p50_throughput": 32.5,
-      "p50_latency": 828.5,
-      "request_count": 2
+      "p50_throughput": 27.5,
+      "p50_latency": 722.5,
+      "request_count": 8
     }
   },
   "moonshotai/kimi-k2-thinking-20251106": {
@@ -1431,43 +1477,43 @@
       "median": 54.5
     },
     "latency": {
-      "min": 389,
-      "max": 3677,
-      "median": 885.25
+      "min": 417,
+      "max": 1824,
+      "median": 1034.5
     },
     "e2eLatency": {
-      "min": 3669.5,
-      "max": 46807,
-      "median": 7413
+      "min": 3363.5,
+      "max": 128505.5,
+      "median": 11023.5
     },
-    "uptime": 97.3555915554833,
+    "uptime": 99.01664063655191,
     "topProvider": {
-      "p50_throughput": 16,
-      "p50_latency": 3458,
-      "request_count": 63
+      "p50_throughput": 19,
+      "p50_latency": 1251,
+      "request_count": 1057
     }
   },
   "amazon/nova-premier-v1": {
     "throughput": {
       "min": 15,
-      "max": 24,
+      "max": 26,
       "median": 20
     },
     "latency": {
-      "min": 433,
+      "min": 427,
       "max": 649,
-      "median": 449
+      "median": 441.5
     },
     "e2eLatency": {
       "min": 1136,
       "max": 3175,
-      "median": 1296.75
+      "median": 1251
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 19.5,
-      "p50_latency": 523,
-      "request_count": 4
+      "p50_throughput": 27,
+      "p50_latency": 400,
+      "request_count": 7
     }
   },
   "perplexity/sonar-pro-search": {
@@ -1477,50 +1523,50 @@
       "median": 43.5
     },
     "latency": {
-      "min": 3855.5,
+      "min": 3147.5,
       "max": 5901,
-      "median": 5136
+      "median": 4454.5
     },
     "e2eLatency": {
-      "min": 12026,
-      "max": 15993.5,
-      "median": 13581
+      "min": 10974.5,
+      "max": 15966,
+      "median": 12831.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 52,
-      "p50_latency": 4024,
-      "request_count": 192
+      "p50_throughput": 50,
+      "p50_latency": 2302,
+      "request_count": 371
     }
   },
   "mistralai/voxtral-small-24b-2507": {
     "throughput": {
-      "min": 34,
-      "max": 80,
+      "min": 47,
+      "max": 82,
       "median": 70
     },
     "latency": {
-      "min": 141,
-      "max": 496,
-      "median": 227
+      "min": 133,
+      "max": 493.5,
+      "median": 222
     },
     "e2eLatency": {
-      "min": 360,
-      "max": 1394,
-      "median": 633.25
+      "min": 334,
+      "max": 1427,
+      "median": 622.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 80,
-      "p50_latency": 448,
-      "request_count": 58
+      "p50_throughput": 73,
+      "p50_latency": 258,
+      "request_count": 28
     }
   },
   "openai/gpt-oss-safeguard-20b": {
     "throughput": {
       "min": 813,
-      "max": 891.5,
-      "median": 859.5
+      "max": 892,
+      "median": 858.5
     },
     "latency": {
       "min": 170,
@@ -1528,153 +1574,153 @@
       "median": 176
     },
     "e2eLatency": {
-      "min": 525,
-      "max": 569,
-      "median": 556.5
+      "min": 527,
+      "max": 567,
+      "median": 552.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 943,
-      "p50_latency": 182,
-      "request_count": 12969
+      "p50_throughput": 932,
+      "p50_latency": 127,
+      "request_count": 5679
     }
   },
   "nvidia/nemotron-nano-12b-v2-vl": {
     "throughput": {
-      "min": 69,
-      "max": 130,
-      "median": 89.5
+      "min": 70,
+      "max": 124,
+      "median": 74.5
     },
     "latency": {
-      "min": 405,
-      "max": 1199,
-      "median": 808.25
+      "min": 455,
+      "max": 1317,
+      "median": 1116.5
     },
     "e2eLatency": {
       "min": 4523,
-      "max": 14168,
-      "median": 10584.25
+      "max": 13223,
+      "median": 10660.5
     },
-    "uptime": 90.4822506729309,
+    "uptime": 98.48760372787173,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 128,
+      "p50_latency": 368,
+      "request_count": 7
     }
   },
   "minimax/minimax-m2": {
     "throughput": {
-      "min": 56,
-      "max": 121,
+      "min": 26.5,
+      "max": 101,
       "median": 72
     },
     "latency": {
-      "min": 446,
-      "max": 1258,
-      "median": 1101.5
+      "min": 451,
+      "max": 1274,
+      "median": 1090
     },
     "e2eLatency": {
-      "min": 3918,
-      "max": 13599.5,
+      "min": 3482.5,
+      "max": 7961,
       "median": 6413
     },
-    "uptime": 99.23112123633395,
+    "uptime": 97.67449191115595,
     "topProvider": {
-      "p50_throughput": 85,
-      "p50_latency": 1165,
-      "request_count": 63
+      "p50_throughput": 77.5,
+      "p50_latency": 1071.5,
+      "request_count": 186
     }
   },
   "qwen/qwen3-vl-32b-instruct": {
     "throughput": {
-      "min": 15,
-      "max": 84,
-      "median": 50.5
+      "min": 16,
+      "max": 56,
+      "median": 40
     },
     "latency": {
-      "min": 326,
-      "max": 1281,
-      "median": 587.25
+      "min": 459,
+      "max": 1323,
+      "median": 785
     },
     "e2eLatency": {
-      "min": 1183,
+      "min": 1591,
       "max": 5527.5,
-      "median": 2595.5
+      "median": 2715.5
     },
-    "uptime": 99.74848181648012,
+    "uptime": 99.9571461876289,
     "topProvider": {
-      "p50_throughput": 29.5,
-      "p50_latency": 1185,
-      "request_count": 258
+      "p50_throughput": 49,
+      "p50_latency": 692.5,
+      "request_count": 860
     }
   },
   "liquid/lfm2-8b-a1b": {
     "throughput": {
-      "min": 27,
+      "min": 35,
       "max": 50,
       "median": 44
     },
     "latency": {
       "min": 184,
-      "max": 6236,
+      "max": 453,
       "median": 203.5
     },
     "e2eLatency": {
       "min": 14381.5,
-      "max": 34179.5,
-      "median": 19276.75
+      "max": 26914.5,
+      "median": 19130.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 49,
-      "p50_latency": 174,
-      "request_count": 9105
+      "p50_throughput": 48,
+      "p50_latency": 196,
+      "request_count": 8804
     }
   },
   "liquid/lfm-2.2-6b": {
     "throughput": {
-      "min": 63,
+      "min": 89,
       "max": 151,
-      "median": 103.75
+      "median": 105
     },
     "latency": {
       "min": 159,
-      "max": 397,
+      "max": 377,
       "median": 267.5
     },
     "e2eLatency": {
       "min": 636,
-      "max": 1248,
-      "median": 965.75
+      "max": 1581.5,
+      "median": 964.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 50,
+      "p50_latency": 246,
+      "request_count": 5
     }
   },
   "ibm-granite/granite-4.0-h-micro": {
     "throughput": {
       "min": 23,
-      "max": 26,
+      "max": 27,
       "median": 25
     },
     "latency": {
       "min": 483,
-      "max": 1045,
-      "median": 590.5
+      "max": 1050,
+      "median": 580.5
     },
     "e2eLatency": {
       "min": 1906,
-      "max": 5142,
-      "median": 4085.5
+      "max": 5145,
+      "median": 4056.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 502.5,
-      "request_count": 800
+      "p50_throughput": 18,
+      "p50_latency": 590,
+      "request_count": 440
     }
   },
   "openai/gpt-5-image-mini": {
@@ -1691,841 +1737,841 @@
     "e2eLatency": {
       "min": 50635.5,
       "max": 60824.5,
-      "median": 54315.5
+      "median": 54310.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 120,
-      "p50_latency": 3074,
-      "request_count": 429
+      "p50_throughput": 117,
+      "p50_latency": 3449,
+      "request_count": 357
     }
   },
   "anthropic/claude-4.5-haiku-20251001": {
     "throughput": {
-      "min": 62,
-      "max": 89,
+      "min": 48,
+      "max": 69,
       "median": 68
     },
     "latency": {
-      "min": 595,
-      "max": 1023,
-      "median": 687
+      "min": 632,
+      "max": 1245,
+      "median": 699.5
     },
     "e2eLatency": {
-      "min": 2523,
-      "max": 3750.5,
+      "min": 2439.5,
+      "max": 3298,
       "median": 2814.75
     },
-    "uptime": 99.63712129093174,
+    "uptime": 99.91850179024424,
     "topProvider": {
-      "p50_throughput": 75,
-      "p50_latency": 715,
-      "request_count": 6231
+      "p50_throughput": 59,
+      "p50_latency": 536.5,
+      "request_count": 8586
     }
   },
   "qwen/qwen3-vl-8b-thinking": {
     "throughput": {
       "min": 122,
       "max": 144,
-      "median": 125
+      "median": 130
     },
     "latency": {
       "min": 435,
-      "max": 804,
-      "median": 657.5
+      "max": 744,
+      "median": 600.5
     },
     "e2eLatency": {
       "min": 7790,
       "max": 41653,
-      "median": 18204.5
+      "median": 13530.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 129,
-      "p50_latency": 552.5,
-      "request_count": 8
+      "p50_throughput": 143,
+      "p50_latency": 444.5,
+      "request_count": 88
     }
   },
   "qwen/qwen3-vl-8b-instruct": {
     "throughput": {
       "min": 34,
-      "max": 91,
-      "median": 37
+      "max": 94,
+      "median": 47
     },
     "latency": {
-      "min": 289,
-      "max": 688,
-      "median": 484
+      "min": 190,
+      "max": 667,
+      "median": 293.5
     },
     "e2eLatency": {
-      "min": 1118,
-      "max": 2347,
-      "median": 1845.75
+      "min": 1091,
+      "max": 2322,
+      "median": 1853.5
     },
-    "uptime": 99.80335671089655,
+    "uptime": 99.57241216753346,
     "topProvider": {
-      "p50_throughput": 34,
-      "p50_latency": 715,
-      "request_count": 5810
+      "p50_throughput": 37,
+      "p50_latency": 757,
+      "request_count": 5565
     }
   },
   "openai/gpt-5-image": {
     "throughput": {
       "min": 64,
-      "max": 74,
-      "median": 72
+      "max": 73,
+      "median": 71
     },
     "latency": {
       "min": 7916,
-      "max": 11152.5,
-      "median": 10011.75
+      "max": 10452,
+      "median": 9954.25
     },
     "e2eLatency": {
       "min": 76952,
       "max": 96017,
-      "median": 88555.5
+      "median": 86589
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 80.5,
-      "p50_latency": 10172.5,
-      "request_count": 18
+      "p50_throughput": 69,
+      "p50_latency": 9513,
+      "request_count": 29
     }
   },
   "openai/o3-deep-research-2025-06-26": {
     "throughput": {
       "min": 29.5,
-      "max": 74,
-      "median": 68
+      "max": 99,
+      "median": 69
     },
     "latency": {
       "min": 4999,
       "max": 10517,
-      "median": 8847.25
+      "median": 8697
     },
     "e2eLatency": {
-      "min": 97372.5,
+      "min": 38136,
       "max": 319629.5,
-      "median": 265430
+      "median": 173692
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 63.5,
+      "p50_latency": 6476.5,
+      "request_count": 6
     }
   },
   "openai/o4-mini-deep-research-2025-06-26": {
     "throughput": {
       "min": 37,
-      "max": 50.5,
-      "median": 40.5
+      "max": 51,
+      "median": 39.5
     },
     "latency": {
       "min": 7779,
       "max": 28517,
-      "median": 16362.5
+      "median": 16870
     },
     "e2eLatency": {
-      "min": 86495,
+      "min": 101453.5,
       "max": 449177,
       "median": 273902
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 43.5,
-      "p50_latency": 20019,
-      "request_count": 2
+      "p50_throughput": 34,
+      "p50_latency": 1966,
+      "request_count": 1
     }
   },
   "nvidia/llama-3.3-nemotron-super-49b-v1.5": {
     "throughput": {
-      "min": 65,
+      "min": 77,
       "max": 81,
-      "median": 80
+      "median": 79.5
     },
     "latency": {
       "min": 255,
-      "max": 313,
-      "median": 268.5
+      "max": 637,
+      "median": 279
     },
     "e2eLatency": {
-      "min": 2041,
+      "min": 8822.5,
       "max": 10834.5,
-      "median": 8899.75
+      "median": 9051.25
     },
-    "uptime": 99.99553489311641,
+    "uptime": 99.99759343489039,
     "topProvider": {
       "p50_throughput": 78,
-      "p50_latency": 615.5,
-      "request_count": 270
+      "p50_latency": 618,
+      "request_count": 235
     }
   },
   "baidu/ernie-4.5-21b-a3b-thinking": {
     "throughput": {
       "min": 64,
       "max": 90,
-      "median": 85.5
+      "median": 83.5
     },
     "latency": {
-      "min": 868.5,
+      "min": 894,
       "max": 1079.5,
-      "median": 1037.75
+      "median": 1041.25
     },
     "e2eLatency": {
       "min": 6742,
       "max": 24659.5,
-      "median": 10896.25
+      "median": 10744
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 87,
-      "p50_latency": 1689,
-      "request_count": 1
+      "p50_throughput": 10,
+      "p50_latency": 1096,
+      "request_count": 9
     }
   },
   "google/gemini-2.5-flash-image": {
     "throughput": {
       "min": 139,
       "max": 158,
-      "median": 146.5
+      "median": 144.5
     },
     "latency": {
       "min": 1034,
-      "max": 6816.5,
+      "max": 6803,
       "median": 3688
     },
     "e2eLatency": {
       "min": 8262.5,
-      "max": 14851,
-      "median": 12397.75
+      "max": 15050,
+      "median": 12509
     },
-    "uptime": 98.98664021390937,
+    "uptime": 99.1034461357401,
     "topProvider": {
-      "p50_throughput": 145,
-      "p50_latency": 5223,
-      "request_count": 1955
+      "p50_throughput": 152,
+      "p50_latency": 4446,
+      "request_count": 1984
     }
   },
   "qwen/qwen3-vl-30b-a3b-thinking": {
     "throughput": {
-      "min": 17,
-      "max": 127,
-      "median": 53
+      "min": 31,
+      "max": 86,
+      "median": 54
     },
     "latency": {
-      "min": 485,
-      "max": 2850,
+      "min": 1216,
+      "max": 2168,
       "median": 1815
     },
     "e2eLatency": {
-      "min": 9887.5,
+      "min": 11704,
       "max": 56926,
       "median": 26647.25
     },
-    "uptime": 99.86872772400851,
+    "uptime": 99.905760815241,
     "topProvider": {
-      "p50_throughput": 97,
-      "p50_latency": 696,
-      "request_count": 526
+      "p50_throughput": 113,
+      "p50_latency": 747,
+      "request_count": 499
     }
   },
   "qwen/qwen3-vl-30b-a3b-instruct": {
     "throughput": {
-      "min": 16,
+      "min": 18,
       "max": 69,
-      "median": 35.5
+      "median": 37
     },
     "latency": {
       "min": 149,
-      "max": 1087,
-      "median": 759
+      "max": 3462,
+      "median": 1067.5
     },
     "e2eLatency": {
       "min": 2095,
       "max": 12451,
-      "median": 2686.75
+      "median": 4698
     },
-    "uptime": 96.50141470591736,
+    "uptime": 97.00508207455398,
     "topProvider": {
-      "p50_throughput": 21,
-      "p50_latency": 807.5,
-      "request_count": 428
+      "p50_throughput": 46,
+      "p50_latency": 517,
+      "request_count": 1050
     }
   },
   "openai/gpt-5-pro-2025-10-06": {
     "throughput": {
       "min": 10,
       "max": 18,
-      "median": 13.5
+      "median": 13
     },
     "latency": {
       "min": 98790,
-      "max": 209856,
-      "median": 158745.5
+      "max": 286048.5,
+      "median": 166862.25
     },
     "e2eLatency": {
       "min": 201966.5,
-      "max": 440402,
-      "median": 335562
+      "max": 612726,
+      "median": 355870.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 4,
-      "p50_latency": 36770,
-      "request_count": 7
+      "p50_throughput": 12,
+      "p50_latency": 118509,
+      "request_count": 17
     }
   },
   "z-ai/glm-4.6": {
     "throughput": {
-      "min": 14,
-      "max": 75,
-      "median": 36.5
+      "min": 15,
+      "max": 74,
+      "median": 52
     },
     "latency": {
       "min": 429,
       "max": 2662,
-      "median": 1051
+      "median": 1013.5
     },
     "e2eLatency": {
-      "min": 5459.5,
-      "max": 18983.5,
-      "median": 8169.25
+      "min": 4034.5,
+      "max": 26480,
+      "median": 10373.5
     },
-    "uptime": 99.19833214873199,
+    "uptime": 99.17556214745161,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 1909,
-      "request_count": 262
+      "p50_throughput": 12,
+      "p50_latency": 2176.5,
+      "request_count": 292
     }
   },
   "anthropic/claude-4.5-sonnet-20250929": {
     "throughput": {
       "min": 37,
-      "max": 47,
+      "max": 46,
       "median": 38
     },
     "latency": {
-      "min": 1140,
-      "max": 2429.5,
-      "median": 1469.25
+      "min": 1265,
+      "max": 2406.5,
+      "median": 1540
     },
     "e2eLatency": {
-      "min": 5867,
-      "max": 9033,
-      "median": 7263.5
+      "min": 6561,
+      "max": 8876.5,
+      "median": 7521.5
     },
-    "uptime": 99.97136722374542,
+    "uptime": 99.98228815764958,
     "topProvider": {
-      "p50_throughput": 36,
-      "p50_latency": 1254,
-      "request_count": 13930
+      "p50_throughput": 38,
+      "p50_latency": 985,
+      "request_count": 21134
     }
   },
   "deepseek/deepseek-v3.2-exp": {
     "throughput": {
       "min": 16,
-      "max": 29,
-      "median": 22
+      "max": 36,
+      "median": 24
     },
     "latency": {
-      "min": 1065,
-      "max": 3199,
-      "median": 2314
+      "min": 1083,
+      "max": 3460,
+      "median": 2818.75
     },
     "e2eLatency": {
-      "min": 3737,
-      "max": 24254,
-      "median": 6966.25
+      "min": 4100.5,
+      "max": 25875.5,
+      "median": 10362.25
     },
-    "uptime": 99.7858149257886,
+    "uptime": 99.64387633243841,
     "topProvider": {
-      "p50_throughput": 25,
-      "p50_latency": 1181,
-      "request_count": 3019
+      "p50_throughput": 23,
+      "p50_latency": 1334,
+      "request_count": 2539
     }
   },
   "thedrummer/cydonia-24b-v4.1": {
     "throughput": {
       "min": 29,
       "max": 64,
-      "median": 46.5
+      "median": 33.5
     },
     "latency": {
-      "min": 504,
-      "max": 1414,
-      "median": 852.5
+      "min": 503,
+      "max": 1429,
+      "median": 907
     },
     "e2eLatency": {
-      "min": 4179.5,
-      "max": 9372.5,
+      "min": 4187.5,
+      "max": 9384,
       "median": 6201.25
     },
-    "uptime": 99.99505660190816,
+    "uptime": 99.97033158813264,
     "topProvider": {
-      "p50_throughput": 63,
-      "p50_latency": 552,
-      "request_count": 369
+      "p50_throughput": 66,
+      "p50_latency": 515,
+      "request_count": 417
     }
   },
   "relace/relace-apply-3": {
     "throughput": {
-      "min": 1025.5,
+      "min": 935.5,
       "max": 1687,
-      "median": 1101.5
+      "median": 1064.5
     },
     "latency": {
       "min": 395,
-      "max": 445,
+      "max": 463,
       "median": 430.5
     },
     "e2eLatency": {
       "min": 866.5,
-      "max": 992,
-      "median": 946
+      "max": 1007,
+      "median": 959.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 590,
-      "p50_latency": 577,
-      "request_count": 119
+      "p50_throughput": 1161,
+      "p50_latency": 406,
+      "request_count": 120
     }
   },
   "google/gemini-2.5-flash-preview-09-2025": {
     "throughput": {
-      "min": 74,
+      "min": 73,
       "max": 131,
-      "median": 119.5
+      "median": 109
     },
     "latency": {
-      "min": 373,
-      "max": 792,
-      "median": 712.5
+      "min": 370,
+      "max": 2922,
+      "median": 711.25
     },
     "e2eLatency": {
       "min": 1641,
-      "max": 2801,
-      "median": 2382.5
+      "max": 7241.5,
+      "median": 2428.75
     },
-    "uptime": 99.93236662984349,
+    "uptime": 99.92719178434346,
     "topProvider": {
-      "p50_throughput": 128,
-      "p50_latency": 589,
-      "request_count": 1297
+      "p50_throughput": 74,
+      "p50_latency": 4210.5,
+      "request_count": 5380
     }
   },
   "google/gemini-2.5-flash-lite-preview-09-2025": {
     "throughput": {
       "min": 89,
       "max": 256,
-      "median": 138
+      "median": 140.75
     },
     "latency": {
-      "min": 437,
+      "min": 440,
       "max": 1130,
-      "median": 613
+      "median": 588
     },
     "e2eLatency": {
       "min": 1302.5,
       "max": 3503.5,
-      "median": 2211.75
+      "median": 1858.75
     },
-    "uptime": 99.84923545872415,
+    "uptime": 99.64699941188768,
     "topProvider": {
-      "p50_throughput": 109,
-      "p50_latency": 465,
-      "request_count": 21867
+      "p50_throughput": 147,
+      "p50_latency": 597,
+      "request_count": 13546
     }
   },
   "qwen/qwen3-vl-235b-a22b-thinking": {
     "throughput": {
-      "min": 17,
+      "min": 14,
       "max": 52,
-      "median": 42.5
+      "median": 42.25
     },
     "latency": {
       "min": 802,
-      "max": 4020,
-      "median": 2171
+      "max": 4883.5,
+      "median": 1799.75
     },
     "e2eLatency": {
       "min": 22700,
-      "max": 84849,
-      "median": 47785.25
+      "max": 85347,
+      "median": 42920.25
     },
-    "uptime": 99.30000229379702,
+    "uptime": 85.98147487316733,
     "topProvider": {
-      "p50_throughput": 54,
-      "p50_latency": 1125,
-      "request_count": 762
+      "p50_throughput": 52,
+      "p50_latency": 1190,
+      "request_count": 1186
     }
   },
   "qwen/qwen3-vl-235b-a22b-instruct": {
     "throughput": {
       "min": 3,
-      "max": 57,
-      "median": 19.5
+      "max": 32,
+      "median": 18.5
     },
     "latency": {
-      "min": 1064.5,
-      "max": 6807,
-      "median": 1227.5
+      "min": 1179,
+      "max": 4636,
+      "median": 2354.25
     },
     "e2eLatency": {
-      "min": 4012,
-      "max": 17672,
-      "median": 9761.75
+      "min": 8257,
+      "max": 32279,
+      "median": 10865.75
     },
-    "uptime": 97.85165492421606,
+    "uptime": 98.35249842716591,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 2315,
-      "request_count": 83
+      "p50_throughput": 21,
+      "p50_latency": 1535,
+      "request_count": 4887
     }
   },
   "qwen/qwen3-max": {
     "throughput": {
-      "min": 19,
+      "min": 21,
       "max": 26,
-      "median": 23.5
+      "median": 24
     },
     "latency": {
-      "min": 1263.5,
+      "min": 1373,
       "max": 1599,
-      "median": 1450.25
+      "median": 1492.25
     },
     "e2eLatency": {
-      "min": 5322,
+      "min": 5394,
       "max": 10821.5,
-      "median": 6989.25
+      "median": 7240.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 22,
-      "p50_latency": 1752,
-      "request_count": 287
+      "p50_throughput": 24,
+      "p50_latency": 1662,
+      "request_count": 379
     }
   },
   "qwen/qwen3-coder-plus": {
     "throughput": {
       "min": 30,
-      "max": 39,
+      "max": 35,
       "median": 33
     },
     "latency": {
-      "min": 1191,
+      "min": 1186.5,
       "max": 1757,
       "median": 1498
     },
     "e2eLatency": {
       "min": 4593,
-      "max": 7153,
+      "max": 6684,
       "median": 5105.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 1111,
-      "request_count": 45
+      "p50_throughput": 27,
+      "p50_latency": 1913,
+      "request_count": 90
     }
   },
   "openai/gpt-5-codex": {
     "throughput": {
       "min": 37,
-      "max": 60,
-      "median": 50
+      "max": 58,
+      "median": 47.5
     },
     "latency": {
-      "min": 1878,
-      "max": 3060,
-      "median": 2402
+      "min": 1875,
+      "max": 2669.5,
+      "median": 2330
     },
     "e2eLatency": {
-      "min": 4305.5,
-      "max": 7848,
-      "median": 6089
+      "min": 4300,
+      "max": 6592,
+      "median": 5873
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 40.5,
-      "p50_latency": 1117.5,
-      "request_count": 22
+      "p50_throughput": 20,
+      "p50_latency": 857,
+      "request_count": 7
     }
   },
   "deepseek/deepseek-v3.1-terminus": {
     "throughput": {
-      "min": 10,
-      "max": 31,
-      "median": 23.5
+      "min": 14,
+      "max": 38,
+      "median": 23
     },
     "latency": {
-      "min": 1059.5,
-      "max": 2570.5,
-      "median": 1414.5
+      "min": 956,
+      "max": 2263,
+      "median": 1437
     },
     "e2eLatency": {
-      "min": 5049,
-      "max": 17754.5,
-      "median": 9041.25
+      "min": 6637,
+      "max": 12007,
+      "median": 8240.75
     },
     "uptime": null,
     "topProvider": {
-      "p50_throughput": 17,
-      "p50_latency": 958,
-      "request_count": 2144
+      "p50_throughput": 14,
+      "p50_latency": 1217,
+      "request_count": 3392
     }
   },
   "x-ai/grok-4-fast": {
     "throughput": {
-      "min": 96,
-      "max": 138,
-      "median": 102.5
+      "min": 91,
+      "max": 121,
+      "median": 101
     },
     "latency": {
-      "min": 2247.5,
+      "min": 2256,
       "max": 2828,
       "median": 2616.5
     },
     "e2eLatency": {
       "min": 5153,
-      "max": 7177,
-      "median": 6090
+      "max": 7179,
+      "median": 5995.75
     },
-    "uptime": 99.91566544173459,
+    "uptime": 99.90275201102503,
     "topProvider": {
-      "p50_throughput": 118,
-      "p50_latency": 2789.5,
-      "request_count": 37730
+      "p50_throughput": 114,
+      "p50_latency": 2477.5,
+      "request_count": 31440
     }
   },
   "alibaba/tongyi-deepresearch-30b-a3b": {
     "throughput": {
-      "min": 55,
+      "min": 56,
       "max": 201,
-      "median": 89.5
+      "median": 90
     },
     "latency": {
-      "min": 157,
+      "min": 161,
       "max": 289,
-      "median": 191.5
+      "median": 196.5
     },
     "e2eLatency": {
-      "min": 2619,
-      "max": 14715.5,
-      "median": 4582.25
+      "min": 2895,
+      "max": 14997,
+      "median": 4655.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 198,
-      "p50_latency": 174.5,
-      "request_count": 72
+      "p50_throughput": 203,
+      "p50_latency": 152,
+      "request_count": 71
     }
   },
   "qwen/qwen3-coder-flash": {
     "throughput": {
       "min": 30,
-      "max": 51,
-      "median": 35.5
+      "max": 46,
+      "median": 33
     },
     "latency": {
-      "min": 1226.5,
+      "min": 958,
       "max": 2152.5,
-      "median": 1555.5
+      "median": 1553.5
     },
     "e2eLatency": {
-      "min": 3855,
+      "min": 2674.5,
       "max": 7366,
-      "median": 4993
+      "median": 5020.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 48,
-      "p50_latency": 2045,
-      "request_count": 37
+      "p50_throughput": 58,
+      "p50_latency": 1070,
+      "request_count": 35
     }
   },
   "opengvlab/internvl3-78b": {
     "throughput": {
       "min": 7,
       "max": 11,
-      "median": 9
+      "median": 9.5
     },
     "latency": {
-      "min": 602,
+      "min": 546,
       "max": 1330,
-      "median": 659.5
+      "median": 658.5
     },
     "e2eLatency": {
-      "min": 1346,
+      "min": 1236,
       "max": 5681,
       "median": 1479.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 546,
-      "request_count": 2788
+      "p50_throughput": 28.5,
+      "p50_latency": 603,
+      "request_count": 2
     }
   },
   "qwen/qwen3-next-80b-a3b-thinking-2509": {
     "throughput": {
-      "min": 90,
-      "max": 229,
-      "median": 139.75
+      "min": 91,
+      "max": 241,
+      "median": 182.5
     },
     "latency": {
-      "min": 271,
-      "max": 1276,
-      "median": 761
+      "min": 336,
+      "max": 1175,
+      "median": 636.75
     },
     "e2eLatency": {
       "min": 1047,
-      "max": 18931,
-      "median": 8553.75
+      "max": 17319,
+      "median": 11162.75
     },
-    "uptime": 99.66584006367803,
+    "uptime": 99.62488049363853,
     "topProvider": {
-      "p50_throughput": 135.5,
-      "p50_latency": 239.5,
-      "request_count": 4
+      "p50_throughput": 116,
+      "p50_latency": 319.5,
+      "request_count": 56
     }
   },
   "qwen/qwen3-next-80b-a3b-instruct-2509": {
     "throughput": {
-      "min": 15.5,
-      "max": 83,
-      "median": 27
+      "min": 6,
+      "max": 113,
+      "median": 62.5
     },
     "latency": {
-      "min": 399,
-      "max": 1104,
-      "median": 901
+      "min": 396,
+      "max": 1174,
+      "median": 701
     },
     "e2eLatency": {
-      "min": 1152,
-      "max": 13608,
-      "median": 2554.25
+      "min": 897,
+      "max": 5578,
+      "median": 2285.75
     },
-    "uptime": 99.11709808272069,
+    "uptime": 99.46407429149308,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 342,
-      "request_count": 14348
+      "p50_throughput": 44,
+      "p50_latency": 381,
+      "request_count": 13931
     }
   },
   "meituan/longcat-flash-chat": {
     "throughput": {
       "min": 53,
       "max": 60,
-      "median": 58
+      "median": 57.5
     },
     "latency": {
       "min": 878,
       "max": 991,
-      "median": 948.75
+      "median": 948
     },
     "e2eLatency": {
       "min": 4307.5,
       "max": 6259.5,
-      "median": 4499.5
+      "median": 4440
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 59,
-      "p50_latency": 882.5,
-      "request_count": 628
+      "p50_throughput": 57,
+      "p50_latency": 958,
+      "request_count": 583
     }
   },
   "qwen/qwen-plus-2025-07-28": {
     "throughput": {
       "min": 27,
-      "max": 55,
+      "max": 49,
       "median": 39.5
     },
     "latency": {
       "min": 544,
-      "max": 851,
-      "median": 777.5
+      "max": 827,
+      "median": 767
     },
     "e2eLatency": {
-      "min": 1814,
+      "min": 1730,
       "max": 31463,
       "median": 7419
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 754,
-      "request_count": 369
+      "p50_throughput": 51,
+      "p50_latency": 558,
+      "request_count": 69
     }
   },
   "nvidia/nemotron-nano-9b-v2": {
     "throughput": {
-      "min": 40,
+      "min": 39,
       "max": 120,
-      "median": 64.5
+      "median": 106
     },
     "latency": {
       "min": 496,
-      "max": 1585,
-      "median": 667.5
+      "max": 1578,
+      "median": 758.5
     },
     "e2eLatency": {
       "min": 7498,
-      "max": 19333.5,
-      "median": 11008
+      "max": 19891.5,
+      "median": 10174.5
     },
-    "uptime": 99.93775748709311,
+    "uptime": 99.97799618600558,
     "topProvider": {
-      "p50_throughput": 130.5,
-      "p50_latency": 182,
-      "request_count": 36
+      "p50_throughput": 98,
+      "p50_latency": 671,
+      "request_count": 715
     }
   },
   "moonshotai/kimi-k2-0905": {
     "throughput": {
-      "min": 8,
-      "max": 87,
-      "median": 12.5
+      "min": 7,
+      "max": 92,
+      "median": 13
     },
     "latency": {
-      "min": 305,
-      "max": 1645,
-      "median": 1262
+      "min": 355,
+      "max": 1753,
+      "median": 750.5
     },
     "e2eLatency": {
-      "min": 592,
-      "max": 6641.5,
-      "median": 2928.5
+      "min": 1288,
+      "max": 7280,
+      "median": 2605.75
     },
-    "uptime": 99.98843435352846,
+    "uptime": 99.91817718490613,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 18,
+      "p50_latency": 431,
+      "request_count": 2801
     }
   },
   "qwen/qwen3-30b-a3b-thinking-2507": {
     "throughput": {
-      "min": 72,
-      "max": 134,
-      "median": 96
+      "min": 51,
+      "max": 102,
+      "median": 72
     },
     "latency": {
-      "min": 255,
-      "max": 1606,
-      "median": 515
+      "min": 456,
+      "max": 1308,
+      "median": 801
     },
     "e2eLatency": {
       "min": 9838.5,
       "max": 125740,
-      "median": 27981.75
+      "median": 28171
     },
-    "uptime": 99.99624473551978,
+    "uptime": 99.99737410479226,
     "topProvider": {
-      "p50_throughput": 78,
-      "p50_latency": 229.5,
-      "request_count": 842
+      "p50_throughput": 70,
+      "p50_latency": 355,
+      "request_count": 1774
     }
   },
   "x-ai/grok-code-fast-1": {
@@ -2535,141 +2581,141 @@
       "median": 143
     },
     "latency": {
-      "min": 2932,
+      "min": 2963,
       "max": 4224,
       "median": 3122.75
     },
     "e2eLatency": {
-      "min": 9066,
-      "max": 12547.5,
-      "median": 10796.25
+      "min": 9513,
+      "max": 12545,
+      "median": 10913
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 139,
-      "p50_latency": 2422,
-      "request_count": 14713
+      "p50_throughput": 151,
+      "p50_latency": 2910,
+      "request_count": 10413
     }
   },
   "nousresearch/hermes-4-70b": {
     "throughput": {
       "min": 65,
-      "max": 76,
-      "median": 71
+      "max": 77,
+      "median": 74
     },
     "latency": {
       "min": 266,
       "max": 747,
-      "median": 484.5
+      "median": 486.5
     },
     "e2eLatency": {
-      "min": 2187.5,
-      "max": 2834.5,
+      "min": 2179,
+      "max": 3064,
       "median": 2578.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 79,
-      "p50_latency": 686,
-      "request_count": 172
+      "p50_throughput": 45,
+      "p50_latency": 813.5,
+      "request_count": 106
     }
   },
   "nousresearch/hermes-4-405b": {
     "throughput": {
       "min": 28,
       "max": 35,
-      "median": 34
+      "median": 32.5
     },
     "latency": {
       "min": 303,
-      "max": 481,
+      "max": 482,
       "median": 385.5
     },
     "e2eLatency": {
       "min": 2405.5,
-      "max": 5133,
+      "max": 4974.5,
       "median": 3952.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 577,
-      "request_count": 258
+      "p50_throughput": 32,
+      "p50_latency": 469,
+      "request_count": 423
     }
   },
   "deepseek/deepseek-chat-v3.1": {
     "throughput": {
-      "min": 20,
-      "max": 112,
-      "median": 45.5
+      "min": 6,
+      "max": 46,
+      "median": 23
     },
     "latency": {
-      "min": 601,
-      "max": 2714.5,
-      "median": 1638
+      "min": 891,
+      "max": 2860,
+      "median": 2554.75
     },
     "e2eLatency": {
-      "min": 2325,
-      "max": 10546.5,
-      "median": 5716
+      "min": 2499.5,
+      "max": 16995.5,
+      "median": 14298.5
     },
-    "uptime": 99.98127907569453,
+    "uptime": 99.9674308346183,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 2447,
-      "request_count": 1837
+      "p50_throughput": 8,
+      "p50_latency": 2241,
+      "request_count": 8486
     }
   },
   "openai/gpt-4o-audio-preview": {
     "throughput": {
-      "min": 13.5,
+      "min": 12,
       "max": 58,
-      "median": 27.75
+      "median": 27
     },
     "latency": {
       "min": 685,
-      "max": 922,
-      "median": 888.75
+      "max": 1753,
+      "median": 882
     },
     "e2eLatency": {
       "min": 1594,
-      "max": 3503,
-      "median": 2147
+      "max": 3840,
+      "median": 2261
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 852,
-      "request_count": 15
+      "p50_throughput": 39.5,
+      "p50_latency": 772,
+      "request_count": 4
     }
   },
   "mistralai/mistral-medium-3.1": {
     "throughput": {
       "min": 56,
-      "max": 64,
-      "median": 58
+      "max": 65,
+      "median": 58.5
     },
     "latency": {
       "min": 394,
-      "max": 863,
-      "median": 654.75
+      "max": 882,
+      "median": 616.5
     },
     "e2eLatency": {
       "min": 4404.5,
       "max": 6484,
-      "median": 5237
+      "median": 5264.25
     },
-    "uptime": 99.9992848228685,
+    "uptime": 99.99922112010718,
     "topProvider": {
       "p50_throughput": 72,
-      "p50_latency": 541,
-      "request_count": 1867
+      "p50_latency": 584,
+      "request_count": 1858
     }
   },
   "baidu/ernie-4.5-21b-a3b": {
     "throughput": {
       "min": 17,
-      "max": 70,
+      "max": 71,
       "median": 28
     },
     "latency": {
@@ -2678,107 +2724,107 @@
       "median": 1002.5
     },
     "e2eLatency": {
-      "min": 2190,
-      "max": 5969.5,
-      "median": 4217.75
+      "min": 2757,
+      "max": 9025,
+      "median": 4322
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 47.5,
+      "p50_latency": 1128.5,
+      "request_count": 10
     }
   },
   "baidu/ernie-4.5-vl-28b-a3b": {
     "throughput": {
       "min": 58,
       "max": 63,
-      "median": 60
+      "median": 61
     },
     "latency": {
-      "min": 864,
-      "max": 1609,
-      "median": 1110.25
+      "min": 875,
+      "max": 1265.5,
+      "median": 1115.75
     },
     "e2eLatency": {
-      "min": 4121,
-      "max": 6880.5,
-      "median": 5209.75
+      "min": 4601,
+      "max": 5960.5,
+      "median": 5211.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 62,
-      "p50_latency": 1129,
-      "request_count": 11
+      "p50_throughput": 64.5,
+      "p50_latency": 1364,
+      "request_count": 12
     }
   },
   "z-ai/glm-4.5v": {
     "throughput": {
-      "min": 24,
+      "min": 16,
       "max": 52,
-      "median": 36.75
+      "median": 35.5
     },
     "latency": {
       "min": 579,
-      "max": 6111,
-      "median": 2561.25
+      "max": 5546,
+      "median": 1864.5
     },
     "e2eLatency": {
-      "min": 4784.5,
+      "min": 6971.5,
       "max": 20244,
-      "median": 11804
+      "median": 11745.75
     },
-    "uptime": 99.65632781698025,
+    "uptime": 99.60521569062827,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 890,
-      "request_count": 3
+      "p50_throughput": 51,
+      "p50_latency": 971,
+      "request_count": 70
     }
   },
   "ai21/jamba-large-1.7": {
     "throughput": {
       "min": 20,
       "max": 45,
-      "median": 26
+      "median": 28.5
     },
     "latency": {
       "min": 695,
       "max": 913.5,
-      "median": 834.5
+      "median": 825
     },
     "e2eLatency": {
       "min": 1944,
       "max": 10760,
-      "median": 4612.75
+      "median": 4686.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 48,
-      "p50_latency": 923,
-      "request_count": 57
+      "p50_throughput": 55,
+      "p50_latency": 899,
+      "request_count": 27
     }
   },
   "openai/gpt-5-chat-2025-08-07": {
     "throughput": {
-      "min": 63,
+      "min": 68,
       "max": 92,
-      "median": 71.5
+      "median": 74.5
     },
     "latency": {
-      "min": 452,
+      "min": 473,
       "max": 518,
-      "median": 494
+      "median": 496.5
     },
     "e2eLatency": {
-      "min": 1410.5,
+      "min": 1905,
       "max": 2207,
-      "median": 1968.75
+      "median": 1993.75
     },
-    "uptime": 100,
+    "uptime": 99.99956155638715,
     "topProvider": {
-      "p50_throughput": 105,
-      "p50_latency": 496,
-      "request_count": 3181
+      "p50_throughput": 88,
+      "p50_latency": 462,
+      "request_count": 3823
     }
   },
   "openai/gpt-5-2025-08-07": {
@@ -2790,18 +2836,18 @@
     "latency": {
       "min": 4607,
       "max": 10990.5,
-      "median": 6066.5
+      "median": 6256.25
     },
     "e2eLatency": {
-      "min": 18194,
-      "max": 34892,
-      "median": 21695.75
+      "min": 20078.5,
+      "max": 35379.5,
+      "median": 23707.25
     },
-    "uptime": 99.9799716368888,
+    "uptime": 99.92840306013272,
     "topProvider": {
-      "p50_throughput": 44,
-      "p50_latency": 5349,
-      "request_count": 3438
+      "p50_throughput": 52,
+      "p50_latency": 9488,
+      "request_count": 6507
     }
   },
   "openai/gpt-5-mini-2025-08-07": {
@@ -2813,248 +2859,248 @@
     "latency": {
       "min": 3336,
       "max": 7830.5,
-      "median": 5205.5
+      "median": 5204.25
     },
     "e2eLatency": {
       "min": 8901.5,
-      "max": 33953,
-      "median": 15376.25
+      "max": 33851,
+      "median": 15372
     },
-    "uptime": 99.98939069139692,
+    "uptime": 99.98411767471129,
     "topProvider": {
-      "p50_throughput": 85,
-      "p50_latency": 2566.5,
-      "request_count": 27363
+      "p50_throughput": 88,
+      "p50_latency": 2574.5,
+      "request_count": 39982
     }
   },
   "openai/gpt-5-nano-2025-08-07": {
     "throughput": {
       "min": 32,
-      "max": 113,
+      "max": 92,
       "median": 69.5
     },
     "latency": {
-      "min": 1348.5,
+      "min": 1353,
       "max": 3197,
-      "median": 2333.5
+      "median": 2337
     },
     "e2eLatency": {
       "min": 4047,
       "max": 21160,
-      "median": 9988.75
+      "median": 11237
     },
-    "uptime": 99.99970377949921,
+    "uptime": 99.99940715374714,
     "topProvider": {
       "p50_throughput": 97,
-      "p50_latency": 1639,
-      "request_count": 86086
+      "p50_latency": 2202.5,
+      "request_count": 38268
     }
   },
   "openai/gpt-oss-120b": {
     "throughput": {
-      "min": 17,
-      "max": 229,
-      "median": 148
+      "min": 18,
+      "max": 663,
+      "median": 156
     },
     "latency": {
-      "min": 233,
-      "max": 1511.5,
-      "median": 308.25
+      "min": 265,
+      "max": 1650,
+      "median": 632
     },
     "e2eLatency": {
-      "min": 1717,
+      "min": 1248.5,
       "max": 11317,
-      "median": 4101
+      "median": 4298.5
     },
-    "uptime": 99.97231965127203,
+    "uptime": 99.9918645835022,
     "topProvider": {
-      "p50_throughput": 58,
-      "p50_latency": 648,
-      "request_count": 11294
+      "p50_throughput": 83,
+      "p50_latency": 616,
+      "request_count": 5675
     }
   },
   "openai/gpt-oss-20b": {
     "throughput": {
-      "min": 33,
-      "max": 268,
-      "median": 92
+      "min": 58,
+      "max": 197,
+      "median": 113.5
     },
     "latency": {
-      "min": 259,
-      "max": 1023,
-      "median": 515
+      "min": 335,
+      "max": 533.5,
+      "median": 493.5
     },
     "e2eLatency": {
-      "min": 1308,
-      "max": 3677,
-      "median": 2307.75
+      "min": 1684,
+      "max": 45237,
+      "median": 2775.25
     },
-    "uptime": 85.22539810277159,
+    "uptime": 99.93859062905662,
     "topProvider": {
-      "p50_throughput": 145,
-      "p50_latency": 544,
-      "request_count": 3165
+      "p50_throughput": 151,
+      "p50_latency": 587,
+      "request_count": 2596
     }
   },
   "anthropic/claude-4.1-opus-20250805": {
     "throughput": {
       "min": 14,
       "max": 34,
-      "median": 24.25
+      "median": 25
     },
     "latency": {
-      "min": 1305,
-      "max": 3539,
+      "min": 1318.5,
+      "max": 1993,
       "median": 1541
     },
     "e2eLatency": {
       "min": 8498,
-      "max": 27026.5,
-      "median": 14206
+      "max": 27375.5,
+      "median": 16371.25
     },
     "uptime": null,
     "topProvider": {
-      "p50_throughput": 14,
-      "p50_latency": 3220,
-      "request_count": 73
+      "p50_throughput": 13,
+      "p50_latency": 4342,
+      "request_count": 62
     }
   },
   "mistralai/codestral-2508": {
     "throughput": {
-      "min": 56,
-      "max": 68,
+      "min": 53,
+      "max": 67,
       "median": 61.5
     },
     "latency": {
-      "min": 163,
-      "max": 205.5,
-      "median": 185
+      "min": 146,
+      "max": 205,
+      "median": 177
     },
     "e2eLatency": {
-      "min": 453,
-      "max": 552,
-      "median": 497
+      "min": 456,
+      "max": 549,
+      "median": 487
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 67,
-      "p50_latency": 170,
-      "request_count": 3140
+      "p50_throughput": 64,
+      "p50_latency": 179,
+      "request_count": 4406
     }
   },
   "qwen/qwen3-coder-30b-a3b-instruct": {
     "throughput": {
       "min": 23,
-      "max": 69,
-      "median": 62.5
+      "max": 68,
+      "median": 26
     },
     "latency": {
-      "min": 359,
+      "min": 302,
       "max": 2089,
       "median": 1035.25
     },
     "e2eLatency": {
-      "min": 2684,
-      "max": 9998,
-      "median": 5186.25
+      "min": 2942.5,
+      "max": 10048.5,
+      "median": 4553.5
     },
-    "uptime": 99.96504223699269,
+    "uptime": 99.95165959288171,
     "topProvider": {
-      "p50_throughput": 54,
-      "p50_latency": 1106,
-      "request_count": 119
+      "p50_throughput": 53,
+      "p50_latency": 1114,
+      "request_count": 69
     }
   },
   "qwen/qwen3-30b-a3b-instruct-2507": {
     "throughput": {
-      "min": 16,
-      "max": 96,
-      "median": 59
+      "min": 20,
+      "max": 102,
+      "median": 44
     },
     "latency": {
       "min": 306,
-      "max": 2089,
-      "median": 782
+      "max": 2002,
+      "median": 716.5
     },
     "e2eLatency": {
-      "min": 2061,
-      "max": 8070.5,
-      "median": 4392.5
+      "min": 1079,
+      "max": 2472,
+      "median": 2100.5
     },
-    "uptime": 99.94369833292137,
+    "uptime": 99.82409506684388,
     "topProvider": {
-      "p50_throughput": 79.5,
-      "p50_latency": 766,
-      "request_count": 180
+      "p50_throughput": 16,
+      "p50_latency": 729,
+      "request_count": 700
     }
   },
   "z-ai/glm-4.5": {
     "throughput": {
-      "min": 29,
-      "max": 46,
-      "median": 43
+      "min": 27,
+      "max": 49,
+      "median": 36
     },
     "latency": {
-      "min": 456,
-      "max": 1804,
-      "median": 1087.75
+      "min": 473,
+      "max": 3556,
+      "median": 1659
     },
     "e2eLatency": {
-      "min": 4313,
-      "max": 15127,
-      "median": 9167
+      "min": 6229,
+      "max": 17031,
+      "median": 7975.5
     },
-    "uptime": 98.71157943611861,
+    "uptime": 98.53020812398115,
     "topProvider": {
-      "p50_throughput": 68,
-      "p50_latency": 591,
-      "request_count": 15
+      "p50_throughput": 50,
+      "p50_latency": 1091,
+      "request_count": 43
     }
   },
   "z-ai/glm-4.5-air": {
     "throughput": {
-      "min": 20,
-      "max": 72,
-      "median": 54.5
+      "min": 19,
+      "max": 70,
+      "median": 48
     },
     "latency": {
       "min": 390,
-      "max": 6866.5,
-      "median": 1194
+      "max": 2014,
+      "median": 716
     },
     "e2eLatency": {
-      "min": 1840,
+      "min": 1746.5,
       "max": 36220.5,
-      "median": 3294.75
+      "median": 3144.75
     },
-    "uptime": 99.97780817446612,
+    "uptime": 99.97941403473398,
     "topProvider": {
-      "p50_throughput": 52,
-      "p50_latency": 671,
-      "request_count": 19913
+      "p50_throughput": 54,
+      "p50_latency": 672,
+      "request_count": 19470
     }
   },
   "qwen/qwen3-235b-a22b-thinking-2507": {
     "throughput": {
-      "min": 17,
-      "max": 63,
-      "median": 42.5
+      "min": 37,
+      "max": 71,
+      "median": 46
     },
     "latency": {
-      "min": 355,
-      "max": 1785.5,
-      "median": 889.5
+      "min": 572,
+      "max": 1732.5,
+      "median": 842
     },
     "e2eLatency": {
       "min": 11830,
-      "max": 36767,
-      "median": 24071.25
+      "max": 45601,
+      "median": 27782.25
     },
-    "uptime": 96.33092927154529,
+    "uptime": 97.28954454981852,
     "topProvider": {
-      "p50_throughput": 47,
-      "p50_latency": 1380,
-      "request_count": 1817
+      "p50_throughput": 43,
+      "p50_latency": 887,
+      "request_count": 2981
     }
   },
   "z-ai/glm-4-32b-0414": {
@@ -3064,204 +3110,204 @@
       "median": 3
     },
     "latency": {
-      "min": 930,
+      "min": 921.5,
       "max": 968,
-      "median": 951.5
+      "median": 948.5
     },
     "e2eLatency": {
-      "min": 1866,
+      "min": 1664,
       "max": 1936,
-      "median": 1898
+      "median": 1894
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 4,
-      "p50_latency": 817,
-      "request_count": 46667
+      "p50_throughput": 3,
+      "p50_latency": 959,
+      "request_count": 37345
     }
   },
   "qwen/qwen3-coder-480b-a35b-07-25": {
     "throughput": {
-      "min": 14,
-      "max": 59.5,
-      "median": 48.5
+      "min": 34,
+      "max": 90,
+      "median": 53.5
     },
     "latency": {
-      "min": 558,
-      "max": 3910,
-      "median": 1404
+      "min": 397,
+      "max": 1371,
+      "median": 549.5
     },
     "e2eLatency": {
-      "min": 2576,
+      "min": 3184,
       "max": 11900.5,
-      "median": 3593.5
+      "median": 5881
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 98.5,
-      "p50_latency": 535,
-      "request_count": 1080
+      "p50_throughput": 55,
+      "p50_latency": 338,
+      "request_count": 6004
     }
   },
   "bytedance/ui-tars-1.5-7b": {
     "throughput": {
       "min": 2,
-      "max": 43.5,
+      "max": 14,
       "median": 7
     },
     "latency": {
-      "min": 780,
+      "min": 855,
       "max": 1343,
       "median": 1119.5
     },
     "e2eLatency": {
-      "min": 2247,
+      "min": 2075,
       "max": 2986,
       "median": 2693.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 2,
-      "p50_latency": 1133.5,
-      "request_count": 188
+      "p50_throughput": 45,
+      "p50_latency": 812,
+      "request_count": 189
     }
   },
   "google/gemini-2.5-flash-lite": {
     "throughput": {
-      "min": 33,
-      "max": 219,
+      "min": 80,
+      "max": 222,
       "median": 95.5
     },
     "latency": {
-      "min": 447,
+      "min": 448,
       "max": 1121,
-      "median": 540
+      "median": 536
     },
     "e2eLatency": {
-      "min": 1284,
+      "min": 1266,
       "max": 3537,
-      "median": 1439.75
+      "median": 1694
     },
-    "uptime": 94.68484943531145,
+    "uptime": 99.06929379290011,
     "topProvider": {
-      "p50_throughput": 113,
-      "p50_latency": 425,
-      "request_count": 311030
+      "p50_throughput": 131,
+      "p50_latency": 483,
+      "request_count": 365262
     }
   },
   "qwen/qwen3-235b-a22b-07-25": {
     "throughput": {
       "min": 9,
-      "max": 112,
-      "median": 24.5
+      "max": 55,
+      "median": 22.5
     },
     "latency": {
-      "min": 376,
-      "max": 1331.5,
-      "median": 644.5
+      "min": 178,
+      "max": 811.5,
+      "median": 434.5
     },
     "e2eLatency": {
-      "min": 1062,
-      "max": 4408,
-      "median": 2502.75
+      "min": 1201,
+      "max": 11152.5,
+      "median": 3117
     },
-    "uptime": 99.81791462018595,
-    "topProvider": {
-      "p50_throughput": 9,
-      "p50_latency": 3014,
-      "request_count": 49
-    }
-  },
-  "switchpoint/router": {
-    "throughput": {
-      "min": 11,
-      "max": 25,
-      "median": 15
-    },
-    "latency": {
-      "min": 3786,
-      "max": 4892,
-      "median": 4193
-    },
-    "e2eLatency": {
-      "min": 9484.5,
-      "max": 13350,
-      "median": 10545
-    },
-    "uptime": 100,
+    "uptime": 99.85153955348535,
     "topProvider": {
       "p50_throughput": null,
       "p50_latency": null,
       "request_count": null
     }
   },
-  "moonshotai/kimi-k2": {
+  "switchpoint/router": {
     "throughput": {
-      "min": 18,
-      "max": 39,
-      "median": 24
+      "min": 11,
+      "max": 42,
+      "median": 20.5
     },
     "latency": {
-      "min": 418,
-      "max": 1291,
-      "median": 884.5
+      "min": 3789.5,
+      "max": 4892,
+      "median": 4240.5
+    },
+    "e2eLatency": {
+      "min": 9748,
+      "max": 13350,
+      "median": 11145.5
+    },
+    "uptime": 100,
+    "topProvider": {
+      "p50_throughput": 109.5,
+      "p50_latency": 5700,
+      "request_count": 6
+    }
+  },
+  "moonshotai/kimi-k2": {
+    "throughput": {
+      "min": 17,
+      "max": 46,
+      "median": 28
+    },
+    "latency": {
+      "min": 428,
+      "max": 1340.5,
+      "median": 929
     },
     "e2eLatency": {
       "min": 2495,
-      "max": 16259.5,
-      "median": 4456.25
+      "max": 16159,
+      "median": 4190.25
     },
-    "uptime": 99.90394961285885,
+    "uptime": 99.95556598383907,
     "topProvider": {
-      "p50_throughput": 25,
-      "p50_latency": 390,
-      "request_count": 341
+      "p50_throughput": 48,
+      "p50_latency": 393,
+      "request_count": 433
     }
   },
   "mistralai/devstral-medium-2507": {
     "throughput": {
-      "min": 36,
+      "min": 37,
       "max": 59,
-      "median": 47
+      "median": 46.5
     },
     "latency": {
-      "min": 212,
+      "min": 328,
       "max": 709,
-      "median": 383
+      "median": 407.5
     },
     "e2eLatency": {
       "min": 772,
       "max": 2499,
-      "median": 1487.25
+      "median": 1709
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 85,
-      "p50_latency": 301,
+      "p50_throughput": 15,
+      "p50_latency": 370,
       "request_count": 5
     }
   },
   "mistralai/devstral-small-2507": {
     "throughput": {
-      "min": 135,
-      "max": 164,
+      "min": 130,
+      "max": 166,
       "median": 155
     },
     "latency": {
-      "min": 190,
-      "max": 212,
-      "median": 204.5
+      "min": 201,
+      "max": 258,
+      "median": 206
     },
     "e2eLatency": {
-      "min": 724,
-      "max": 913,
-      "median": 826
+      "min": 780,
+      "max": 1014,
+      "median": 882.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 147.5,
-      "p50_latency": 276,
-      "request_count": 366
+      "p50_throughput": 152,
+      "p50_latency": 214,
+      "request_count": 833
     }
   },
   "venice/uncensored": {
@@ -3272,69 +3318,69 @@
     },
     "latency": {
       "min": 579.5,
-      "max": 634,
-      "median": 623.5
+      "max": 675,
+      "median": 629.25
     },
     "e2eLatency": {
-      "min": 6630.5,
-      "max": 7992,
-      "median": 7128.25
+      "min": 6628,
+      "max": 8457.5,
+      "median": 7181
     },
-    "uptime": 85.00543871036062,
+    "uptime": 80.47657188683313,
     "topProvider": null
   },
   "x-ai/grok-4-07-09": {
     "throughput": {
       "min": 34,
       "max": 40,
-      "median": 37
+      "median": 35.5
     },
     "latency": {
-      "min": 13785,
+      "min": 13638.5,
       "max": 15980,
-      "median": 14549.5
+      "median": 14130.5
     },
     "e2eLatency": {
-      "min": 32568.5,
+      "min": 32239.5,
       "max": 47858.5,
-      "median": 43585.25
+      "median": 41693
     },
-    "uptime": 99.99173196683329,
+    "uptime": 99.98523634223852,
     "topProvider": {
-      "p50_throughput": 29,
-      "p50_latency": 22103.5,
-      "request_count": 832
+      "p50_throughput": 34,
+      "p50_latency": 13660,
+      "request_count": 1118
     }
   },
   "google/gemma-3n-e2b-it": {
     "throughput": {
-      "min": 45.5,
+      "min": 40,
       "max": 52,
       "median": 49
     },
     "latency": {
       "min": 499,
       "max": 578,
-      "median": 522
+      "median": 529
     },
     "e2eLatency": {
       "min": 4805,
       "max": 12357.5,
-      "median": 5963
+      "median": 5858.5
     },
-    "uptime": 99.97043986980468,
+    "uptime": 99.94274146711393,
     "topProvider": null
   },
   "tencent/hunyuan-a13b-instruct": {
     "throughput": {
       "min": 7,
       "max": 34,
-      "median": 9.5
+      "median": 10.5
     },
     "latency": {
-      "min": 1154.5,
+      "min": 1192,
       "max": 1483,
-      "median": 1209
+      "median": 1205.75
     },
     "e2eLatency": {
       "min": 2742.5,
@@ -3343,256 +3389,95 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 102,
-      "p50_latency": 1129,
-      "request_count": 1
+      "p50_throughput": 92,
+      "p50_latency": 2927.5,
+      "request_count": 8
     }
   },
   "tngtech/deepseek-r1t2-chimera": {
     "throughput": {
       "min": 11,
-      "max": 41,
-      "median": 11.5
+      "max": 44,
+      "median": 12
     },
     "latency": {
-      "min": 1217,
+      "min": 1150.5,
       "max": 1665.5,
-      "median": 1502
+      "median": 1430.25
     },
     "e2eLatency": {
-      "min": 8946,
+      "min": 9013,
       "max": 32973,
       "median": 18823.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 46,
-      "p50_latency": 1030,
-      "request_count": 2334
+      "p50_throughput": 67,
+      "p50_latency": 892,
+      "request_count": 2350
     }
   },
   "morph/morph-v3-large": {
     "throughput": {
-      "min": 2881.5,
-      "max": 3129.5,
-      "median": 3003
+      "min": 2891.5,
+      "max": 3100.5,
+      "median": 2996.75
     },
     "latency": {
       "min": 349,
-      "max": 417,
-      "median": 388
+      "max": 416,
+      "median": 389
     },
     "e2eLatency": {
       "min": 1242.5,
-      "max": 1490.5,
-      "median": 1393.5
+      "max": 1501,
+      "median": 1400
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 3059,
-      "p50_latency": 450,
-      "request_count": 121
+      "p50_throughput": 3032,
+      "p50_latency": 387,
+      "request_count": 264
     }
   },
   "morph/morph-v3-fast": {
     "throughput": {
-      "min": 1597,
+      "min": 1928.5,
       "max": 4301,
-      "median": 2579.5
+      "median": 3168.25
     },
     "latency": {
-      "min": 386.5,
+      "min": 384,
       "max": 453.5,
-      "median": 408.75
+      "median": 395.25
     },
     "e2eLatency": {
-      "min": 1017.5,
+      "min": 1049.5,
       "max": 1479,
-      "median": 1136.25
+      "median": 1100.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 4426,
-      "p50_latency": 308,
-      "request_count": 11
+      "p50_throughput": 1949,
+      "p50_latency": 486,
+      "request_count": 25
     }
   },
   "baidu/ernie-4.5-vl-424b-a47b": {
     "throughput": {
       "min": 19,
-      "max": 25,
-      "median": 21
+      "max": 31,
+      "median": 21.5
     },
     "latency": {
       "min": 1189,
-      "max": 2789.5,
+      "max": 1653,
       "median": 1296.5
     },
     "e2eLatency": {
       "min": 4972,
-      "max": 8688,
-      "median": 5814.5
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 1319,
-      "request_count": 6
-    }
-  },
-  "baidu/ernie-4.5-300b-a47b": {
-    "throughput": {
-      "min": 3,
-      "max": 25,
-      "median": 20
-    },
-    "latency": {
-      "min": 1282.5,
-      "max": 1893.5,
-      "median": 1428.5
-    },
-    "e2eLatency": {
-      "min": 3075,
-      "max": 7572,
-      "median": 6402.75
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 10,
-      "p50_latency": 2436,
-      "request_count": 3
-    }
-  },
-  "inception/mercury": {
-    "throughput": {
-      "min": 33,
-      "max": 167,
-      "median": 55
-    },
-    "latency": {
-      "min": 694,
-      "max": 1037,
-      "median": 912
-    },
-    "e2eLatency": {
-      "min": 1570.5,
-      "max": 3411,
-      "median": 2028
-    },
-    "uptime": 100,
-    "topProvider": {
-      "p50_throughput": 150,
-      "p50_latency": 2460,
-      "request_count": 46
-    }
-  },
-  "mistralai/mistral-small-3.2-24b-instruct-2506": {
-    "throughput": {
-      "min": 27,
-      "max": 90,
-      "median": 62.5
-    },
-    "latency": {
-      "min": 192,
-      "max": 898,
-      "median": 501
-    },
-    "e2eLatency": {
-      "min": 1373,
-      "max": 3814,
-      "median": 2833
-    },
-    "uptime": 98.92838871824726,
-    "topProvider": {
-      "p50_throughput": 93,
-      "p50_latency": 722,
-      "request_count": 657
-    }
-  },
-  "minimax/minimax-m1": {
-    "throughput": {
-      "min": 21,
-      "max": 61,
-      "median": 42
-    },
-    "latency": {
-      "min": 2984,
-      "max": 7535,
-      "median": 5030.5
-    },
-    "e2eLatency": {
-      "min": 6194.5,
-      "max": 16934,
-      "median": 12072
-    },
-    "uptime": 99.03060047063096,
-    "topProvider": {
-      "p50_throughput": 6,
-      "p50_latency": 1598,
-      "request_count": 3
-    }
-  },
-  "google/gemini-2.5-flash": {
-    "throughput": {
-      "min": 60,
-      "max": 114,
-      "median": 96.5
-    },
-    "latency": {
-      "min": 514,
-      "max": 2136.5,
-      "median": 721.5
-    },
-    "e2eLatency": {
-      "min": 1618,
-      "max": 6686.5,
-      "median": 1985.75
-    },
-    "uptime": 98.69496320182706,
-    "topProvider": {
-      "p50_throughput": 92,
-      "p50_latency": 420,
-      "request_count": 255903
-    }
-  },
-  "google/gemini-2.5-pro": {
-    "throughput": {
-      "min": 67,
-      "max": 102,
-      "median": 93
-    },
-    "latency": {
-      "min": 2494,
-      "max": 5808.5,
-      "median": 3146.5
-    },
-    "e2eLatency": {
-      "min": 5825,
-      "max": 21827,
-      "median": 18373.5
-    },
-    "uptime": 98.40243005262239,
-    "topProvider": {
-      "p50_throughput": 97,
-      "p50_latency": 2448.5,
-      "request_count": 14190
-    }
-  },
-  "openai/o3-pro-2025-06-10": {
-    "throughput": {
-      "min": 11,
-      "max": 13,
-      "median": 11.5
-    },
-    "latency": {
-      "min": 36700,
-      "max": 61106.5,
-      "median": 55188
-    },
-    "e2eLatency": {
-      "min": 74986.5,
-      "max": 127426.5,
-      "median": 106048
+      "max": 11303,
+      "median": 5731
     },
     "uptime": 100,
     "topProvider": {
@@ -3601,50 +3486,211 @@
       "request_count": null
     }
   },
+  "baidu/ernie-4.5-300b-a47b": {
+    "throughput": {
+      "min": 3,
+      "max": 25,
+      "median": 19.5
+    },
+    "latency": {
+      "min": 1286.5,
+      "max": 2496,
+      "median": 1564.75
+    },
+    "e2eLatency": {
+      "min": 3075,
+      "max": 11844,
+      "median": 6402.75
+    },
+    "uptime": 100,
+    "topProvider": {
+      "p50_throughput": 27.5,
+      "p50_latency": 4069,
+      "request_count": 2
+    }
+  },
+  "inception/mercury": {
+    "throughput": {
+      "min": 39,
+      "max": 167,
+      "median": 63.5
+    },
+    "latency": {
+      "min": 694,
+      "max": 1037,
+      "median": 912
+    },
+    "e2eLatency": {
+      "min": 1613,
+      "max": 3411,
+      "median": 2124.5
+    },
+    "uptime": 100,
+    "topProvider": {
+      "p50_throughput": 36.5,
+      "p50_latency": 801.5,
+      "request_count": 20
+    }
+  },
+  "mistralai/mistral-small-3.2-24b-instruct-2506": {
+    "throughput": {
+      "min": 22,
+      "max": 90,
+      "median": 56
+    },
+    "latency": {
+      "min": 192,
+      "max": 825,
+      "median": 392.5
+    },
+    "e2eLatency": {
+      "min": 1373,
+      "max": 7264.5,
+      "median": 2838.75
+    },
+    "uptime": 98.6702638606959,
+    "topProvider": {
+      "p50_throughput": 80.5,
+      "p50_latency": 877,
+      "request_count": 912
+    }
+  },
+  "minimax/minimax-m1": {
+    "throughput": {
+      "min": 21,
+      "max": 54.5,
+      "median": 39.5
+    },
+    "latency": {
+      "min": 2984,
+      "max": 8587,
+      "median": 5030.5
+    },
+    "e2eLatency": {
+      "min": 6194.5,
+      "max": 26326,
+      "median": 12218
+    },
+    "uptime": 98.59003193998937,
+    "topProvider": {
+      "p50_throughput": 33.5,
+      "p50_latency": 13755.5,
+      "request_count": 10
+    }
+  },
+  "google/gemini-2.5-flash": {
+    "throughput": {
+      "min": 61,
+      "max": 114,
+      "median": 91.5
+    },
+    "latency": {
+      "min": 511,
+      "max": 2136.5,
+      "median": 632.5
+    },
+    "e2eLatency": {
+      "min": 1802,
+      "max": 6287,
+      "median": 1973.75
+    },
+    "uptime": 99.15323036811664,
+    "topProvider": {
+      "p50_throughput": 86,
+      "p50_latency": 540,
+      "request_count": 210426
+    }
+  },
+  "google/gemini-2.5-pro": {
+    "throughput": {
+      "min": 77,
+      "max": 102,
+      "median": 94
+    },
+    "latency": {
+      "min": 2460,
+      "max": 5808.5,
+      "median": 3210.5
+    },
+    "e2eLatency": {
+      "min": 5825,
+      "max": 26729,
+      "median": 18457.25
+    },
+    "uptime": 98.54941673054878,
+    "topProvider": {
+      "p50_throughput": 86,
+      "p50_latency": 2264,
+      "request_count": 14387
+    }
+  },
+  "openai/o3-pro-2025-06-10": {
+    "throughput": {
+      "min": 6.5,
+      "max": 13,
+      "median": 11
+    },
+    "latency": {
+      "min": 30224.5,
+      "max": 61106.5,
+      "median": 50311
+    },
+    "e2eLatency": {
+      "min": 61585,
+      "max": 127426.5,
+      "median": 106048
+    },
+    "uptime": 100,
+    "topProvider": {
+      "p50_throughput": 6,
+      "p50_latency": 75771.5,
+      "request_count": 2
+    }
+  },
   "x-ai/grok-3-mini": {
     "throughput": {
       "min": 76,
-      "max": 91,
-      "median": 83
+      "max": 89,
+      "median": 82
     },
     "latency": {
-      "min": 6665,
-      "max": 9836,
-      "median": 7460.5
+      "min": 6246,
+      "max": 9855,
+      "median": 7274
     },
     "e2eLatency": {
-      "min": 14443.5,
+      "min": 13678,
       "max": 23123.5,
       "median": 16131.5
     },
-    "uptime": 99.76999326359419,
+    "uptime": 99.90136199110798,
     "topProvider": {
-      "p50_throughput": 77,
-      "p50_latency": 8202,
-      "request_count": 7611
+      "p50_throughput": 90,
+      "p50_latency": 6765.5,
+      "request_count": 7686
     }
   },
   "x-ai/grok-3": {
     "throughput": {
       "min": 39,
-      "max": 51,
+      "max": 52,
       "median": 44.5
     },
     "latency": {
       "min": 682,
       "max": 904.5,
-      "median": 785.25
+      "median": 774
     },
     "e2eLatency": {
-      "min": 2404.5,
+      "min": 2303,
       "max": 9738,
-      "median": 6761.25
+      "median": 6748.25
     },
-    "uptime": 99.8569173898055,
+    "uptime": 99.68434867789499,
     "topProvider": {
-      "p50_throughput": 51,
-      "p50_latency": 921,
-      "request_count": 1328
+      "p50_throughput": 50,
+      "p50_latency": 794,
+      "request_count": 1588
     }
   },
   "google/gemini-2.5-pro-preview-06-05": {
@@ -3672,117 +3718,117 @@
   },
   "deepseek/deepseek-r1-0528": {
     "throughput": {
-      "min": 26,
-      "max": 116,
-      "median": 37
+      "min": 19,
+      "max": 84,
+      "median": 32.5
     },
     "latency": {
-      "min": 413,
-      "max": 6333,
-      "median": 850.5
+      "min": 906.5,
+      "max": 1918,
+      "median": 1251.5
     },
     "e2eLatency": {
-      "min": 5991.5,
-      "max": 40194.5,
-      "median": 33361.5
+      "min": 15459,
+      "max": 38649,
+      "median": 28535.75
     },
-    "uptime": 97.06043251719264,
+    "uptime": 94.54236296221725,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 1777,
-      "request_count": 607
+      "p50_throughput": 23,
+      "p50_latency": 1523,
+      "request_count": 768
     }
   },
   "anthropic/claude-4-opus-20250522": {
     "throughput": {
       "min": 13,
-      "max": 34,
-      "median": 26.5
+      "max": 28,
+      "median": 25
     },
     "latency": {
       "min": 1268,
-      "max": 4307.5,
-      "median": 1741.5
+      "max": 3781.5,
+      "median": 1683.5
     },
     "e2eLatency": {
-      "min": 9818,
-      "max": 18835.5,
-      "median": 14268
+      "min": 4928,
+      "max": 20336.5,
+      "median": 15409.75
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 13,
-      "p50_latency": 3057.5,
-      "request_count": 408
+      "p50_latency": 4025,
+      "request_count": 318
     }
   },
   "anthropic/claude-4-sonnet-20250522": {
     "throughput": {
       "min": 33,
-      "max": 46,
-      "median": 41.5
+      "max": 47,
+      "median": 40.25
     },
     "latency": {
-      "min": 745.5,
+      "min": 704,
       "max": 1767,
-      "median": 873
+      "median": 1186.75
     },
     "e2eLatency": {
-      "min": 4773.5,
-      "max": 13127.5,
-      "median": 6029.75
+      "min": 4777.5,
+      "max": 12798.5,
+      "median": 6079.75
     },
-    "uptime": 98.566531612699,
+    "uptime": 99.94807748112578,
     "topProvider": {
-      "p50_throughput": 45,
-      "p50_latency": 621,
-      "request_count": 5953
+      "p50_throughput": 41,
+      "p50_latency": 823,
+      "request_count": 4925
     }
   },
   "google/gemma-3n-e4b-it": {
     "throughput": {
       "min": 25,
-      "max": 44,
+      "max": 41,
       "median": 27.5
     },
     "latency": {
       "min": 210,
       "max": 654.5,
-      "median": 425.5
+      "median": 432
     },
     "e2eLatency": {
-      "min": 905,
-      "max": 7920.5,
-      "median": 2417
+      "min": 901,
+      "max": 12055,
+      "median": 2600
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 203,
-      "request_count": 13687
+      "p50_throughput": 23,
+      "p50_latency": 251,
+      "request_count": 13523
     }
   },
   "nousresearch/deephermes-3-mistral-24b-preview": {
     "throughput": {
       "min": 14,
-      "max": 49,
+      "max": 43,
       "median": 32.5
     },
     "latency": {
       "min": 530.5,
       "max": 1578,
-      "median": 641
+      "median": 738.25
     },
     "e2eLatency": {
-      "min": 3213,
+      "min": 4891,
       "max": 121181,
-      "median": 6498.5
+      "median": 7387
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 29.5,
+      "p50_latency": 1493,
+      "request_count": 4
     }
   },
   "mistralai/mistral-medium-3": {
@@ -3792,20 +3838,20 @@
       "median": 51
     },
     "latency": {
-      "min": 238,
-      "max": 330,
-      "median": 271
+      "min": 236,
+      "max": 317,
+      "median": 258
     },
     "e2eLatency": {
       "min": 669.5,
       "max": 3174.5,
-      "median": 1683.25
+      "median": 1735.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 53,
-      "p50_latency": 440,
-      "request_count": 129
+      "p50_throughput": 55,
+      "p50_latency": 444,
+      "request_count": 111
     }
   },
   "google/gemini-2.5-pro-preview-03-25": {
@@ -3927,288 +3973,288 @@
     "throughput": {
       "min": 149,
       "max": 441,
-      "median": 311
+      "median": 340.5
     },
     "latency": {
-      "min": 1063,
-      "max": 1493,
-      "median": 1284
+      "min": 1111,
+      "max": 1447,
+      "median": 1289.5
     },
     "e2eLatency": {
       "min": 2911.5,
       "max": 4521,
-      "median": 3627
+      "median": 3650.5
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 640,
-      "p50_latency": 1554,
-      "request_count": 52
+      "p50_latency": 1889,
+      "request_count": 19
     }
   },
   "qwen/qwen3-4b-04-28": {
     "throughput": {
-      "min": 119,
-      "max": 231,
-      "median": 193
+      "min": 89,
+      "max": 221,
+      "median": 190.5
     },
     "latency": {
-      "min": 600,
+      "min": 253,
       "max": 749,
       "median": 624
     },
     "e2eLatency": {
       "min": 5240,
-      "max": 6740,
+      "max": 9995.5,
       "median": 6196
     },
-    "uptime": 70.16040018765325,
+    "uptime": 61.06914273477837,
     "topProvider": {
-      "p50_throughput": 35,
-      "p50_latency": 1708,
-      "request_count": 281
+      "p50_throughput": 89,
+      "p50_latency": 227.5,
+      "request_count": 144
     }
   },
   "meta-llama/llama-guard-4-12b": {
     "throughput": {
-      "min": 15,
+      "min": 16,
       "max": 18,
       "median": 16.5
     },
     "latency": {
       "min": 150,
       "max": 169,
-      "median": 161
+      "median": 157.5
     },
     "e2eLatency": {
       "min": 308,
       "max": 407,
-      "median": 360
+      "median": 352.5
     },
     "uptime": null,
     "topProvider": {
       "p50_throughput": 18,
-      "p50_latency": 161,
-      "request_count": 5382
+      "p50_latency": 163,
+      "request_count": 5156
     }
   },
   "qwen/qwen3-30b-a3b-04-28": {
     "throughput": {
       "min": 21,
-      "max": 69,
-      "median": 29.5
+      "max": 149,
+      "median": 56
     },
     "latency": {
-      "min": 118,
+      "min": 105,
       "max": 1616,
-      "median": 585
+      "median": 440
     },
     "e2eLatency": {
-      "min": 3930,
-      "max": 22444.5,
-      "median": 11563.5
+      "min": 3545,
+      "max": 21738,
+      "median": 16249.5
     },
-    "uptime": 100,
+    "uptime": 99.99791052884514,
     "topProvider": {
-      "p50_throughput": 200,
-      "p50_latency": 492,
-      "request_count": 72
+      "p50_throughput": 182,
+      "p50_latency": 5625,
+      "request_count": 61
     }
   },
   "qwen/qwen3-8b-04-28": {
     "throughput": {
-      "min": 26,
+      "min": 32,
       "max": 81,
-      "median": 42
+      "median": 49
     },
     "latency": {
       "min": 447.5,
-      "max": 1170,
-      "median": 1043.5
+      "max": 1158,
+      "median": 1040.5
     },
     "e2eLatency": {
       "min": 5378,
-      "max": 11974,
-      "median": 10346.5
+      "max": 12048.5,
+      "median": 10139
     },
-    "uptime": 100,
+    "uptime": 99.99950579944353,
     "topProvider": {
       "p50_throughput": 53,
-      "p50_latency": 3661,
-      "request_count": 327
+      "p50_latency": 831.5,
+      "request_count": 2570
     }
   },
   "qwen/qwen3-14b-04-28": {
     "throughput": {
       "min": 7,
-      "max": 60,
-      "median": 32
+      "max": 44,
+      "median": 19.5
     },
     "latency": {
-      "min": 355,
+      "min": 224,
       "max": 2023,
       "median": 1246
     },
     "e2eLatency": {
-      "min": 2452,
-      "max": 11729,
-      "median": 4037.75
+      "min": 3674,
+      "max": 8628,
+      "median": 4391.5
     },
-    "uptime": 99.16811501541764,
+    "uptime": 98.91890966416618,
     "topProvider": {
-      "p50_throughput": 59,
-      "p50_latency": 1192,
-      "request_count": 2319
+      "p50_throughput": 66,
+      "p50_latency": 1045,
+      "request_count": 2596
     }
   },
   "qwen/qwen3-32b-04-28": {
     "throughput": {
-      "min": 10,
-      "max": 664,
-      "median": 132.5
+      "min": 9,
+      "max": 398,
+      "median": 30.5
     },
     "latency": {
-      "min": 198,
-      "max": 1247,
-      "median": 301.5
+      "min": 276,
+      "max": 1932,
+      "median": 387.5
     },
     "e2eLatency": {
-      "min": 1095,
-      "max": 22827.5,
-      "median": 13615.5
+      "min": 1146,
+      "max": 22016.5,
+      "median": 8811.25
     },
-    "uptime": 99.84188135653517,
+    "uptime": 99.96944077932604,
     "topProvider": {
-      "p50_throughput": 22,
-      "p50_latency": 967,
-      "request_count": 756
+      "p50_throughput": 10,
+      "p50_latency": 782,
+      "request_count": 937
     }
   },
   "qwen/qwen3-235b-a22b-04-28": {
     "throughput": {
       "min": 37,
       "max": 73,
-      "median": 45.5
+      "median": 48.5
     },
     "latency": {
       "min": 756,
-      "max": 1120,
-      "median": 971
+      "max": 1094,
+      "median": 933.5
     },
     "e2eLatency": {
       "min": 2176.5,
       "max": 10174,
-      "median": 5482.25
+      "median": 6245.75
     },
-    "uptime": 99.82138165266012,
+    "uptime": 99.60669948698832,
     "topProvider": {
-      "p50_throughput": 69,
-      "p50_latency": 832.5,
-      "request_count": 98
+      "p50_throughput": 68,
+      "p50_latency": 1074,
+      "request_count": 139
     }
   },
   "tngtech/deepseek-r1t-chimera": {
     "throughput": {
       "min": 13,
       "max": 48,
-      "median": 23.5
+      "median": 33
     },
     "latency": {
       "min": 899,
       "max": 1289,
-      "median": 1112
+      "median": 979
     },
     "e2eLatency": {
       "min": 3447.5,
       "max": 7402,
-      "median": 5408.5
+      "median": 3845.75
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 41,
-      "p50_latency": 914,
-      "request_count": 1022
+      "p50_latency": 936,
+      "request_count": 1179
     }
   },
   "openai/o4-mini-high-2025-04-16": {
     "throughput": {
       "min": 91,
       "max": 119,
-      "median": 102
+      "median": 98.5
     },
     "latency": {
-      "min": 3765,
-      "max": 6906.5,
-      "median": 6359.75
+      "min": 3880,
+      "max": 8037.5,
+      "median": 6537.75
     },
     "e2eLatency": {
-      "min": 12271.5,
+      "min": 13617,
       "max": 31118.5,
-      "median": 19297.25
+      "median": 21901.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 99.5,
-      "p50_latency": 3862.5,
-      "request_count": 132
+      "p50_throughput": 84,
+      "p50_latency": 3877,
+      "request_count": 115
     }
   },
   "openai/o3-2025-04-16": {
     "throughput": {
       "min": 40,
-      "max": 81,
+      "max": 73,
       "median": 49
     },
     "latency": {
       "min": 2867,
-      "max": 5443,
-      "median": 3647
+      "max": 5387.5,
+      "median": 3867.25
     },
     "e2eLatency": {
       "min": 7026,
-      "max": 19516.5,
-      "median": 11646.25
+      "max": 19470,
+      "median": 11741
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 57.5,
-      "p50_latency": 3107.5,
-      "request_count": 192
+      "p50_throughput": 28,
+      "p50_latency": 1522,
+      "request_count": 1247
     }
   },
   "openai/o4-mini-2025-04-16": {
     "throughput": {
       "min": 79,
       "max": 108,
-      "median": 93.5
+      "median": 93
     },
     "latency": {
-      "min": 2869.5,
+      "min": 2957.5,
       "max": 6442.5,
-      "median": 4335.5
+      "median": 4471.5
     },
     "e2eLatency": {
-      "min": 8234,
+      "min": 8166,
       "max": 20085,
-      "median": 12571
+      "median": 13891.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 95,
-      "p50_latency": 3082,
-      "request_count": 3933
+      "p50_throughput": 89.5,
+      "p50_latency": 6015,
+      "request_count": 500
     }
   },
   "qwen/qwen2.5-coder-7b-instruct": {
     "throughput": {
-      "min": 192,
-      "max": 231,
-      "median": 212.5
+      "min": 144,
+      "max": 224,
+      "median": 210.5
     },
     "latency": {
-      "min": 184,
+      "min": 236,
       "max": 411,
-      "median": 283.5
+      "median": 296
     },
     "e2eLatency": {
       "min": 2549,
@@ -4217,78 +4263,78 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 223.5,
-      "p50_latency": 492.5,
-      "request_count": 14
+      "p50_throughput": 226,
+      "p50_latency": 112,
+      "request_count": 181
     }
   },
   "openai/gpt-4.1-2025-04-14": {
     "throughput": {
       "min": 30,
-      "max": 86,
-      "median": 46.5
+      "max": 54,
+      "median": 46.25
     },
     "latency": {
-      "min": 487,
+      "min": 486,
       "max": 916,
-      "median": 699.5
+      "median": 676
     },
     "e2eLatency": {
-      "min": 1804,
-      "max": 3913.5,
-      "median": 2482
+      "min": 1839,
+      "max": 2883,
+      "median": 2436
     },
-    "uptime": 99.96937137761029,
+    "uptime": 99.98699788185763,
     "topProvider": {
-      "p50_throughput": 46,
-      "p50_latency": 495.5,
-      "request_count": 15266
+      "p50_throughput": 41,
+      "p50_latency": 501,
+      "request_count": 24741
     }
   },
   "openai/gpt-4.1-mini-2025-04-14": {
     "throughput": {
       "min": 11,
-      "max": 47,
+      "max": 45,
       "median": 40.5
     },
     "latency": {
-      "min": 499,
+      "min": 502,
       "max": 802,
-      "median": 632.5
+      "median": 614.5
     },
     "e2eLatency": {
-      "min": 1532,
+      "min": 1552,
       "max": 3121.5,
-      "median": 2238.75
+      "median": 2210.75
     },
-    "uptime": 100,
+    "uptime": 99.99965399959171,
     "topProvider": {
-      "p50_throughput": 55,
-      "p50_latency": 486,
-      "request_count": 79502
+      "p50_throughput": 38,
+      "p50_latency": 523,
+      "request_count": 58712
     }
   },
   "openai/gpt-4.1-nano-2025-04-14": {
     "throughput": {
       "min": 48,
-      "max": 114.5,
-      "median": 83.5
+      "max": 118,
+      "median": 84.75
     },
     "latency": {
-      "min": 396,
-      "max": 532,
-      "median": 475
+      "min": 394,
+      "max": 559,
+      "median": 485
     },
     "e2eLatency": {
-      "min": 1435.5,
+      "min": 1429,
       "max": 2552,
-      "median": 1605.75
+      "median": 1637.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 91,
-      "p50_latency": 403,
-      "request_count": 14584
+      "p50_throughput": 100,
+      "p50_latency": 389,
+      "request_count": 18906
     }
   },
   "eleutherai/llemma_7b": {
@@ -4309,32 +4355,32 @@
     },
     "uptime": null,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 25,
+      "p50_latency": 2429,
+      "request_count": 1
     }
   },
   "alfredpros/codellama-7b-instruct-solidity": {
     "throughput": {
       "min": 7,
-      "max": 23.5,
+      "max": 21,
       "median": 16
     },
     "latency": {
-      "min": 638,
+      "min": 511,
       "max": 1263,
-      "median": 753
+      "median": 742
     },
     "e2eLatency": {
       "min": 3113,
-      "max": 5039.5,
+      "max": 5027.5,
       "median": 4395
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 6,
+      "p50_latency": 1553,
+      "request_count": 1
     }
   },
   "x-ai/grok-3-mini-beta": {
@@ -4387,115 +4433,115 @@
     "throughput": {
       "min": 19,
       "max": 20,
-      "median": 19
+      "median": 20
     },
     "latency": {
       "min": 149,
       "max": 161,
-      "median": 154
+      "median": 153.5
     },
     "e2eLatency": {
       "min": 438,
       "max": 556,
-      "median": 525.75
+      "median": 532.5
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 20,
-      "p50_latency": 148,
-      "request_count": 9414
+      "p50_latency": 150,
+      "request_count": 10268
     }
   },
   "meta-llama/llama-4-maverick-17b-128e-instruct": {
     "throughput": {
-      "min": 36,
-      "max": 210,
-      "median": 40
+      "min": 26,
+      "max": 106,
+      "median": 39.5
     },
     "latency": {
-      "min": 274,
-      "max": 816,
-      "median": 720
+      "min": 418,
+      "max": 835,
+      "median": 789.25
     },
     "e2eLatency": {
-      "min": 397,
-      "max": 1943.5,
-      "median": 1842.25
+      "min": 403,
+      "max": 1908,
+      "median": 1825.25
     },
-    "uptime": 78.91213917840436,
+    "uptime": 86.80365178317697,
     "topProvider": {
-      "p50_throughput": 33,
-      "p50_latency": 289,
-      "request_count": 19315
+      "p50_throughput": 40,
+      "p50_latency": 255,
+      "request_count": 27144
     }
   },
   "meta-llama/llama-4-scout-17b-16e-instruct": {
     "throughput": {
       "min": 16,
-      "max": 197,
-      "median": 38
+      "max": 257,
+      "median": 43
     },
     "latency": {
-      "min": 198,
-      "max": 1435,
-      "median": 258.25
+      "min": 188,
+      "max": 1439,
+      "median": 213
     },
     "e2eLatency": {
-      "min": 1042.5,
-      "max": 3416,
-      "median": 1438
+      "min": 645,
+      "max": 3468,
+      "median": 1084
     },
-    "uptime": 99.48876371446279,
+    "uptime": 99.36887570483512,
     "topProvider": {
-      "p50_throughput": 24.5,
-      "p50_latency": 218,
-      "request_count": 676
+      "p50_throughput": 17,
+      "p50_latency": 198,
+      "request_count": 695
     }
   },
   "qwen/qwen2.5-vl-32b-instruct": {
     "throughput": {
-      "min": 18,
+      "min": 13,
       "max": 42,
-      "median": 35
+      "median": 32.25
     },
     "latency": {
       "min": 366,
-      "max": 939,
-      "median": 526.25
+      "max": 1693.5,
+      "median": 613
     },
     "e2eLatency": {
       "min": 1805,
-      "max": 5995.5,
+      "max": 7154,
       "median": 3415.5
     },
-    "uptime": 99.33831906578104,
+    "uptime": 99.46182494218569,
     "topProvider": {
-      "p50_throughput": 39,
-      "p50_latency": 424,
-      "request_count": 757
+      "p50_throughput": 49,
+      "p50_latency": 362,
+      "request_count": 999
     }
   },
   "deepseek/deepseek-chat-v3-0324": {
     "throughput": {
-      "min": 11,
-      "max": 70,
-      "median": 31.5
+      "min": 12,
+      "max": 86,
+      "median": 29
     },
     "latency": {
-      "min": 456,
-      "max": 2179,
-      "median": 1130
+      "min": 459,
+      "max": 3173.5,
+      "median": 950.5
     },
     "e2eLatency": {
-      "min": 1450,
-      "max": 14067.5,
-      "median": 6534.75
+      "min": 1455,
+      "max": 17010,
+      "median": 4787.75
     },
-    "uptime": 99.58222040309137,
+    "uptime": 98.52277183329717,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 1706,
-      "request_count": 4563
+      "p50_throughput": 12,
+      "p50_latency": 1661,
+      "request_count": 4660
     }
   },
   "openai/o1-pro": {
@@ -4516,32 +4562,32 @@
     },
     "uptime": null,
     "topProvider": {
-      "p50_throughput": 4,
-      "p50_latency": 11315,
-      "request_count": 2
+      "p50_throughput": 8,
+      "p50_latency": 9477,
+      "request_count": 1
     }
   },
   "mistralai/mistral-small-3.1-24b-instruct-2503": {
     "throughput": {
-      "min": 4,
+      "min": 3,
       "max": 51,
-      "median": 31
+      "median": 14.5
     },
     "latency": {
-      "min": 283,
-      "max": 770,
-      "median": 663
+      "min": 282,
+      "max": 3093,
+      "median": 713.25
     },
     "e2eLatency": {
       "min": 1581,
       "max": 4497.5,
-      "median": 2392.75
+      "median": 2033.75
     },
-    "uptime": 99.99738850407057,
+    "uptime": 99.99394189359059,
     "topProvider": {
       "p50_throughput": 4,
-      "p50_latency": 715.5,
-      "request_count": 5586
+      "p50_latency": 688,
+      "request_count": 4383
     }
   },
   "allenai/olmo-2-0325-32b-instruct": {
@@ -4562,343 +4608,343 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 11,
+      "p50_latency": 4466,
+      "request_count": 1
     }
   },
   "google/gemma-3-4b-it": {
     "throughput": {
       "min": 24,
-      "max": 39,
+      "max": 38,
       "median": 28.5
     },
     "latency": {
-      "min": 418,
-      "max": 793,
-      "median": 557.5
+      "min": 309,
+      "max": 570,
+      "median": 487
     },
     "e2eLatency": {
-      "min": 1247,
+      "min": 965,
       "max": 2237.5,
-      "median": 1564.5
+      "median": 1578.75
     },
-    "uptime": 98.98824523887595,
+    "uptime": 98.22524575910286,
     "topProvider": {
-      "p50_throughput": 27,
-      "p50_latency": 722,
-      "request_count": 1817
+      "p50_throughput": 36,
+      "p50_latency": 438,
+      "request_count": 1812
     }
   },
   "google/gemma-3-12b-it": {
     "throughput": {
-      "min": 12,
-      "max": 53,
-      "median": 34
+      "min": 17,
+      "max": 48,
+      "median": 33
     },
     "latency": {
-      "min": 274,
-      "max": 968,
-      "median": 575
+      "min": 241,
+      "max": 698,
+      "median": 420.5
     },
     "e2eLatency": {
-      "min": 636.5,
-      "max": 10933,
-      "median": 1598.25
+      "min": 556,
+      "max": 4347,
+      "median": 1000.75
     },
-    "uptime": 99.9048914891552,
+    "uptime": 99.96124019166687,
     "topProvider": {
-      "p50_throughput": 27,
-      "p50_latency": 683,
-      "request_count": 1059
+      "p50_throughput": 23,
+      "p50_latency": 853,
+      "request_count": 1143
     }
   },
   "cohere/command-a-03-2025": {
     "throughput": {
       "min": 6,
       "max": 67,
-      "median": 37.5
+      "median": 38
     },
     "latency": {
       "min": 257,
       "max": 522,
-      "median": 335
+      "median": 339.5
     },
     "e2eLatency": {
-      "min": 799.5,
-      "max": 6508,
-      "median": 5098.75
+      "min": 799,
+      "max": 6628,
+      "median": 5285
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 47,
-      "p50_latency": 194,
-      "request_count": 3
+      "p50_throughput": 56.5,
+      "p50_latency": 262.5,
+      "request_count": 6
     }
   },
   "openai/gpt-4o-mini-search-preview-2025-03-11": {
     "throughput": {
-      "min": 48.5,
+      "min": 13,
       "max": 88,
       "median": 77
     },
     "latency": {
-      "min": 1604,
+      "min": 1482,
       "max": 2004,
-      "median": 1662.5
+      "median": 1674
     },
     "e2eLatency": {
-      "min": 4842,
+      "min": 3481,
       "max": 7440,
-      "median": 5976.25
+      "median": 5486
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 84,
-      "p50_latency": 1443,
-      "request_count": 39
+      "p50_throughput": 61.5,
+      "p50_latency": 1538,
+      "request_count": 68
     }
   },
   "openai/gpt-4o-search-preview-2025-03-11": {
     "throughput": {
-      "min": 28,
-      "max": 58,
-      "median": 41
+      "min": 30,
+      "max": 65,
+      "median": 44
     },
     "latency": {
-      "min": 2461,
-      "max": 3329,
-      "median": 3085
+      "min": 2433,
+      "max": 3264,
+      "median": 2984.5
     },
     "e2eLatency": {
-      "min": 8912.5,
+      "min": 8356.5,
       "max": 12233,
-      "median": 10468
+      "median": 10335
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 70,
-      "p50_latency": 2362,
-      "request_count": 41
+      "p50_throughput": 73,
+      "p50_latency": 2574,
+      "request_count": 33
     }
   },
   "google/gemma-3-27b-it": {
     "throughput": {
-      "min": 27,
-      "max": 41,
-      "median": 33
+      "min": 17,
+      "max": 40,
+      "median": 31
     },
     "latency": {
-      "min": 392,
-      "max": 687,
-      "median": 622.5
+      "min": 386,
+      "max": 2839,
+      "median": 638.5
     },
     "e2eLatency": {
-      "min": 2044,
-      "max": 5322,
-      "median": 2823.25
+      "min": 2620,
+      "max": 14298,
+      "median": 3360.5
     },
-    "uptime": 96.14924752700004,
+    "uptime": 96.60823214267896,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 956,
-      "request_count": 1647
+      "p50_throughput": 29,
+      "p50_latency": 1371,
+      "request_count": 948
     }
   },
   "thedrummer/skyfall-36b-v2": {
     "throughput": {
       "min": 38,
       "max": 51,
-      "median": 47.5
+      "median": 49
     },
     "latency": {
-      "min": 661,
+      "min": 664,
       "max": 975,
-      "median": 710.25
+      "median": 686.75
     },
     "e2eLatency": {
-      "min": 5063.5,
-      "max": 6002,
-      "median": 5493.25
+      "min": 5134.5,
+      "max": 5948,
+      "median": 5554.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 49,
-      "p50_latency": 680,
-      "request_count": 635
+      "p50_throughput": 46,
+      "p50_latency": 808,
+      "request_count": 726
     }
   },
   "perplexity/sonar-reasoning-pro": {
     "throughput": {
       "min": 78,
       "max": 85,
-      "median": 82.5
+      "median": 82
     },
     "latency": {
-      "min": 1540,
+      "min": 1626,
       "max": 2322,
-      "median": 1759
+      "median": 1769
     },
     "e2eLatency": {
-      "min": 13386,
-      "max": 24122,
-      "median": 15236.25
+      "min": 12931.5,
+      "max": 23984.5,
+      "median": 14675.75
     },
-    "uptime": 99.98273555181493,
+    "uptime": 99.5984371608422,
     "topProvider": {
-      "p50_throughput": 86,
-      "p50_latency": 1778,
-      "request_count": 151
+      "p50_throughput": 76,
+      "p50_latency": 3414.5,
+      "request_count": 86
     }
   },
   "perplexity/sonar-pro": {
     "throughput": {
-      "min": 56,
+      "min": 70,
       "max": 99,
-      "median": 85.5
+      "median": 92
     },
     "latency": {
       "min": 1306,
       "max": 1555,
-      "median": 1481
+      "median": 1483
     },
     "e2eLatency": {
-      "min": 4588,
-      "max": 6752.5,
-      "median": 6168
+      "min": 5454.5,
+      "max": 6751.5,
+      "median": 6345.75
     },
-    "uptime": 99.99959951300782,
+    "uptime": 99.9626085508872,
     "topProvider": {
-      "p50_throughput": 104,
-      "p50_latency": 1345,
-      "request_count": 1030
+      "p50_throughput": 81,
+      "p50_latency": 1407,
+      "request_count": 1752
     }
   },
   "perplexity/sonar-deep-research": {
     "throughput": {
-      "min": 2366.5,
-      "max": 2978.5,
-      "median": 2547.25
+      "min": 1789,
+      "max": 2922,
+      "median": 2521.25
     },
     "latency": {
-      "min": 28157,
-      "max": 30354,
-      "median": 29187.5
+      "min": 28385.5,
+      "max": 30836,
+      "median": 29566.25
     },
     "e2eLatency": {
-      "min": 84682.5,
+      "min": 84150,
       "max": 134455,
-      "median": 118430.5
+      "median": 113958
     },
-    "uptime": 99.77959625359757,
+    "uptime": 99.65416905408435,
     "topProvider": {
-      "p50_throughput": 2447.5,
-      "p50_latency": 30216,
-      "request_count": 36
+      "p50_throughput": 703.5,
+      "p50_latency": 4483.5,
+      "request_count": 120
     }
   },
   "qwen/qwq-32b": {
     "throughput": {
-      "min": 23,
-      "max": 39,
-      "median": 30
+      "min": 19,
+      "max": 36,
+      "median": 29.5
     },
     "latency": {
-      "min": 1592,
-      "max": 2388,
-      "median": 2176.75
+      "min": 1354.5,
+      "max": 2954,
+      "median": 2088.75
     },
     "e2eLatency": {
-      "min": 18297,
-      "max": 45723,
-      "median": 28630.5
+      "min": 24847,
+      "max": 55653.5,
+      "median": 35171.25
     },
-    "uptime": 98.17984739588819,
+    "uptime": 98.09733488950263,
     "topProvider": {
-      "p50_throughput": 23,
-      "p50_latency": 2526,
-      "request_count": 35
+      "p50_throughput": 20,
+      "p50_latency": 3118,
+      "request_count": 280
     }
   },
   "google/gemini-2.0-flash-lite-001": {
     "throughput": {
       "min": 37,
       "max": 80,
-      "median": 51.5
+      "median": 55
     },
     "latency": {
       "min": 418,
       "max": 1134,
-      "median": 610.75
+      "median": 611.75
     },
     "e2eLatency": {
       "min": 1415,
       "max": 2799.5,
       "median": 2268
     },
-    "uptime": 96.95650003991484,
+    "uptime": 99.83246296359219,
     "topProvider": {
-      "p50_throughput": 74,
-      "p50_latency": 467,
-      "request_count": 22698
+      "p50_throughput": 93,
+      "p50_latency": 423.5,
+      "request_count": 24926
     }
   },
   "anthropic/claude-3-7-sonnet-20250219": {
     "throughput": {
       "min": 42,
       "max": 53,
-      "median": 45
+      "median": 45.5
     },
     "latency": {
-      "min": 714.5,
-      "max": 1241,
-      "median": 849.25
+      "min": 696,
+      "max": 1323,
+      "median": 891.25
     },
     "e2eLatency": {
-      "min": 5133.5,
-      "max": 9221.5,
-      "median": 6441.75
+      "min": 4329.5,
+      "max": 30967.5,
+      "median": 6148.25
     },
-    "uptime": 99.79285521293677,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 46,
-      "p50_latency": 845,
-      "request_count": 4841
+      "p50_throughput": 44,
+      "p50_latency": 735,
+      "request_count": 4298
     }
   },
   "mistralai/mistral-saba-2502": {
     "throughput": {
       "min": 21,
-      "max": 118.5,
+      "max": 118,
       "median": 70.25
     },
     "latency": {
       "min": 176.5,
       "max": 285,
-      "median": 202.5
+      "median": 205.25
     },
     "e2eLatency": {
       "min": 507,
-      "max": 9936.5,
+      "max": 9293,
       "median": 749
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 98.5,
-      "p50_latency": 228,
-      "request_count": 4
+      "p50_throughput": 121.5,
+      "p50_latency": 150,
+      "request_count": 10
     }
   },
   "meta-llama/llama-guard-3-8b": {
     "throughput": {
       "min": 12,
       "max": 20,
-      "median": 18.5
+      "median": 18
     },
     "latency": {
       "min": 262,
       "max": 355,
-      "median": 281.5
+      "median": 283.5
     },
     "e2eLatency": {
       "min": 766,
@@ -4907,78 +4953,78 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 21,
-      "p50_latency": 259.5,
-      "request_count": 102
+      "p50_throughput": 15,
+      "p50_latency": 252,
+      "request_count": 43
     }
   },
   "openai/o3-mini-high-2025-01-31": {
     "throughput": {
       "min": 73.5,
       "max": 177,
-      "median": 92
+      "median": 96
     },
     "latency": {
       "min": 230,
-      "max": 6913.5,
-      "median": 3349.25
+      "max": 10148.5,
+      "median": 3606.25
     },
     "e2eLatency": {
       "min": 2514,
-      "max": 19038,
-      "median": 12128
+      "max": 27393.5,
+      "median": 13045
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 123.5,
-      "p50_latency": 6754,
-      "request_count": 14
+      "p50_throughput": 36,
+      "p50_latency": 230,
+      "request_count": 10
     }
   },
   "google/gemini-2.0-flash-001": {
     "throughput": {
       "min": 68,
-      "max": 90,
+      "max": 87,
       "median": 76
     },
     "latency": {
-      "min": 387,
+      "min": 334,
       "max": 477,
       "median": 400.5
     },
     "e2eLatency": {
-      "min": 1400,
+      "min": 1408,
       "max": 1802.5,
-      "median": 1553.5
+      "median": 1561.25
     },
-    "uptime": 99.75648708409506,
+    "uptime": 99.49741271330792,
     "topProvider": {
-      "p50_throughput": 87,
-      "p50_latency": 373,
-      "request_count": 152666
+      "p50_throughput": 86,
+      "p50_latency": 381,
+      "request_count": 158233
     }
   },
   "qwen/qwen-vl-plus": {
     "throughput": {
-      "min": 16,
+      "min": 13,
       "max": 84,
-      "median": 79.5
+      "median": 74
     },
     "latency": {
       "min": 489,
-      "max": 1933,
-      "median": 733.5
+      "max": 2248,
+      "median": 750
     },
     "e2eLatency": {
       "min": 5276.5,
-      "max": 8407,
-      "median": 6812.75
+      "max": 7994,
+      "median": 5726
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 91,
-      "p50_latency": 485.5,
-      "request_count": 194
+      "p50_throughput": 92,
+      "p50_latency": 431.5,
+      "request_count": 190
     }
   },
   "aion-labs/aion-1.0": {
@@ -4988,43 +5034,43 @@
       "median": 38
     },
     "latency": {
-      "min": 1657,
-      "max": 1764,
-      "median": 1711
+      "min": 1667,
+      "max": 1775,
+      "median": 1722
     },
     "e2eLatency": {
-      "min": 47013,
+      "min": 47790,
       "max": 55850,
-      "median": 50370.5
+      "median": 51009.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 40,
-      "p50_latency": 1750,
-      "request_count": 73
+      "p50_throughput": 34,
+      "p50_latency": 1728.5,
+      "request_count": 128
     }
   },
   "aion-labs/aion-1.0-mini": {
     "throughput": {
       "min": 26,
-      "max": 239,
-      "median": 32.5
+      "max": 187,
+      "median": 32
     },
     "latency": {
-      "min": 1156,
-      "max": 2752,
-      "median": 2429.75
+      "min": 1348,
+      "max": 2686.5,
+      "median": 2453.5
     },
     "e2eLatency": {
-      "min": 2808,
-      "max": 24506,
-      "median": 10687.5
+      "min": 3194,
+      "max": 24295.5,
+      "median": 14223
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 20.5,
+      "p50_latency": 1987,
+      "request_count": 2
     }
   },
   "aion-labs/aion-rp-llama-3.1-8b": {
@@ -5034,32 +5080,32 @@
       "median": 34
     },
     "latency": {
-      "min": 987,
+      "min": 995.5,
       "max": 1069.5,
-      "median": 1038.5
+      "median": 1044
     },
     "e2eLatency": {
       "min": 4532,
-      "max": 6850,
-      "median": 5261.5
+      "max": 6714,
+      "median": 5303.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 38,
-      "p50_latency": 1019,
-      "request_count": 19
+      "p50_throughput": 35,
+      "p50_latency": 1225,
+      "request_count": 35
     }
   },
   "qwen/qwen-vl-max-2025-01-25": {
     "throughput": {
       "min": 4,
       "max": 40,
-      "median": 26
+      "median": 32
     },
     "latency": {
       "min": 506,
       "max": 1433,
-      "median": 883.5
+      "median": 928.25
     },
     "e2eLatency": {
       "min": 1298.5,
@@ -5068,216 +5114,216 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 52.5,
-      "p50_latency": 1145,
-      "request_count": 44
+      "p50_throughput": 41,
+      "p50_latency": 1188,
+      "request_count": 71
     }
   },
   "qwen/qwen-turbo-2024-11-01": {
     "throughput": {
-      "min": 6,
-      "max": 33,
-      "median": 27.5
+      "min": 5,
+      "max": 38,
+      "median": 28.5
     },
     "latency": {
-      "min": 406,
+      "min": 405,
       "max": 646,
-      "median": 464.5
+      "median": 460
     },
     "e2eLatency": {
-      "min": 976,
-      "max": 2311.5,
-      "median": 1705.75
+      "min": 941.5,
+      "max": 2316,
+      "median": 1514.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 5,
-      "p50_latency": 370,
-      "request_count": 681
+      "p50_throughput": 43,
+      "p50_latency": 457,
+      "request_count": 28275
     }
   },
   "qwen/qwen2.5-vl-72b-instruct": {
     "throughput": {
       "min": 5,
       "max": 17,
-      "median": 15.5
+      "median": 15
     },
     "latency": {
       "min": 755,
-      "max": 2433,
-      "median": 1561.25
+      "max": 1782,
+      "median": 1386
     },
     "e2eLatency": {
-      "min": 4748,
-      "max": 13783,
-      "median": 6828.25
+      "min": 4347,
+      "max": 16301.5,
+      "median": 7346
     },
-    "uptime": 99.88426292474723,
+    "uptime": 99.86501428183429,
     "topProvider": {
-      "p50_throughput": 38,
-      "p50_latency": 2037,
-      "request_count": 61
+      "p50_throughput": 36,
+      "p50_latency": 2271,
+      "request_count": 91
     }
   },
   "qwen/qwen-plus-2025-01-25": {
     "throughput": {
       "min": 4,
       "max": 41,
-      "median": 32.5
+      "median": 20
     },
     "latency": {
       "min": 315,
       "max": 704,
-      "median": 489
+      "median": 418
     },
     "e2eLatency": {
-      "min": 952.5,
+      "min": 815,
       "max": 3720.5,
-      "median": 1617.25
+      "median": 1395
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 17,
-      "p50_latency": 301,
-      "request_count": 406
+      "p50_throughput": 20,
+      "p50_latency": 316,
+      "request_count": 351
     }
   },
   "qwen/qwen-max-2025-01-25": {
     "throughput": {
       "min": 12,
-      "max": 48,
+      "max": 42,
       "median": 29.5
     },
     "latency": {
-      "min": 421,
+      "min": 437,
       "max": 678,
       "median": 530.75
     },
     "e2eLatency": {
       "min": 1619,
-      "max": 7409,
+      "max": 3973,
       "median": 2039.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 7,
-      "p50_latency": 821,
-      "request_count": 12
+      "p50_throughput": 64,
+      "p50_latency": 392,
+      "request_count": 151
     }
   },
   "openai/o3-mini-2025-01-31": {
     "throughput": {
-      "min": 74,
+      "min": 73,
       "max": 201,
-      "median": 90
+      "median": 94.5
     },
     "latency": {
       "min": 165,
-      "max": 7882,
-      "median": 3096.75
+      "max": 8008.5,
+      "median": 6692.5
     },
     "e2eLatency": {
-      "min": 4568.5,
-      "max": 19632.5,
-      "median": 11093.5
+      "min": 4570.5,
+      "max": 19447,
+      "median": 14028.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 119,
-      "p50_latency": 5660,
-      "request_count": 389
+      "p50_throughput": 125,
+      "p50_latency": 5607.5,
+      "request_count": 462
     }
   },
   "mistralai/mistral-small-24b-instruct-2501": {
     "throughput": {
       "min": 37,
-      "max": 66,
+      "max": 64,
       "median": 42.5
     },
     "latency": {
-      "min": 331,
+      "min": 188,
       "max": 934.5,
-      "median": 538
+      "median": 675.5
     },
     "e2eLatency": {
-      "min": 1623.5,
+      "min": 2425.5,
       "max": 5802.5,
-      "median": 3796.25
+      "median": 4638.5
     },
-    "uptime": 99.96574497161168,
+    "uptime": 99.94715448672754,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 703,
-      "request_count": 7409
+      "p50_throughput": 32,
+      "p50_latency": 790,
+      "request_count": 6943
     }
   },
   "deepseek/deepseek-r1-distill-qwen-32b": {
     "throughput": {
       "min": 12,
       "max": 34,
-      "median": 26.5
+      "median": 27
     },
     "latency": {
-      "min": 502,
+      "min": 506,
       "max": 3344,
-      "median": 1063
+      "median": 1064
     },
     "e2eLatency": {
       "min": 14221.5,
       "max": 45730.5,
-      "median": 18167.75
+      "median": 18027.25
     },
-    "uptime": 90.84159774824532,
+    "uptime": 97.27319527327883,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 2726,
-      "request_count": 885
+      "p50_throughput": 24,
+      "p50_latency": 1546,
+      "request_count": 633
     }
   },
   "perplexity/sonar": {
     "throughput": {
       "min": 61,
       "max": 85,
-      "median": 78
+      "median": 76.5
     },
     "latency": {
       "min": 1323,
-      "max": 1557,
-      "median": 1447
+      "max": 1513.5,
+      "median": 1437.5
     },
     "e2eLatency": {
       "min": 4416,
       "max": 6755.5,
-      "median": 5380
+      "median": 5053.5
     },
-    "uptime": 99.99388273899551,
+    "uptime": 99.9371427745743,
     "topProvider": {
-      "p50_throughput": 75,
-      "p50_latency": 1357,
-      "request_count": 1921
+      "p50_throughput": 92,
+      "p50_latency": 1393,
+      "request_count": 3638
     }
   },
   "deepseek/deepseek-r1-distill-llama-70b": {
     "throughput": {
       "min": 41,
       "max": 161,
-      "median": 46.5
+      "median": 51
     },
     "latency": {
       "min": 312,
-      "max": 1599.5,
-      "median": 694
+      "max": 1461,
+      "median": 748.75
     },
     "e2eLatency": {
       "min": 5336,
-      "max": 17844,
-      "median": 12728
+      "max": 15202,
+      "median": 9073
     },
-    "uptime": 99.99277153720489,
+    "uptime": 99.99311099055346,
     "topProvider": {
-      "p50_throughput": 46,
-      "p50_latency": 894,
-      "request_count": 25
+      "p50_throughput": 52,
+      "p50_latency": 675,
+      "request_count": 41
     }
   },
   "deepseek/deepseek-r1": {
@@ -5287,135 +5333,135 @@
       "median": 53.5
     },
     "latency": {
-      "min": 1169,
-      "max": 1610,
-      "median": 1442
+      "min": 1171,
+      "max": 1568,
+      "median": 1441.5
     },
     "e2eLatency": {
       "min": 16980.5,
       "max": 46015,
-      "median": 30381.25
+      "median": 29536.5
     },
-    "uptime": 99.9843798812871,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 27,
-      "p50_latency": 1632,
-      "request_count": 1943
+      "p50_throughput": 26,
+      "p50_latency": 1390,
+      "request_count": 2243
     }
   },
   "minimax/minimax-01": {
     "throughput": {
       "min": 25,
       "max": 28,
-      "median": 25.5
+      "median": 26
     },
     "latency": {
-      "min": 850,
+      "min": 848,
       "max": 920,
-      "median": 886
+      "median": 879
     },
     "e2eLatency": {
-      "min": 6529.5,
-      "max": 7923,
-      "median": 7009.25
+      "min": 6641,
+      "max": 8429,
+      "median": 7306.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 850.5,
-      "request_count": 362
+      "p50_throughput": 34,
+      "p50_latency": 873.5,
+      "request_count": 386
     }
   },
   "microsoft/phi-4": {
     "throughput": {
       "min": 11,
-      "max": 29,
-      "median": 14
+      "max": 37,
+      "median": 15.5
     },
     "latency": {
       "min": 470,
-      "max": 1289,
-      "median": 811
+      "max": 1296,
+      "median": 751
     },
     "e2eLatency": {
-      "min": 1373,
-      "max": 6779,
-      "median": 2459.75
+      "min": 1374,
+      "max": 7560,
+      "median": 2470.25
     },
-    "uptime": 99.98080097322065,
+    "uptime": 99.9768086928255,
     "topProvider": {
-      "p50_throughput": 29,
-      "p50_latency": 1676,
-      "request_count": 1359
+      "p50_throughput": 39,
+      "p50_latency": 1287,
+      "request_count": 2958
     }
   },
   "sao10k/l3.1-70b-hanami-x1": {
     "throughput": {
       "min": 11,
-      "max": 14,
+      "max": 13,
       "median": 12
     },
     "latency": {
       "min": 607.5,
-      "max": 1739.5,
-      "median": 1419.5
+      "max": 3651,
+      "median": 1454.25
     },
     "e2eLatency": {
       "min": 2843,
-      "max": 21926,
-      "median": 8467
+      "max": 42144,
+      "median": 10306.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 12369,
-      "request_count": 3
+      "p50_throughput": 14.5,
+      "p50_latency": 6263,
+      "request_count": 12
     }
   },
   "deepseek/deepseek-chat-v3": {
     "throughput": {
-      "min": 16,
-      "max": 35,
-      "median": 21.5
+      "min": 20,
+      "max": 39,
+      "median": 26
     },
     "latency": {
       "min": 358,
-      "max": 1391,
-      "median": 847.75
+      "max": 1412,
+      "median": 1012
     },
     "e2eLatency": {
       "min": 2230,
-      "max": 6933.5,
-      "median": 5147
+      "max": 5583,
+      "median": 5162.5
     },
-    "uptime": 99.59433168122011,
+    "uptime": 99.6410633731003,
     "topProvider": {
-      "p50_throughput": 43,
-      "p50_latency": 740,
-      "request_count": 1553
+      "p50_throughput": 43.5,
+      "p50_latency": 767,
+      "request_count": 1852
     }
   },
   "sao10k/l3.3-euryale-70b-v2.3": {
     "throughput": {
       "min": 13,
       "max": 24,
-      "median": 13
+      "median": 13.5
     },
     "latency": {
-      "min": 262,
-      "max": 1853,
-      "median": 1745.5
+      "min": 263,
+      "max": 1869,
+      "median": 1112.5
     },
     "e2eLatency": {
-      "min": 801,
-      "max": 7181.5,
-      "median": 6797
+      "min": 804,
+      "max": 7429.5,
+      "median": 1293.5
     },
-    "uptime": 99.25818853737037,
+    "uptime": 98.92186566741522,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 1936,
-      "request_count": 254
+      "p50_throughput": 12,
+      "p50_latency": 1973,
+      "request_count": 461
     }
   },
   "openai/o1-2024-12-17": {
@@ -5427,64 +5473,64 @@
     "latency": {
       "min": 269,
       "max": 13673,
-      "median": 5983.75
+      "median": 5755.75
     },
     "e2eLatency": {
       "min": 8785,
       "max": 31521.5,
-      "median": 20181.5
+      "median": 19535.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": null,
-      "p50_latency": null,
-      "request_count": null
+      "p50_throughput": 74,
+      "p50_latency": 4695,
+      "request_count": 8
     }
   },
   "cohere/command-r7b-12-2024": {
     "throughput": {
       "min": 100,
       "max": 119,
-      "median": 110.5
+      "median": 109.5
     },
     "latency": {
       "min": 180,
       "max": 312,
-      "median": 303.5
+      "median": 305
     },
     "e2eLatency": {
-      "min": 981,
+      "min": 973,
       "max": 1317,
       "median": 1184.75
     },
-    "uptime": 99.90283267222706,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 111,
-      "p50_latency": 304.5,
-      "request_count": 48
+      "p50_throughput": 104,
+      "p50_latency": 297.5,
+      "request_count": 78
     }
   },
   "meta-llama/llama-3.3-70b-instruct": {
     "throughput": {
-      "min": 21,
-      "max": 120,
-      "median": 60.5
+      "min": 26,
+      "max": 188,
+      "median": 77.5
     },
     "latency": {
-      "min": 191,
-      "max": 1014.5,
-      "median": 306
+      "min": 207,
+      "max": 747,
+      "median": 349.5
     },
     "e2eLatency": {
-      "min": 1087,
-      "max": 5939,
-      "median": 3009.75
+      "min": 999,
+      "max": 7906,
+      "median": 2745.75
     },
-    "uptime": 99.9761353690302,
+    "uptime": 99.98919814400874,
     "topProvider": {
-      "p50_throughput": 23,
-      "p50_latency": 698,
-      "request_count": 300
+      "p50_throughput": 24,
+      "p50_latency": 1098,
+      "request_count": 143
     }
   },
   "amazon/nova-lite-v1": {
@@ -5494,273 +5540,273 @@
       "median": 8
     },
     "latency": {
-      "min": 463,
+      "min": 464,
       "max": 476,
       "median": 470.5
     },
     "e2eLatency": {
-      "min": 951,
+      "min": 970,
       "max": 1073,
       "median": 996.5
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 8,
-      "p50_latency": 457,
-      "request_count": 1304
+      "p50_latency": 451,
+      "request_count": 1414
     }
   },
   "amazon/nova-micro-v1": {
     "throughput": {
-      "min": 89,
+      "min": 88,
       "max": 212,
-      "median": 162
+      "median": 165
     },
     "latency": {
-      "min": 304,
+      "min": 302,
       "max": 377,
-      "median": 362.5
+      "median": 361.25
     },
     "e2eLatency": {
-      "min": 785,
-      "max": 1227,
-      "median": 1095
+      "min": 782,
+      "max": 1586,
+      "median": 1147
     },
-    "uptime": 99.99673536178749,
+    "uptime": 99.99661996970674,
     "topProvider": {
-      "p50_throughput": 71,
-      "p50_latency": 295,
-      "request_count": 2107
+      "p50_throughput": 138,
+      "p50_latency": 453.5,
+      "request_count": 4702
     }
   },
   "amazon/nova-pro-v1": {
     "throughput": {
       "min": 19,
-      "max": 68,
-      "median": 39.5
+      "max": 90,
+      "median": 45
     },
     "latency": {
-      "min": 496,
+      "min": 438,
       "max": 657,
-      "median": 574.25
+      "median": 546
     },
     "e2eLatency": {
-      "min": 1315,
-      "max": 2854.5,
-      "median": 1901.5
+      "min": 1110,
+      "max": 2344,
+      "median": 1878.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 67,
-      "p50_latency": 574,
-      "request_count": 3
+      "p50_throughput": 124,
+      "p50_latency": 409,
+      "request_count": 84
     }
   },
   "openai/gpt-4o-2024-11-20": {
     "throughput": {
       "min": 42,
-      "max": 77,
-      "median": 58
+      "max": 74,
+      "median": 53
     },
     "latency": {
       "min": 399,
       "max": 694,
-      "median": 476
+      "median": 483
     },
     "e2eLatency": {
-      "min": 1619,
+      "min": 1650.5,
       "max": 3941.5,
-      "median": 2354
+      "median": 2549.25
     },
-    "uptime": 100,
+    "uptime": 99.99835032498599,
     "topProvider": {
-      "p50_throughput": 92,
-      "p50_latency": 498.5,
-      "request_count": 670
+      "p50_throughput": 59,
+      "p50_latency": 435,
+      "request_count": 449
     }
   },
   "mistralai/mistral-large-2411": {
     "throughput": {
       "min": 6,
-      "max": 49,
-      "median": 41
+      "max": 48,
+      "median": 40.5
     },
     "latency": {
       "min": 334,
-      "max": 419.5,
+      "max": 424,
       "median": 358.5
     },
     "e2eLatency": {
       "min": 763,
-      "max": 3916.5,
+      "max": 3837,
       "median": 1969.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 52,
-      "p50_latency": 331,
-      "request_count": 93
+      "p50_throughput": 54,
+      "p50_latency": 427,
+      "request_count": 145
     }
   },
   "mistralai/mistral-large-2407": {
     "throughput": {
       "min": 19,
-      "max": 45,
-      "median": 38
+      "max": 46,
+      "median": 40
     },
     "latency": {
       "min": 406.5,
       "max": 553,
-      "median": 443.75
+      "median": 458.5
     },
     "e2eLatency": {
       "min": 1358,
-      "max": 7681,
-      "median": 3737
+      "max": 6158,
+      "median": 5063.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 43.5,
-      "p50_latency": 540.5,
-      "request_count": 14
+      "p50_throughput": 42,
+      "p50_latency": 654.5,
+      "request_count": 12
     }
   },
   "mistralai/pixtral-large-2411": {
     "throughput": {
       "min": 48,
-      "max": 56,
+      "max": 65,
       "median": 53
     },
     "latency": {
-      "min": 677,
-      "max": 942,
-      "median": 834
+      "min": 320,
+      "max": 934.5,
+      "median": 794
     },
     "e2eLatency": {
       "min": 4041,
-      "max": 6969,
+      "max": 10050,
       "median": 4716
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 56,
-      "p50_latency": 663.5,
-      "request_count": 44
+      "p50_throughput": 58,
+      "p50_latency": 868,
+      "request_count": 31
     }
   },
   "qwen/qwen-2.5-coder-32b-instruct": {
     "throughput": {
       "min": 11,
-      "max": 33,
-      "median": 22.5
+      "max": 29,
+      "median": 21.5
     },
     "latency": {
-      "min": 298,
-      "max": 752,
-      "median": 469.75
+      "min": 294,
+      "max": 665.5,
+      "median": 476.75
     },
     "e2eLatency": {
-      "min": 1181,
-      "max": 3902,
-      "median": 2196.75
+      "min": 1097,
+      "max": 4860,
+      "median": 1686.5
     },
-    "uptime": 98.79988224276748,
+    "uptime": 99.84875681507253,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 568,
-      "request_count": 1320
+      "p50_throughput": 9,
+      "p50_latency": 718,
+      "request_count": 1257
     }
   },
   "raifle/sorcererlm-8x22b": {
     "throughput": {
-      "min": 38,
+      "min": 30,
       "max": 45,
-      "median": 41.5
+      "median": 40
     },
     "latency": {
-      "min": 505.5,
+      "min": 487.5,
       "max": 1116,
-      "median": 620.25
+      "median": 579
     },
     "e2eLatency": {
-      "min": 3868,
+      "min": 4259,
       "max": 7688,
-      "median": 4829.25
+      "median": 4890
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 40,
-      "p50_latency": 1666,
-      "request_count": 42
+      "p50_throughput": 48,
+      "p50_latency": 837.5,
+      "request_count": 14
     }
   },
   "thedrummer/unslopnemo-12b": {
     "throughput": {
-      "min": 27,
-      "max": 31,
+      "min": 29,
+      "max": 32,
       "median": 30
     },
     "latency": {
-      "min": 1362,
-      "max": 1596.5,
-      "median": 1457
+      "min": 1378,
+      "max": 1590,
+      "median": 1439.25
     },
     "e2eLatency": {
-      "min": 6860,
-      "max": 7881,
-      "median": 7347.5
+      "min": 6812,
+      "max": 7640.5,
+      "median": 7221.25
     },
-    "uptime": 99.88512160039602,
+    "uptime": 99.91892029736118,
     "topProvider": {
-      "p50_throughput": 32,
-      "p50_latency": 1443.5,
-      "request_count": 1128
+      "p50_throughput": 3,
+      "p50_latency": 55779,
+      "request_count": 1786
     }
   },
   "anthropic/claude-3-5-haiku": {
     "throughput": {
-      "min": 32,
+      "min": 37,
       "max": 45,
       "median": 39
     },
     "latency": {
-      "min": 725.5,
-      "max": 836,
-      "median": 790.5
+      "min": 759,
+      "max": 828,
+      "median": 797
     },
     "e2eLatency": {
-      "min": 2912,
+      "min": 3548.5,
       "max": 5448.5,
-      "median": 4102.5
+      "median": 4217.75
     },
-    "uptime": 99.95930899938247,
+    "uptime": 99.93163311402385,
     "topProvider": {
-      "p50_throughput": 46,
-      "p50_latency": 833,
-      "request_count": 3479
+      "p50_throughput": 40,
+      "p50_latency": 1865.5,
+      "request_count": 3724
     }
   },
   "anthracite-org/magnum-v4-72b": {
     "throughput": {
-      "min": 21,
+      "min": 22,
       "max": 23,
       "median": 23
     },
     "latency": {
       "min": 467.5,
       "max": 563,
-      "median": 495
+      "median": 486.5
     },
     "e2eLatency": {
       "min": 4666,
       "max": 7703,
-      "median": 6504.75
+      "median": 6862
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 23,
-      "p50_latency": 574,
-      "request_count": 110
+      "p50_latency": 537,
+      "request_count": 101
     }
   },
   "anthropic/claude-3.5-sonnet": {
@@ -5770,66 +5816,66 @@
       "median": 28.5
     },
     "latency": {
-      "min": 1062,
-      "max": 1321,
-      "median": 1174
+      "min": 1053.5,
+      "max": 1327,
+      "median": 1176.25
     },
     "e2eLatency": {
-      "min": 5433.5,
+      "min": 5505.5,
       "max": 7097,
-      "median": 6209.25
+      "median": 6285.25
     },
-    "uptime": 99.70852529341117,
+    "uptime": 99.8514652863649,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 864,
-      "request_count": 1281
+      "p50_throughput": 29,
+      "p50_latency": 947,
+      "request_count": 1543
     }
   },
   "qwen/qwen-2.5-7b-instruct": {
     "throughput": {
       "min": 18,
       "max": 84.5,
-      "median": 30.5
+      "median": 52.5
     },
     "latency": {
       "min": 268,
-      "max": 1786,
-      "median": 386
+      "max": 1009,
+      "median": 371
     },
     "e2eLatency": {
       "min": 1051,
-      "max": 4949.5,
-      "median": 1481
+      "max": 2929.5,
+      "median": 1339
     },
-    "uptime": 99.95383521109714,
+    "uptime": 99.89568331168995,
     "topProvider": {
-      "p50_throughput": 60.5,
-      "p50_latency": 333,
-      "request_count": 2428
+      "p50_throughput": 76,
+      "p50_latency": 318,
+      "request_count": 2160
     }
   },
   "nvidia/llama-3.1-nemotron-70b-instruct": {
     "throughput": {
       "min": 8,
       "max": 35,
-      "median": 13
+      "median": 13.5
     },
     "latency": {
-      "min": 142,
+      "min": 153,
       "max": 501,
       "median": 226
     },
     "e2eLatency": {
-      "min": 309,
-      "max": 4289,
-      "median": 544.5
+      "min": 344,
+      "max": 4299,
+      "median": 562
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 33,
-      "p50_latency": 286.5,
-      "request_count": 134
+      "p50_throughput": 13,
+      "p50_latency": 156,
+      "request_count": 97
     }
   },
   "inflection/inflection-3-pi": {
@@ -5839,250 +5885,250 @@
       "median": 2
     },
     "latency": {
-      "min": 2192,
+      "min": 2180,
       "max": 3799,
-      "median": 2642.5
+      "median": 2530
     },
     "e2eLatency": {
-      "min": 4390.5,
-      "max": 10820,
+      "min": 4944,
+      "max": 9655,
       "median": 6176.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 21,
-      "p50_latency": 2460.5,
+      "p50_throughput": 19.5,
+      "p50_latency": 2360,
       "request_count": 2
     }
   },
   "inflection/inflection-3-productivity": {
     "throughput": {
-      "min": 1,
-      "max": 3,
-      "median": 2
+      "min": 2,
+      "max": 17,
+      "median": 2.5
     },
     "latency": {
-      "min": 2848,
-      "max": 3290,
-      "median": 3103.5
+      "min": 2545,
+      "max": 3195,
+      "median": 3095
     },
     "e2eLatency": {
-      "min": 6170,
-      "max": 8836,
-      "median": 6870.5
+      "min": 6334,
+      "max": 9469,
+      "median": 6960
     },
-    "uptime": 99.4949494949495,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 34,
-      "p50_latency": 2023.5,
-      "request_count": 2
+      "p50_throughput": 55,
+      "p50_latency": 1916,
+      "request_count": 3
     }
   },
   "thedrummer/rocinante-12b": {
     "throughput": {
       "min": 41,
-      "max": 87,
-      "median": 62.5
+      "max": 86,
+      "median": 43
     },
     "latency": {
-      "min": 267,
-      "max": 1263,
-      "median": 753.5
+      "min": 271,
+      "max": 1293,
+      "median": 1224
     },
     "e2eLatency": {
-      "min": 2360.5,
+      "min": 2412.5,
       "max": 6024.5,
-      "median": 4160.25
+      "median": 5799.5
     },
-    "uptime": 99.15729085567132,
+    "uptime": 99.6767818904785,
     "topProvider": {
-      "p50_throughput": 44,
-      "p50_latency": 1332.5,
-      "request_count": 684
+      "p50_throughput": 38,
+      "p50_latency": 1347,
+      "request_count": 1001
     }
   },
   "meta-llama/llama-3.2-3b-instruct": {
     "throughput": {
-      "min": 12,
-      "max": 47,
-      "median": 27
+      "min": 16,
+      "max": 67,
+      "median": 30
     },
     "latency": {
-      "min": 339,
-      "max": 973,
-      "median": 500.75
+      "min": 380,
+      "max": 1424,
+      "median": 626.5
     },
     "e2eLatency": {
-      "min": 783,
-      "max": 9764.5,
-      "median": 4478
+      "min": 1016,
+      "max": 8062,
+      "median": 3082.75
     },
-    "uptime": 83.25599074137128,
+    "uptime": 92.25827665862043,
     "topProvider": {
-      "p50_throughput": 17,
-      "p50_latency": 625,
-      "request_count": 6793
+      "p50_throughput": 18,
+      "p50_latency": 589,
+      "request_count": 5457
     }
   },
   "meta-llama/llama-3.2-1b-instruct": {
     "throughput": {
       "min": 18,
       "max": 107,
-      "median": 86.5
+      "median": 64
     },
     "latency": {
       "min": 243.5,
-      "max": 364,
-      "median": 311
+      "max": 344.5,
+      "median": 302.5
     },
     "e2eLatency": {
       "min": 547,
-      "max": 1152,
-      "median": 952
+      "max": 992,
+      "median": 916
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 8,
-      "p50_latency": 313,
-      "request_count": 272
+      "p50_throughput": 10,
+      "p50_latency": 271,
+      "request_count": 443
     }
   },
   "meta-llama/llama-3.2-11b-vision-instruct": {
     "throughput": {
-      "min": 4,
-      "max": 32,
-      "median": 15.5
+      "min": 3,
+      "max": 31,
+      "median": 5
     },
     "latency": {
       "min": 286,
-      "max": 1775,
-      "median": 831
+      "max": 1766,
+      "median": 1500.25
     },
     "e2eLatency": {
-      "min": 1305.5,
-      "max": 3830,
-      "median": 2593.25
+      "min": 411,
+      "max": 3793,
+      "median": 2695
     },
-    "uptime": 97.68354504883364,
+    "uptime": 98.01961841806694,
     "topProvider": {
-      "p50_throughput": 4,
-      "p50_latency": 1706.5,
-      "request_count": 574
+      "p50_throughput": 5,
+      "p50_latency": 1488,
+      "request_count": 575
     }
   },
   "qwen/qwen-2.5-72b-instruct": {
     "throughput": {
-      "min": 22,
+      "min": 11,
       "max": 50,
-      "median": 26.5
+      "median": 27.5
     },
     "latency": {
-      "min": 273,
+      "min": 308,
       "max": 876,
-      "median": 363
+      "median": 421
     },
     "e2eLatency": {
-      "min": 999,
+      "min": 1384.5,
       "max": 5819.5,
-      "median": 2361
+      "median": 3066.25
     },
-    "uptime": 0.07672073651907058,
+    "uptime": 0,
     "topProvider": {
-      "p50_throughput": 27,
-      "p50_latency": 173,
-      "request_count": 1441
+      "p50_throughput": 38,
+      "p50_latency": 550.5,
+      "request_count": 2042
     }
   },
   "neversleep/llama-3.1-lumimaid-8b": {
     "throughput": {
-      "min": 25,
+      "min": 27,
       "max": 36,
-      "median": 29.5
+      "median": 30
     },
     "latency": {
-      "min": 1019,
-      "max": 1194,
+      "min": 1054,
+      "max": 1118,
       "median": 1077
     },
     "e2eLatency": {
-      "min": 3544,
+      "min": 3657.5,
       "max": 4076.5,
-      "median": 3885.75
+      "median": 3929.25
     },
-    "uptime": 99.93717277486911,
+    "uptime": 100,
     "topProvider": {
-      "p50_throughput": 29,
-      "p50_latency": 1244,
-      "request_count": 151
+      "p50_throughput": 34.5,
+      "p50_latency": 1200.5,
+      "request_count": 80
     }
   },
   "cohere/command-r-08-2024": {
     "throughput": {
       "min": 7,
-      "max": 56,
-      "median": 45.5
+      "max": 55,
+      "median": 35.5
     },
     "latency": {
-      "min": 229,
+      "min": 239,
       "max": 329,
-      "median": 256
+      "median": 268.5
     },
     "e2eLatency": {
       "min": 810,
-      "max": 4163,
-      "median": 3355.5
+      "max": 4307.5,
+      "median": 3413.75
     },
-    "uptime": 94.71527230874692,
+    "uptime": 94.00132262741465,
     "topProvider": {
-      "p50_throughput": 53,
-      "p50_latency": 260,
-      "request_count": 173
+      "p50_throughput": 17,
+      "p50_latency": 282,
+      "request_count": 300
     }
   },
   "cohere/command-r-plus-08-2024": {
     "throughput": {
       "min": 18,
-      "max": 40,
+      "max": 39,
       "median": 32.25
     },
     "latency": {
       "min": 180,
       "max": 701.5,
-      "median": 267
+      "median": 369.75
     },
     "e2eLatency": {
       "min": 758,
-      "max": 19876,
+      "max": 19798.5,
       "median": 4389.25
     },
-    "uptime": 99.97527200791296,
+    "uptime": 99.96290801186943,
     "topProvider": {
-      "p50_throughput": 4.5,
-      "p50_latency": 56834.5,
-      "request_count": 4
+      "p50_throughput": 34,
+      "p50_latency": 158,
+      "request_count": 7
     }
   },
   "sao10k/l3.1-euryale-70b": {
     "throughput": {
-      "min": 15,
-      "max": 54,
-      "median": 25
+      "min": 14,
+      "max": 55,
+      "median": 36
     },
     "latency": {
-      "min": 230,
-      "max": 1552.5,
-      "median": 459
+      "min": 226.5,
+      "max": 1571,
+      "median": 1444.5
     },
     "e2eLatency": {
-      "min": 1445,
+      "min": 1559,
       "max": 8980,
-      "median": 2409.25
+      "median": 7799.75
     },
-    "uptime": 99.98487941332125,
+    "uptime": 99.96889201634089,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 1581,
-      "request_count": 239
+      "p50_throughput": 13,
+      "p50_latency": 1552,
+      "request_count": 224
     }
   },
   "qwen/qwen-2-vl-7b-instruct": {
@@ -6094,41 +6140,41 @@
     "latency": {
       "min": 718,
       "max": 935,
-      "median": 904
+      "median": 912.75
     },
     "e2eLatency": {
       "min": 1831.5,
-      "max": 2349.5,
-      "median": 2066.75
+      "max": 2788.5,
+      "median": 2069.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 9,
-      "p50_latency": 878,
-      "request_count": 717
+      "p50_throughput": 8,
+      "p50_latency": 949.5,
+      "request_count": 770
     }
   },
   "nousresearch/hermes-3-llama-3.1-70b": {
     "throughput": {
       "min": 14,
       "max": 49,
-      "median": 33.5
+      "median": 32.5
     },
     "latency": {
       "min": 231,
       "max": 1754,
-      "median": 815
+      "median": 810
     },
     "e2eLatency": {
-      "min": 3351,
-      "max": 10077,
-      "median": 6672.25
+      "min": 3272.5,
+      "max": 10123,
+      "median": 6654.75
     },
-    "uptime": 93.32070572775437,
+    "uptime": 90.73000658718952,
     "topProvider": {
-      "p50_throughput": 18,
-      "p50_latency": 1382,
-      "request_count": 151
+      "p50_throughput": 9,
+      "p50_latency": 2356,
+      "request_count": 408
     }
   },
   "nousresearch/hermes-3-llama-3.1-405b": {
@@ -6139,42 +6185,42 @@
     },
     "latency": {
       "min": 462.5,
-      "max": 1192,
-      "median": 605.5
+      "max": 1224,
+      "median": 857.75
     },
     "e2eLatency": {
-      "min": 16817,
-      "max": 28781,
-      "median": 19850.5
+      "min": 5277,
+      "max": 21283,
+      "median": 12032.5
     },
-    "uptime": 88.46683774455141,
+    "uptime": 77.78153677163452,
     "topProvider": {
-      "p50_throughput": 21,
-      "p50_latency": 717,
-      "request_count": 1044
+      "p50_throughput": 24,
+      "p50_latency": 680,
+      "request_count": 1215
     }
   },
   "openai/chatgpt-4o-latest": {
     "throughput": {
       "min": 63,
-      "max": 85,
+      "max": 78,
       "median": 71.5
     },
     "latency": {
-      "min": 385,
+      "min": 427,
       "max": 520,
-      "median": 476.75
+      "median": 487.5
     },
     "e2eLatency": {
-      "min": 1412,
+      "min": 1539.5,
       "max": 2167,
-      "median": 1754.25
+      "median": 1823.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 87,
-      "p50_latency": 396.5,
-      "request_count": 562
+      "p50_throughput": 83,
+      "p50_latency": 534,
+      "request_count": 639
     }
   },
   "sao10k/l3-lunaris-8b": {
@@ -6186,18 +6232,18 @@
     "latency": {
       "min": 141,
       "max": 1340.5,
-      "median": 735.75
+      "median": 719
     },
     "e2eLatency": {
       "min": 2524.5,
-      "max": 10883,
+      "max": 10810,
       "median": 6577.5
     },
-    "uptime": 99.99149729313494,
+    "uptime": 99.99561635553641,
     "topProvider": {
-      "p50_throughput": 86,
-      "p50_latency": 148,
-      "request_count": 6605
+      "p50_throughput": 87,
+      "p50_latency": 141,
+      "request_count": 6924
     }
   },
   "openai/gpt-4o-2024-08-06": {
@@ -6207,83 +6253,83 @@
       "median": 33.5
     },
     "latency": {
-      "min": 445,
+      "min": 446,
       "max": 1715,
-      "median": 772
+      "median": 873.5
     },
     "e2eLatency": {
       "min": 892,
       "max": 4709.5,
-      "median": 1723
+      "median": 2116
     },
-    "uptime": 99.98417064268892,
+    "uptime": 99.97708568447212,
     "topProvider": {
-      "p50_throughput": 28.5,
-      "p50_latency": 642.5,
-      "request_count": 58
+      "p50_throughput": 71,
+      "p50_latency": 656,
+      "request_count": 205
     }
   },
   "meta-llama/llama-3.1-405b": {
     "throughput": {
       "min": 23,
-      "max": 27,
+      "max": 26,
       "median": 25
     },
     "latency": {
       "min": 650,
-      "max": 1008,
-      "median": 733.75
+      "max": 754,
+      "median": 721.5
     },
     "e2eLatency": {
       "min": 2491,
-      "max": 9602,
-      "median": 5081.5
+      "max": 5621.5,
+      "median": 4715.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 29.5,
-      "p50_latency": 713.5,
-      "request_count": 2
+      "p50_throughput": 30,
+      "p50_latency": 719,
+      "request_count": 7
     }
   },
   "meta-llama/llama-3.1-8b-instruct": {
     "throughput": {
       "min": 16,
-      "max": 270,
-      "median": 85
+      "max": 323,
+      "median": 45.5
     },
     "latency": {
-      "min": 65,
-      "max": 561,
-      "median": 400
+      "min": 103,
+      "max": 566,
+      "median": 245.5
     },
     "e2eLatency": {
-      "min": 297,
-      "max": 6003,
-      "median": 1958.25
+      "min": 323,
+      "max": 5623,
+      "median": 1570.25
     },
-    "uptime": 99.98087578628581,
+    "uptime": 99.98818481216165,
     "topProvider": {
-      "p50_throughput": 56,
-      "p50_latency": 543,
-      "request_count": 13108
+      "p50_throughput": 49,
+      "p50_latency": 664,
+      "request_count": 22056
     }
   },
   "meta-llama/llama-3.1-405b-instruct": {
     "throughput": {
       "min": 8,
       "max": 20,
-      "median": 17.5
+      "median": 15.5
     },
     "latency": {
-      "min": 477,
-      "max": 1151.5,
-      "median": 540.5
+      "min": 524,
+      "max": 1183,
+      "median": 660.5
     },
     "e2eLatency": {
-      "min": 1628,
+      "min": 1669.5,
       "max": 8423,
-      "median": 1817
+      "median": 2434.75
     },
     "uptime": 100,
     "topProvider": {
@@ -6294,117 +6340,117 @@
   },
   "meta-llama/llama-3.1-70b-instruct": {
     "throughput": {
-      "min": 12,
-      "max": 17,
-      "median": 13.5
+      "min": 9,
+      "max": 19,
+      "median": 15
     },
     "latency": {
       "min": 333,
-      "max": 478,
-      "median": 412
+      "max": 712,
+      "median": 436
     },
     "e2eLatency": {
       "min": 835.5,
       "max": 1891.5,
-      "median": 1133
+      "median": 1239
     },
-    "uptime": 99.70876986353672,
+    "uptime": 99.89016539075034,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 700,
-      "request_count": 23404
+      "p50_throughput": 10,
+      "p50_latency": 741,
+      "request_count": 21811
     }
   },
   "mistralai/mistral-nemo": {
     "throughput": {
       "min": 17,
       "max": 91,
-      "median": 50
+      "median": 33.5
     },
     "latency": {
-      "min": 241,
+      "min": 304,
       "max": 1177,
-      "median": 494.25
+      "median": 327.25
     },
     "e2eLatency": {
-      "min": 790,
-      "max": 3267,
-      "median": 1634
+      "min": 789.5,
+      "max": 3475,
+      "median": 2125.5
     },
-    "uptime": 99.9632061456338,
+    "uptime": 99.9302389292509,
     "topProvider": {
-      "p50_throughput": 30,
-      "p50_latency": 408,
-      "request_count": 85492
+      "p50_throughput": 31,
+      "p50_latency": 285,
+      "request_count": 77293
     }
   },
   "openai/gpt-4o-mini-2024-07-18": {
     "throughput": {
       "min": 38,
-      "max": 74,
-      "median": 39.5
+      "max": 57,
+      "median": 39
     },
     "latency": {
-      "min": 398,
-      "max": 508,
-      "median": 482
+      "min": 429,
+      "max": 509,
+      "median": 489
     },
     "e2eLatency": {
-      "min": 1605,
+      "min": 1960,
       "max": 2812,
-      "median": 2497.75
+      "median": 2522.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 39,
-      "p50_latency": 428,
-      "request_count": 4331
+      "p50_throughput": 45,
+      "p50_latency": 441,
+      "request_count": 7791
     }
   },
   "openai/gpt-4o-mini": {
     "throughput": {
       "min": 17,
-      "max": 83,
-      "median": 42.5
+      "max": 85,
+      "median": 34
     },
     "latency": {
       "min": 461,
       "max": 815,
-      "median": 634
+      "median": 541.5
     },
     "e2eLatency": {
       "min": 1218,
-      "max": 2555,
-      "median": 2132.25
+      "max": 2518,
+      "median": 2088.25
     },
-    "uptime": 99.99915747258626,
+    "uptime": 99.99962350956851,
     "topProvider": {
-      "p50_throughput": 38,
-      "p50_latency": 483,
-      "request_count": 95288
+      "p50_throughput": 34,
+      "p50_latency": 466,
+      "request_count": 106796
     }
   },
   "google/gemma-2-27b-it": {
     "throughput": {
       "min": 5,
       "max": 33,
-      "median": 17
+      "median": 19
     },
     "latency": {
       "min": 1000,
       "max": 2051,
-      "median": 1155
+      "median": 1116.5
     },
     "e2eLatency": {
       "min": 2840,
       "max": 10019,
-      "median": 5199.75
+      "median": 5122.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 4,
-      "p50_latency": 1027,
-      "request_count": 143
+      "p50_throughput": 28,
+      "p50_latency": 1303,
+      "request_count": 21
     }
   },
   "google/gemma-2-9b-it": {
@@ -6415,31 +6461,31 @@
     },
     "latency": {
       "min": 247,
-      "max": 286,
+      "max": 291,
       "median": 272
     },
     "e2eLatency": {
       "min": 1498,
-      "max": 2926.5,
-      "median": 2267.5
+      "max": 2747.5,
+      "median": 2223.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 98,
-      "p50_latency": 278,
-      "request_count": 2433
+      "p50_throughput": 91,
+      "p50_latency": 293,
+      "request_count": 4210
     }
   },
   "sao10k/l3-euryale-70b": {
     "throughput": {
       "min": 33,
-      "max": 34,
+      "max": 35,
       "median": 34
     },
     "latency": {
       "min": 796,
       "max": 907,
-      "median": 855.5
+      "median": 867
     },
     "e2eLatency": {
       "min": 6718,
@@ -6448,147 +6494,147 @@
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 35.5,
-      "p50_latency": 805,
-      "request_count": 36
+      "p50_throughput": 34,
+      "p50_latency": 941,
+      "request_count": 95
     }
   },
   "nousresearch/hermes-2-pro-llama-3-8b": {
     "throughput": {
       "min": 52,
       "max": 70,
-      "median": 59.5
+      "median": 59
     },
     "latency": {
-      "min": 752,
-      "max": 809.5,
-      "median": 778.5
+      "min": 736,
+      "max": 807,
+      "median": 769.5
     },
     "e2eLatency": {
-      "min": 2099,
+      "min": 2034,
       "max": 2446,
-      "median": 2157.5
+      "median": 2137.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 50,
-      "p50_latency": 841,
-      "request_count": 289
+      "p50_throughput": 3,
+      "p50_latency": 678,
+      "request_count": 365
     }
   },
   "mistralai/mistral-7b-instruct": {
     "throughput": {
-      "min": 49,
+      "min": 51,
       "max": 82,
-      "median": 69.5
+      "median": 63.5
     },
     "latency": {
       "min": 168,
-      "max": 286,
-      "median": 229.5
+      "max": 267,
+      "median": 230
     },
     "e2eLatency": {
       "min": 1232.5,
-      "max": 6070.5,
-      "median": 1767.5
+      "max": 4395,
+      "median": 1711.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 77,
-      "p50_latency": 196,
-      "request_count": 1120
+      "p50_throughput": 66,
+      "p50_latency": 248,
+      "request_count": 1063
     }
   },
   "mistralai/mistral-7b-instruct-v0.3": {
     "throughput": {
-      "min": 62,
+      "min": 36,
       "max": 78,
-      "median": 67
+      "median": 65.5
     },
     "latency": {
-      "min": 210,
-      "max": 399,
+      "min": 158,
+      "max": 389,
       "median": 244.5
     },
     "e2eLatency": {
-      "min": 1451,
+      "min": 444,
       "max": 3288,
-      "median": 1893.5
+      "median": 1874.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 63,
-      "p50_latency": 719.5,
-      "request_count": 48
+      "p50_throughput": 57,
+      "p50_latency": 227,
+      "request_count": 44
     }
   },
   "meta-llama/llama-guard-2-8b": {
     "throughput": {
-      "min": 4,
+      "min": 3,
       "max": 4,
-      "median": 4
+      "median": 3.5
     },
     "latency": {
       "min": 499,
-      "max": 499,
-      "median": 499
+      "max": 685,
+      "median": 592
     },
     "e2eLatency": {
-      "min": 1047.5,
-      "max": 1047.5,
-      "median": 1047.5
+      "min": 1048,
+      "max": 1376,
+      "median": 1212
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 4,
-      "p50_latency": 551,
-      "request_count": 25
+      "p50_latency": 452,
+      "request_count": 163
     }
   },
   "openai/gpt-4o-2024-05-13": {
     "throughput": {
       "min": 49,
-      "max": 112,
-      "median": 74.25
+      "max": 118,
+      "median": 65
     },
     "latency": {
-      "min": 327.5,
+      "min": 345,
       "max": 998,
-      "median": 453
+      "median": 622.5
     },
     "e2eLatency": {
-      "min": 1120.5,
-      "max": 3512,
-      "median": 2341
+      "min": 958,
+      "max": 3153.5,
+      "median": 1790.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 59,
-      "p50_latency": 395,
-      "request_count": 15
+      "p50_throughput": 53,
+      "p50_latency": 505,
+      "request_count": 3
     }
   },
   "openai/gpt-4o": {
     "throughput": {
       "min": 18,
       "max": 92,
-      "median": 40
+      "median": 45
     },
     "latency": {
-      "min": 409,
-      "max": 1359.5,
-      "median": 516.5
+      "min": 461,
+      "max": 1409,
+      "median": 522
     },
     "e2eLatency": {
-      "min": 1527,
+      "min": 1600,
       "max": 7131.5,
-      "median": 2218.75
+      "median": 2389.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 32,
-      "p50_latency": 419,
-      "request_count": 14855
+      "p50_throughput": 41,
+      "p50_latency": 489,
+      "request_count": 13584
     }
   },
   "meta-llama/llama-3-70b-instruct": {
@@ -6600,133 +6646,133 @@
     "latency": {
       "min": 751,
       "max": 800,
-      "median": 771
+      "median": 766
     },
     "e2eLatency": {
-      "min": 1843.5,
+      "min": 2645,
       "max": 3780.5,
-      "median": 3244.75
+      "median": 3305.25
     },
-    "uptime": 99.99986839594396,
+    "uptime": 99.99527580287047,
     "topProvider": {
-      "p50_throughput": 16,
-      "p50_latency": 807,
-      "request_count": 5254
+      "p50_throughput": 17,
+      "p50_latency": 823,
+      "request_count": 5013
     }
   },
   "meta-llama/llama-3-8b-instruct": {
     "throughput": {
-      "min": 11,
+      "min": 12,
       "max": 63,
-      "median": 34
+      "median": 41
     },
     "latency": {
-      "min": 207,
-      "max": 931,
-      "median": 393.5
+      "min": 199,
+      "max": 963,
+      "median": 321.5
     },
     "e2eLatency": {
       "min": 763,
       "max": 2511,
-      "median": 1030
+      "median": 1700.75
     },
-    "uptime": 99.98377085304548,
+    "uptime": 99.99250879814387,
     "topProvider": {
-      "p50_throughput": 31,
-      "p50_latency": 327,
-      "request_count": 1872
+      "p50_throughput": 36,
+      "p50_latency": 267,
+      "request_count": 590
     }
   },
   "mistralai/mixtral-8x22b-instruct": {
     "throughput": {
       "min": 7,
-      "max": 134,
-      "median": 85
+      "max": 104,
+      "median": 53
     },
     "latency": {
-      "min": 192,
+      "min": 207,
       "max": 278,
-      "median": 229.5
+      "median": 251.5
     },
     "e2eLatency": {
       "min": 618.5,
       "max": 2698,
-      "median": 1850
+      "median": 1071
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 120.5,
-      "p50_latency": 234.5,
-      "request_count": 20
+      "p50_throughput": 11,
+      "p50_latency": 242,
+      "request_count": 835
     }
   },
   "microsoft/wizardlm-2-8x22b": {
     "throughput": {
       "min": 32,
-      "max": 68,
-      "median": 59
+      "max": 66,
+      "median": 48
     },
     "latency": {
       "min": 337,
       "max": 597,
-      "median": 482
+      "median": 490
     },
     "e2eLatency": {
       "min": 1256,
-      "max": 3766,
-      "median": 3008
+      "max": 3124.5,
+      "median": 2001
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 31,
       "p50_latency": 481,
-      "request_count": 3424
+      "request_count": 3217
     }
   },
   "openai/gpt-4-turbo": {
     "throughput": {
-      "min": 16,
+      "min": 14,
       "max": 28,
-      "median": 20
+      "median": 19.5
     },
     "latency": {
-      "min": 871,
+      "min": 868,
       "max": 1137,
-      "median": 918
+      "median": 930
     },
     "e2eLatency": {
       "min": 3907.5,
       "max": 9762,
-      "median": 6716.5
+      "median": 5544.75
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 28,
-      "p50_latency": 790,
-      "request_count": 45
+      "p50_throughput": 30,
+      "p50_latency": 966,
+      "request_count": 59
     }
   },
   "anthropic/claude-3-haiku": {
     "throughput": {
       "min": 25,
       "max": 102,
-      "median": 86
+      "median": 84
     },
     "latency": {
-      "min": 454,
+      "min": 451,
       "max": 645,
-      "median": 524.5
+      "median": 516
     },
     "e2eLatency": {
       "min": 1644,
-      "max": 2198,
-      "median": 1983.25
+      "max": 3126.5,
+      "median": 1988
     },
-    "uptime": 91.98668682794799,
+    "uptime": 93.94555672851196,
     "topProvider": {
-      "p50_throughput": 79,
-      "p50_latency": 496,
-      "request_count": 1592
+      "p50_throughput": 107,
+      "p50_latency": 490,
+      "request_count": 1413
     }
   },
   "mistralai/mistral-large": {
@@ -6738,18 +6784,18 @@
     "latency": {
       "min": 432,
       "max": 473,
-      "median": 446
+      "median": 447.5
     },
     "e2eLatency": {
-      "min": 1714,
+      "min": 1743.5,
       "max": 6225.5,
-      "median": 1833.5
+      "median": 1827
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 34,
-      "p50_latency": 420,
-      "request_count": 624
+      "p50_throughput": 36,
+      "p50_latency": 450,
+      "request_count": 426
     }
   },
   "openai/gpt-3.5-turbo-0613": {
@@ -6761,40 +6807,40 @@
     "latency": {
       "min": 737,
       "max": 1054,
-      "median": 958.5
+      "median": 955.5
     },
     "e2eLatency": {
       "min": 3758,
-      "max": 5443.5,
-      "median": 5258
+      "max": 5444,
+      "median": 5160.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 85,
-      "p50_latency": 653,
-      "request_count": 66
+      "p50_throughput": 70.5,
+      "p50_latency": 881,
+      "request_count": 108
     }
   },
   "openai/gpt-4-turbo-preview": {
     "throughput": {
       "min": 18,
-      "max": 35,
+      "max": 34,
       "median": 23
     },
     "latency": {
       "min": 976,
       "max": 1537,
-      "median": 1286.5
+      "median": 1142
     },
     "e2eLatency": {
-      "min": 6247,
+      "min": 6497,
       "max": 20888,
-      "median": 8364
+      "median": 7853
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 24,
-      "p50_latency": 868,
+      "p50_latency": 1748,
       "request_count": 5
     }
   },
@@ -6802,46 +6848,46 @@
     "throughput": {
       "min": 49,
       "max": 87,
-      "median": 54.5
+      "median": 65.5
     },
     "latency": {
       "min": 150,
       "max": 210,
-      "median": 201
+      "median": 200
     },
     "e2eLatency": {
       "min": 647,
-      "max": 2730,
-      "median": 720.25
+      "max": 3093,
+      "median": 1230.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 86.5,
-      "p50_latency": 252,
-      "request_count": 8
+      "p50_throughput": 64.5,
+      "p50_latency": 234.5,
+      "request_count": 12
     }
   },
   "mistralai/mixtral-8x7b-instruct": {
     "throughput": {
-      "min": 49,
-      "max": 84,
-      "median": 54.5
+      "min": 48,
+      "max": 81,
+      "median": 49.5
     },
     "latency": {
-      "min": 142,
-      "max": 389,
-      "median": 230.5
+      "min": 141,
+      "max": 385,
+      "median": 244
     },
     "e2eLatency": {
-      "min": 1007.5,
-      "max": 4359,
-      "median": 1789.75
+      "min": 952,
+      "max": 4932.5,
+      "median": 2186.5
     },
-    "uptime": 98.60771606572894,
+    "uptime": 98.74167743062283,
     "topProvider": {
-      "p50_throughput": 72,
-      "p50_latency": 134,
-      "request_count": 1467
+      "p50_throughput": 75,
+      "p50_latency": 153,
+      "request_count": 645
     }
   },
   "neversleep/noromaid-20b": {
@@ -6852,19 +6898,19 @@
     },
     "latency": {
       "min": 1438.5,
-      "max": 1515,
-      "median": 1480
+      "max": 1483,
+      "median": 1479.5
     },
     "e2eLatency": {
-      "min": 5242,
+      "min": 5323,
       "max": 5993,
-      "median": 5800.75
+      "median": 5788.25
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 24,
-      "p50_latency": 1693,
-      "request_count": 43
+      "p50_latency": 1634,
+      "request_count": 47
     }
   },
   "alpindale/goliath-120b": {
@@ -6874,20 +6920,20 @@
       "median": 14.5
     },
     "latency": {
-      "min": 742.5,
+      "min": 523,
       "max": 3457,
-      "median": 954.25
+      "median": 819.75
     },
     "e2eLatency": {
       "min": 12443,
       "max": 24432.5,
-      "median": 15933
+      "median": 14209.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 15,
-      "p50_latency": 5974,
-      "request_count": 3
+      "p50_throughput": 16,
+      "p50_latency": 555,
+      "request_count": 9
     }
   },
   "openrouter/auto": {
@@ -6913,46 +6959,46 @@
     "throughput": {
       "min": 4,
       "max": 43,
-      "median": 22.5
+      "median": 27.25
     },
     "latency": {
       "min": 590.5,
-      "max": 1093,
-      "median": 630.5
+      "max": 1018.5,
+      "median": 713
     },
     "e2eLatency": {
-      "min": 1257.5,
-      "max": 23822.5,
-      "median": 6004.75
+      "min": 1296.5,
+      "max": 23771.5,
+      "median": 7774.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 51.5,
-      "p50_latency": 529,
-      "request_count": 26
+      "p50_throughput": 32,
+      "p50_latency": 544,
+      "request_count": 105
     }
   },
   "openai/gpt-3.5-turbo-instruct": {
     "throughput": {
-      "min": 76,
-      "max": 86,
+      "min": 77,
+      "max": 85,
       "median": 81.5
     },
     "latency": {
-      "min": 818,
-      "max": 882,
+      "min": 669.5,
+      "max": 881,
       "median": 845.5
     },
     "e2eLatency": {
-      "min": 2530,
-      "max": 2783,
-      "median": 2717
+      "min": 2492,
+      "max": 2765,
+      "median": 2711.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 108,
-      "p50_latency": 835.5,
-      "request_count": 30
+      "p50_throughput": 96,
+      "p50_latency": 911,
+      "request_count": 21
     }
   },
   "mistralai/mistral-7b-instruct-v0.1": {
@@ -6969,58 +7015,58 @@
     "e2eLatency": {
       "min": 9842,
       "max": 17156,
-      "median": 11680.25
+      "median": 11702
     },
     "uptime": 100,
     "topProvider": {
       "p50_throughput": 15,
-      "p50_latency": 669.5,
-      "request_count": 2
+      "p50_latency": 381,
+      "request_count": 21
     }
   },
   "openai/gpt-3.5-turbo-16k": {
     "throughput": {
       "min": 57,
-      "max": 72,
+      "max": 67,
       "median": 63.5
     },
     "latency": {
-      "min": 436,
+      "min": 441,
       "max": 466,
       "median": 451
     },
     "e2eLatency": {
-      "min": 1354,
+      "min": 1340.5,
       "max": 1636.5,
-      "median": 1415
+      "median": 1429.5
     },
-    "uptime": 100,
+    "uptime": null,
     "topProvider": {
-      "p50_throughput": 17,
-      "p50_latency": 457,
-      "request_count": 9
+      "p50_throughput": 16.5,
+      "p50_latency": 445.5,
+      "request_count": 10
     }
   },
   "mancer/weaver": {
     "throughput": {
-      "min": 40,
+      "min": 39,
       "max": 42,
-      "median": 40.5
+      "median": 41
     },
     "latency": {
       "min": 698.5,
-      "max": 778,
-      "median": 742
+      "max": 772,
+      "median": 744.25
     },
     "e2eLatency": {
-      "min": 6826,
-      "max": 14238,
-      "median": 12223.75
+      "min": 7669,
+      "max": 15861,
+      "median": 12835.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 41,
-      "p50_latency": 684,
+      "p50_throughput": 38,
+      "p50_latency": 579,
       "request_count": 7
     }
   },
@@ -7031,20 +7077,20 @@
       "median": 23
     },
     "latency": {
-      "min": 509,
+      "min": 507,
       "max": 1652.5,
       "median": 1036
     },
     "e2eLatency": {
-      "min": 2622,
-      "max": 7666.5,
-      "median": 5000
+      "min": 2788,
+      "max": 7683,
+      "median": 5014.5
     },
-    "uptime": 93.31350318260085,
+    "uptime": 94.23624618239226,
     "topProvider": {
-      "p50_throughput": 13,
-      "p50_latency": 1952.5,
-      "request_count": 300
+      "p50_throughput": 14,
+      "p50_latency": 1752,
+      "request_count": 198
     }
   },
   "gryphe/mythomax-l2-13b": {
@@ -7055,42 +7101,42 @@
     },
     "latency": {
       "min": 247,
-      "max": 1795,
-      "median": 379.5
+      "max": 1808,
+      "median": 320
     },
     "e2eLatency": {
       "min": 3203.5,
-      "max": 9125,
-      "median": 3463.25
+      "max": 9124,
+      "median": 3464
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 11,
-      "p50_latency": 2061,
-      "request_count": 2293
+      "p50_throughput": 8,
+      "p50_latency": 3168,
+      "request_count": 301
     }
   },
   "openai/gpt-4-0314": {
     "throughput": {
       "min": 18,
       "max": 25,
-      "median": 25
+      "median": 22.75
     },
     "latency": {
       "min": 616.5,
-      "max": 1579,
-      "median": 709.5
+      "max": 1722,
+      "median": 742
     },
     "e2eLatency": {
       "min": 2007.5,
-      "max": 16049,
-      "median": 4502.5
+      "max": 25086,
+      "median": 5102.5
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 20.5,
-      "p50_latency": 657,
-      "request_count": 2
+      "p50_throughput": null,
+      "p50_latency": null,
+      "request_count": null
     }
   },
   "openai/gpt-4": {
@@ -7100,43 +7146,43 @@
       "median": 26.5
     },
     "latency": {
-      "min": 530.5,
+      "min": 533.5,
       "max": 724,
-      "median": 599.5
+      "median": 616
     },
     "e2eLatency": {
-      "min": 1466,
-      "max": 4603,
-      "median": 3171.75
+      "min": 2549.5,
+      "max": 4489,
+      "median": 3542
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 25,
-      "p50_latency": 570,
-      "request_count": 67
+      "p50_throughput": 26.5,
+      "p50_latency": 724.5,
+      "request_count": 88
     }
   },
   "openai/gpt-3.5-turbo": {
     "throughput": {
-      "min": 51,
+      "min": 52,
       "max": 74,
       "median": 57
     },
     "latency": {
-      "min": 354,
-      "max": 438,
-      "median": 417.25
+      "min": 403,
+      "max": 439,
+      "median": 423.25
     },
     "e2eLatency": {
-      "min": 1242,
-      "max": 2650,
-      "median": 1571.75
+      "min": 1315.5,
+      "max": 3547,
+      "median": 1674.25
     },
     "uptime": 100,
     "topProvider": {
-      "p50_throughput": 56,
-      "p50_latency": 362,
-      "request_count": 906
+      "p50_throughput": 78,
+      "p50_latency": 420,
+      "request_count": 783
     }
   }
 }
