@@ -1,6 +1,158 @@
 {
   "data": [
     {
+      "id": "stealth/ox-alpha",
+      "canonical_slug": "stealth/ox-alpha",
+      "hugging_face_id": null,
+      "name": "Ox Alpha",
+      "created": 1787256295,
+      "description": "Ox Alpha is a reasoning model designed for coding, sustained agentic work, and production workloads. It is suited for long-horizon software engineering, complex reasoning, and workflows that combine text with...",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": "2098-12-31",
+      "links": {
+        "details": "/api/v1/models/stealth/ox-alpha/endpoints"
+      },
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ],
+        "default_effort": "max"
+      }
+    },
+    {
+      "id": "tencent/hy-mt2-1.8b",
+      "canonical_slug": "tencent/hy-mt2-1.8b-20260521",
+      "hugging_face_id": "tencent/Hy-MT2-1.8B",
+      "name": "Tencent: Hy-MT2-1.8B",
+      "created": 1787231581,
+      "description": "Hy-MT2-1.8B is a compact 1.8B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and style-guided...",
+      "context_length": 8192,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000000044",
+        "completion": "0.000000177"
+      },
+      "top_provider": {
+        "context_length": 8192,
+        "max_completion_tokens": 4096,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_completion_tokens",
+        "max_tokens",
+        "stop",
+        "temperature"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/tencent/hy-mt2-1.8b-20260521/endpoints"
+      }
+    },
+    {
+      "id": "tencent/hy-mt2-30b-a3b",
+      "canonical_slug": "tencent/hy-mt2-30b-a3b-20260521",
+      "hugging_face_id": "tencent/Hy-MT2-30B-A3B",
+      "name": "Tencent: Hy-MT2-30B-A3B",
+      "created": 1787231561,
+      "description": "Hy-MT2-30B-A3B is Tencent's flagship translation model in the Hy-MT2 family. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and...",
+      "context_length": 8192,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000000074",
+        "completion": "0.000000295"
+      },
+      "top_provider": {
+        "context_length": 8192,
+        "max_completion_tokens": 4096,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_completion_tokens",
+        "max_tokens",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/tencent/hy-mt2-30b-a3b-20260521/endpoints"
+      }
+    },
+    {
       "id": "~z-ai/glm-latest",
       "canonical_slug": "~z-ai/glm-latest",
       "alias_target": {
@@ -265,7 +417,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-30",
       "links": {
         "details": "/api/v1/models/dots-studio/dots-3-note-preview-20260813/endpoints"
       },
@@ -757,9 +909,9 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.000001056",
-        "completion": "0.000003168",
-        "input_cache_read": "0.0000000352"
+        "prompt": "0.000001188",
+        "completion": "0.000003564",
+        "input_cache_read": "0.0000000396"
       },
       "top_provider": {
         "context_length": 1048575,
@@ -892,9 +1044,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1285,
+            "elo": 1291,
             "win_rate": 55.5,
-            "rank": 5
+            "rank": 6
           },
           {
             "arena": "agents",
@@ -906,9 +1058,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1210,
-            "win_rate": 55.5,
-            "rank": 10
+            "elo": 1254,
+            "win_rate": 54.8,
+            "rank": 6
           },
           {
             "arena": "agents",
@@ -1057,7 +1209,7 @@
       "name": "NVIDIA: Nemotron 3.5 Lightning",
       "created": 1786452751,
       "description": "NVIDIA Nemotron 3.5 Lightning is an open mixture-of-experts model from NVIDIA, with 3B active parameters out of 30B total. It is suited for high-throughput agentic workloads and specialized tasks that...",
-      "context_length": 1000000,
+      "context_length": 262144,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -1349,13 +1501,13 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000035",
-        "completion": "0.0000015",
+        "prompt": "0.0000003",
+        "completion": "0.0000011",
         "input_cache_read": "0.00000004"
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -1471,9 +1623,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1241,
-            "win_rate": 50.1,
-            "rank": 12
+            "elo": 1248,
+            "win_rate": 50.2,
+            "rank": 13
           },
           {
             "arena": "agents",
@@ -1492,9 +1644,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1119,
-            "win_rate": 37,
-            "rank": 19
+            "elo": 1230,
+            "win_rate": 49,
+            "rank": 11
           },
           {
             "arena": "agents",
@@ -1626,6 +1778,13 @@
       "benchmarks": {
         "design_arena": [
           {
+            "arena": "agents",
+            "category": "fullstack",
+            "elo": 1335,
+            "win_rate": 64.8,
+            "rank": 4
+          },
+          {
             "arena": "models",
             "category": "3d",
             "elo": 1384,
@@ -1711,13 +1870,13 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000007",
+        "prompt": "0.000000065",
         "completion": "0.00000014",
         "input_cache_read": "0.000000014"
       },
       "top_provider": {
-        "context_length": 1048576,
-        "max_completion_tokens": 1048576,
+        "context_length": 262144,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -1893,7 +2052,7 @@
       "name": "Thinking Machines: Inkling Small",
       "created": 1785443117,
       "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
-      "context_length": 524288,
+      "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
         "input_modalities": [
@@ -2186,9 +2345,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1347,
-            "win_rate": 69.2,
-            "rank": 2
+            "elo": 1354,
+            "win_rate": 69.3,
+            "rank": 3
           },
           {
             "arena": "agents",
@@ -2325,9 +2484,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1347,
-            "win_rate": 69.2,
-            "rank": 2
+            "elo": 1354,
+            "win_rate": 69.3,
+            "rank": 3
           },
           {
             "arena": "agents",
@@ -2661,9 +2820,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1201,
-            "win_rate": 46.3,
-            "rank": 18
+            "elo": 1209,
+            "win_rate": 46,
+            "rank": 19
           },
           {
             "arena": "agents",
@@ -2682,9 +2841,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1153,
-            "win_rate": 39.6,
-            "rank": 17
+            "elo": 1174,
+            "win_rate": 38.9,
+            "rank": 16
           },
           {
             "arena": "agents",
@@ -2839,9 +2998,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1201,
-            "win_rate": 46.3,
-            "rank": 18
+            "elo": 1209,
+            "win_rate": 46,
+            "rank": 19
           },
           {
             "arena": "agents",
@@ -2860,9 +3019,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1153,
-            "win_rate": 39.6,
-            "rank": 17
+            "elo": 1174,
+            "win_rate": 38.9,
+            "rank": 16
           },
           {
             "arena": "agents",
@@ -3585,9 +3744,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1347,
-            "win_rate": 66.4,
-            "rank": 3
+            "elo": 1357,
+            "win_rate": 66.5,
+            "rank": 2
           },
           {
             "arena": "agents",
@@ -3606,9 +3765,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1383,
-            "win_rate": 70.2,
-            "rank": 1
+            "elo": 1300,
+            "win_rate": 59.6,
+            "rank": 3
           },
           {
             "arena": "agents",
@@ -3759,9 +3918,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1240,
-            "win_rate": 49.3,
-            "rank": 13
+            "elo": 1246,
+            "win_rate": 49.1,
+            "rank": 14
           },
           {
             "arena": "agents",
@@ -3787,9 +3946,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1185,
+            "elo": 1182,
             "win_rate": 44.2,
-            "rank": 13
+            "rank": 14
           },
           {
             "arena": "agents",
@@ -5097,9 +5256,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1274,
-            "win_rate": 63.1,
-            "rank": 8
+            "elo": 1280,
+            "win_rate": 62.8,
+            "rank": 9
           },
           {
             "arena": "agents",
@@ -5125,9 +5284,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1245,
-            "win_rate": 55.3,
-            "rank": 7
+            "elo": 1253,
+            "win_rate": 53.9,
+            "rank": 8
           },
           {
             "arena": "agents",
@@ -5686,9 +5845,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1274,
-            "win_rate": 57.5,
-            "rank": 7
+            "elo": 1280,
+            "win_rate": 57.1,
+            "rank": 8
           },
           {
             "arena": "agents",
@@ -5714,9 +5873,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1243,
-            "win_rate": 54.7,
-            "rank": 8
+            "elo": 1253,
+            "win_rate": 52.7,
+            "rank": 7
           },
           {
             "arena": "agents",
@@ -5874,9 +6033,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1274,
-            "win_rate": 57.5,
-            "rank": 7
+            "elo": 1280,
+            "win_rate": 57.1,
+            "rank": 8
           },
           {
             "arena": "agents",
@@ -5902,9 +6061,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1243,
-            "win_rate": 54.7,
-            "rank": 8
+            "elo": 1253,
+            "win_rate": 52.7,
+            "rank": 7
           },
           {
             "arena": "agents",
@@ -6465,9 +6624,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1264,
+            "elo": 1270,
             "win_rate": 61.4,
-            "rank": 9
+            "rank": 10
           },
           {
             "arena": "agents",
@@ -6493,9 +6652,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1207,
-            "win_rate": 49.4,
-            "rank": 11
+            "elo": 1221,
+            "win_rate": 49,
+            "rank": 13
           },
           {
             "arena": "agents",
@@ -6584,7 +6743,7 @@
       "name": "Z.ai: GLM 5.2 (batch)",
       "created": 1781631930,
       "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
-      "context_length": 512000,
+      "context_length": 1048575,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -6602,7 +6761,7 @@
         "input_cache_read": "0.00000026"
       },
       "top_provider": {
-        "context_length": 512000,
+        "context_length": 1048575,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -6659,9 +6818,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1264,
+            "elo": 1270,
             "win_rate": 61.4,
-            "rank": 9
+            "rank": 10
           },
           {
             "arena": "agents",
@@ -6687,9 +6846,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1207,
-            "win_rate": 49.4,
-            "rank": 11
+            "elo": 1221,
+            "win_rate": 49,
+            "rank": 13
           },
           {
             "arena": "agents",
@@ -6852,9 +7011,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1264,
+            "elo": 1270,
             "win_rate": 61.4,
-            "rank": 9
+            "rank": 10
           },
           {
             "arena": "agents",
@@ -6880,9 +7039,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1207,
-            "win_rate": 49.4,
-            "rank": 11
+            "elo": 1221,
+            "win_rate": 49,
+            "rank": 13
           },
           {
             "arena": "agents",
@@ -7030,9 +7189,9 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000071",
-        "completion": "0.0000035",
-        "input_cache_read": "0.00000015"
+        "prompt": "0.00000067",
+        "completion": "0.0000034",
+        "input_cache_read": "0.00000017"
       },
       "top_provider": {
         "context_length": 262144,
@@ -7095,9 +7254,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1206,
-            "win_rate": 53.3,
-            "rank": 17
+            "elo": 1212,
+            "win_rate": 53.1,
+            "rank": 18
           },
           {
             "arena": "agents",
@@ -7123,9 +7282,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1185,
-            "win_rate": 47.1,
-            "rank": 14
+            "elo": 1170,
+            "win_rate": 44.4,
+            "rank": 18
           },
           {
             "arena": "agents",
@@ -7284,9 +7443,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1206,
-            "win_rate": 53.3,
-            "rank": 17
+            "elo": 1212,
+            "win_rate": 53.1,
+            "rank": 18
           },
           {
             "arena": "agents",
@@ -7312,9 +7471,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1185,
-            "win_rate": 47.1,
-            "rank": 14
+            "elo": 1170,
+            "win_rate": 44.4,
+            "rank": 18
           },
           {
             "arena": "agents",
@@ -7501,7 +7660,7 @@
       "top_provider": {
         "context_length": 1000000,
         "max_completion_tokens": 128000,
-        "is_moderated": true
+        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -7564,9 +7723,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1288,
-            "win_rate": 61,
-            "rank": 4
+            "elo": 1294,
+            "win_rate": 60.9,
+            "rank": 5
           },
           {
             "arena": "agents",
@@ -7592,9 +7751,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1305,
-            "win_rate": 63,
-            "rank": 3
+            "elo": 1316,
+            "win_rate": 62.2,
+            "rank": 2
           },
           {
             "arena": "agents",
@@ -7772,9 +7931,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1288,
-            "win_rate": 61,
-            "rank": 4
+            "elo": 1294,
+            "win_rate": 60.9,
+            "rank": 5
           },
           {
             "arena": "agents",
@@ -7800,9 +7959,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1305,
-            "win_rate": 63,
-            "rank": 3
+            "elo": 1316,
+            "win_rate": 62.2,
+            "rank": 2
           },
           {
             "arena": "agents",
@@ -8701,9 +8860,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1220,
-            "win_rate": 49.7,
-            "rank": 15
+            "elo": 1226,
+            "win_rate": 49.3,
+            "rank": 16
           },
           {
             "arena": "agents",
@@ -8722,9 +8881,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1206,
-            "win_rate": 49.5,
-            "rank": 12
+            "elo": 1244,
+            "win_rate": 49.4,
+            "rank": 10
           },
           {
             "arena": "agents",
@@ -8883,9 +9042,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1220,
-            "win_rate": 49.7,
-            "rank": 15
+            "elo": 1226,
+            "win_rate": 49.3,
+            "rank": 16
           },
           {
             "arena": "agents",
@@ -8904,9 +9063,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1206,
-            "win_rate": 49.5,
-            "rank": 12
+            "elo": 1244,
+            "win_rate": 49.4,
+            "rank": 10
           },
           {
             "arena": "agents",
@@ -9302,9 +9461,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1276,
-            "win_rate": 59.7,
-            "rank": 6
+            "elo": 1281,
+            "win_rate": 59.3,
+            "rank": 7
           },
           {
             "arena": "agents",
@@ -9525,9 +9684,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1276,
-            "win_rate": 59.7,
-            "rank": 6
+            "elo": 1281,
+            "win_rate": 59.3,
+            "rank": 7
           },
           {
             "arena": "agents",
@@ -9729,9 +9888,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1214,
-            "win_rate": 50.4,
-            "rank": 16
+            "elo": 1219,
+            "win_rate": 50.1,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -9757,9 +9916,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1215,
-            "win_rate": 51.2,
-            "rank": 9
+            "elo": 1224,
+            "win_rate": 47.8,
+            "rank": 12
           },
           {
             "arena": "agents",
@@ -10032,9 +10191,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1225,
-            "win_rate": 55.7,
-            "rank": 14
+            "elo": 1237,
+            "win_rate": 58.4,
+            "rank": 15
           },
           {
             "arena": "agents",
@@ -10069,7 +10228,7 @@
             "category": "python-pptxslides",
             "elo": 1247,
             "win_rate": 57.4,
-            "rank": 6
+            "rank": 9
           },
           {
             "arena": "agents",
@@ -10267,9 +10426,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1225,
-            "win_rate": 55.7,
-            "rank": 14
+            "elo": 1237,
+            "win_rate": 58.4,
+            "rank": 15
           },
           {
             "arena": "agents",
@@ -10304,7 +10463,7 @@
             "category": "python-pptxslides",
             "elo": 1247,
             "win_rate": 57.4,
-            "rank": 6
+            "rank": 9
           },
           {
             "arena": "agents",
@@ -10932,9 +11091,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1037,
-            "win_rate": 29.5,
-            "rank": 36
+            "elo": 1042,
+            "win_rate": 29.4,
+            "rank": 37
           },
           {
             "arena": "agents",
@@ -11307,7 +11466,7 @@
       "top_provider": {
         "context_length": 200000,
         "max_completion_tokens": 64000,
-        "is_moderated": false
+        "is_moderated": true
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -11376,7 +11535,7 @@
       "top_provider": {
         "context_length": 400000,
         "max_completion_tokens": 128000,
-        "is_moderated": true
+        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -12133,13 +12292,13 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000003",
-        "completion": "0.000002",
-        "input_cache_read": "0.00000003"
+        "prompt": "0.0000006",
+        "completion": "0.0000036",
+        "input_cache_read": "0.00000012"
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -12453,9 +12612,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1118,
+            "elo": 1124,
             "win_rate": 43,
-            "rank": 25
+            "rank": 26
           },
           {
             "arena": "agents",
@@ -12490,7 +12649,7 @@
             "category": "python-pptxslides",
             "elo": 1152,
             "win_rate": 43.3,
-            "rank": 18
+            "rank": 19
           },
           {
             "arena": "agents",
@@ -12688,9 +12847,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1118,
+            "elo": 1124,
             "win_rate": 43,
-            "rank": 25
+            "rank": 26
           },
           {
             "arena": "agents",
@@ -12725,7 +12884,7 @@
             "category": "python-pptxslides",
             "elo": 1152,
             "win_rate": 43.3,
-            "rank": 18
+            "rank": 19
           },
           {
             "arena": "agents",
@@ -12830,9 +12989,9 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000144",
-        "completion": "0.00000288",
-        "input_cache_read": "0.0000001215"
+        "prompt": "0.0000016",
+        "completion": "0.0000032",
+        "input_cache_read": "0.000000135"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -12880,7 +13039,7 @@
             "category": "fullstack",
             "elo": 948,
             "win_rate": 22.1,
-            "rank": 39
+            "rank": 40
           },
           {
             "arena": "agents",
@@ -13889,9 +14048,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1187,
-            "win_rate": 53.7,
-            "rank": 21
+            "elo": 1192,
+            "win_rate": 53.3,
+            "rank": 22
           },
           {
             "arena": "agents",
@@ -14135,7 +14294,7 @@
             "category": "python-pptxslides",
             "elo": 1336,
             "win_rate": 63.1,
-            "rank": 2
+            "rank": 1
           },
           {
             "arena": "agents",
@@ -14351,7 +14510,7 @@
             "category": "python-pptxslides",
             "elo": 1336,
             "win_rate": 63.1,
-            "rank": 2
+            "rank": 1
           },
           {
             "arena": "agents",
@@ -14604,9 +14763,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1197,
-            "win_rate": 55.1,
-            "rank": 19
+            "elo": 1202,
+            "win_rate": 55,
+            "rank": 20
           },
           {
             "arena": "agents",
@@ -14770,22 +14929,14 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "include_reasoning",
-        "logprobs",
         "max_tokens",
-        "presence_penalty",
         "reasoning",
-        "repetition_penalty",
         "response_format",
         "seed",
-        "stop",
-        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -14834,13 +14985,13 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000009",
+        "prompt": "0.0000001",
         "completion": "0.00000034",
-        "input_cache_read": "0.00000005"
+        "input_cache_read": "0.0000001"
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15206,9 +15357,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1179,
-            "win_rate": 52,
-            "rank": 22
+            "elo": 1183,
+            "win_rate": 52.1,
+            "rank": 23
           },
           {
             "arena": "agents",
@@ -15241,9 +15392,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1169,
-            "win_rate": 50.2,
-            "rank": 16
+            "elo": 1170,
+            "win_rate": 49.3,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -15609,9 +15760,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1083,
+            "elo": 1088,
             "win_rate": 41,
-            "rank": 30
+            "rank": 29
           },
           {
             "arena": "agents",
@@ -15632,7 +15783,7 @@
             "category": "mobileapps",
             "elo": 1140,
             "win_rate": 45.4,
-            "rank": 32
+            "rank": 31
           },
           {
             "arena": "agents",
@@ -17196,9 +17347,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1049,
+            "elo": 1052,
             "win_rate": 40.8,
-            "rank": 35
+            "rank": 36
           },
           {
             "arena": "agents",
@@ -17375,9 +17526,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1049,
+            "elo": 1052,
             "win_rate": 40.8,
-            "rank": 35
+            "rank": 36
           },
           {
             "arena": "agents",
@@ -18040,7 +18191,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 262144,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -18308,9 +18459,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1014,
-            "win_rate": 36.4,
-            "rank": 38
+            "elo": 1018,
+            "win_rate": 36.5,
+            "rank": 39
           },
           {
             "arena": "agents",
@@ -18583,9 +18734,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1100,
+            "elo": 1105,
             "win_rate": 42.4,
-            "rank": 26
+            "rank": 27
           },
           {
             "arena": "agents",
@@ -18822,9 +18973,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1100,
+            "elo": 1105,
             "win_rate": 42.4,
-            "rank": 26
+            "rank": 27
           },
           {
             "arena": "agents",
@@ -19018,9 +19169,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1243,
-            "win_rate": 64.1,
-            "rank": 11
+            "elo": 1248,
+            "win_rate": 64.3,
+            "rank": 12
           },
           {
             "arena": "agents",
@@ -19192,9 +19343,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1243,
-            "win_rate": 64.1,
-            "rank": 11
+            "elo": 1248,
+            "win_rate": 64.3,
+            "rank": 12
           },
           {
             "arena": "agents",
@@ -19746,9 +19897,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1152,
-            "win_rate": 51.6,
-            "rank": 23
+            "elo": 1157,
+            "win_rate": 51.7,
+            "rank": 24
           },
           {
             "arena": "agents",
@@ -19978,9 +20129,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1249,
-            "win_rate": 63.1,
-            "rank": 10
+            "elo": 1253,
+            "win_rate": 63,
+            "rank": 11
           },
           {
             "arena": "agents",
@@ -20135,9 +20286,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1249,
-            "win_rate": 63.1,
-            "rank": 10
+            "elo": 1253,
+            "win_rate": 63,
+            "rank": 11
           },
           {
             "arena": "agents",
@@ -20492,9 +20643,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1145,
-            "win_rate": 54.2,
-            "rank": 24
+            "elo": 1149,
+            "win_rate": 54.4,
+            "rank": 25
           },
           {
             "arena": "agents",
@@ -21060,9 +21211,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1023,
-            "win_rate": 37,
-            "rank": 37
+            "elo": 1028,
+            "win_rate": 37.2,
+            "rank": 38
           },
           {
             "arena": "agents",
@@ -21074,9 +21225,9 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1140,
+            "elo": 1139,
             "win_rate": 46.4,
-            "rank": 31
+            "rank": 32
           },
           {
             "arena": "agents",
@@ -21422,9 +21573,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1080,
-            "win_rate": 44.9,
-            "rank": 31
+            "elo": 1085,
+            "win_rate": 45.2,
+            "rank": 32
           },
           {
             "arena": "agents",
@@ -21602,9 +21753,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1093,
-            "win_rate": 47.1,
-            "rank": 27
+            "elo": 1098,
+            "win_rate": 47.4,
+            "rank": 28
           },
           {
             "arena": "agents",
@@ -21766,9 +21917,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1093,
-            "win_rate": 47.1,
-            "rank": 27
+            "elo": 1098,
+            "win_rate": 47.4,
+            "rank": 28
           },
           {
             "arena": "agents",
@@ -22234,8 +22385,8 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1074,
-            "win_rate": 44.1,
+            "elo": 1078,
+            "win_rate": 44.3,
             "rank": 33
           },
           {
@@ -22255,7 +22406,7 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1113,
+            "elo": 1114,
             "win_rate": 43.8,
             "rank": 29
           },
@@ -22399,8 +22550,8 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1074,
-            "win_rate": 44.1,
+            "elo": 1078,
+            "win_rate": 44.3,
             "rank": 33
           },
           {
@@ -22420,7 +22571,7 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1113,
+            "elo": 1114,
             "win_rate": 43.8,
             "rank": 29
           },
@@ -23437,9 +23588,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1187,
-            "win_rate": 59.9,
-            "rank": 20
+            "elo": 1192,
+            "win_rate": 60.2,
+            "rank": 21
           },
           {
             "arena": "agents",
@@ -23583,9 +23734,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1187,
-            "win_rate": 59.9,
-            "rank": 20
+            "elo": 1192,
+            "win_rate": 60.2,
+            "rank": 21
           },
           {
             "arena": "agents",
@@ -24173,7 +24324,7 @@
             "category": "fullstack",
             "elo": 1086,
             "win_rate": 44.5,
-            "rank": 28
+            "rank": 30
           },
           {
             "arena": "agents",
@@ -25950,9 +26101,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1062,
+            "elo": 1064,
             "win_rate": 42.3,
-            "rank": 34
+            "rank": 35
           },
           {
             "arena": "agents",
@@ -26162,9 +26313,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1083,
-            "win_rate": 43.5,
-            "rank": 29
+            "elo": 1085,
+            "win_rate": 43.7,
+            "rank": 31
           },
           {
             "arena": "agents",
@@ -26324,9 +26475,9 @@
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1083,
-            "win_rate": 43.5,
-            "rank": 29
+            "elo": 1085,
+            "win_rate": 43.7,
+            "rank": 31
           },
           {
             "arena": "agents",
@@ -27009,11 +27160,12 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.000001"
+        "completion": "0.000001",
+        "input_cache_read": "0.000000135"
       },
       "top_provider": {
-        "context_length": 163840,
-        "max_completion_tokens": 163840,
+        "context_length": 131072,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -36346,6 +36498,56 @@
       }
     },
     {
+      "id": "mistralai/ministral-8b",
+      "canonical_slug": "mistralai/ministral-8b",
+      "hugging_face_id": null,
+      "name": "Mistral: Ministral 8B",
+      "created": 1729123200,
+      "description": "Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length...",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Mistral",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000011",
+        "completion": "0.00000011"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": "2024-09-30",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/mistralai/ministral-8b/endpoints"
+      }
+    },
+    {
       "id": "qwen/qwen-2.5-7b-instruct",
       "canonical_slug": "qwen/qwen-2.5-7b-instruct",
       "hugging_face_id": "Qwen/Qwen2.5-7B-Instruct",
@@ -38301,6 +38503,60 @@
       }
     },
     {
+      "id": "mancer/weaver",
+      "canonical_slug": "mancer/weaver",
+      "hugging_face_id": null,
+      "name": "Mancer: Weaver (alpha)",
+      "created": 1690934400,
+      "description": "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.",
+      "context_length": 8000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama2",
+        "instruct_type": "alpaca"
+      },
+      "pricing": {
+        "prompt": "0.0000005",
+        "completion": "0.00000075"
+      },
+      "top_provider": {
+        "context_length": 8000,
+        "max_completion_tokens": 6000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": "2023-06-30",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/mancer/weaver/endpoints"
+      }
+    },
+    {
       "id": "undi95/remm-slerp-l2-13b",
       "canonical_slug": "undi95/remm-slerp-l2-13b",
       "hugging_face_id": "Undi95/ReMM-SLERP-L2-13B",
@@ -38596,7 +38852,7 @@
       }
     }
   ],
-  "total_count": 414,
+  "total_count": 419,
   "links": {
     "next": null
   }
